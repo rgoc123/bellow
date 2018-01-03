@@ -1,12 +1,12 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
-import { signup, login, logout } from './util/session_api_util';
+import { login, logout, signup } from './actions/session_actions';
 import configureStore from './store/store';
 import Root from './components/root';
 
 //Testing start
-
+window.login = login;
 //Testing end
 
 document.addEventListener('DOMContentLoaded', () => {
