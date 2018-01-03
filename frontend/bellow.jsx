@@ -10,7 +10,7 @@ import Root from './components/root';
 //Testing end
 
 document.addEventListener('DOMContentLoaded', () => {
-  window.$ = $;
+  // window.$ = $;
   const root = document.getElementById('root');
   const store = configureStore();
   window.getState = store.getState;
