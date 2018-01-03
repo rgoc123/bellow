@@ -18,10 +18,14 @@ const App = () => (
     <header>
       <h1>This. Is. Bellow!</h1>
       <GreetingContainer />
+      <Link to="/login">Login</Link>
+      <br/>
+      <Link to="/signup">Sign Up!</Link>
     </header>
 
+
     <AuthRoute path="/login" component={SessionFormContainer} />
-    <AuthRoute path="/signup" component={SessionFormContainer} />    
+    <AuthRoute path="/signup" component={SessionFormContainer} />
 
   </div>
 );
