@@ -1,18 +1,27 @@
 import React from 'react';
+import { Provider } from 'react-redux';
+import {
+  Route,
+  Redirect,
+  Switch,
+  Link,
+  HashRouter
+} from 'react-router-dom';
 
 import GreetingContainer from './greeting/greeting_container';
+import SessionFormContainer from './session_form/session_form_container';
 
 const App = () => (
   <div>
-    <h1>This. Is. Bellow!</h1>
-    <p>This is it for now. Underwhelming. I know.</p>
-    <p>But rest assured! There will be more tomorrow! Oh yeahhhhh!</p>
-<<<<<<< HEAD
-=======
 
-    <GreetingContainer />
+    <header>
+      <h1>This. Is. Bellow!</h1>
+      <GreetingContainer />
+    </header>
 
->>>>>>> auth
+    <Route path="/login" component={SessionFormContainer} />
+    <Route path="/signup" component={SessionFormContainer} />    
+
   </div>
 );
 
