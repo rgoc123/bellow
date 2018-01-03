@@ -52,40 +52,37 @@ class SessionForm extends React.Component {
           <br/>
 
           <div className="login-form">
-            <label>First Name:
-              <input type="text"
-                value={this.first_name}
-                onChange={this.update('first_name')}
-                className="login-input"
-              />
-            </label>
+            <input type="text"
+              value={this.first_name}
+              onChange={this.update('first_name')}
+              className="login-input-name"
+              placeholder="First Name"
+            />
+            <input type="text"
+              value={this.last_name}
+              onChange={this.update('last_name')}
+              className="login-input-name"
+              placeholder="Last Name"
+            />
             <br/>
-            <label>Last Name:
-              <input type="text"
-                value={this.last_name}
-                onChange={this.update('last_name')}
-                className="login-input"
-              />
-            </label>
+            <input type="text"
+              value={this.email}
+              onChange={this.update('email')}
+              className="login-input"
+              placeholder="Email"
+            />
             <br/>
-            <label>Email:
-              <input type="text"
-                value={this.email}
-                onChange={this.update('email')}
-                className="login-input"
-              />
-            </label>
+            <input type="text"
+              value={this.password}
+              onChange={this.update('password')}
+              className="login-input"
+              placeholder="Password"
+            />
             <br/>
-            <label>Password:
-              <input type="text"
-                value={this.password}
-                onChange={this.update('password')}
-                className="login-input"
-              />
-            </label>
-            <input type="submit" value="Sign Up" />
+            <input id="signup-button" type="submit" value="Sign Up" />
           </div>
         </form>
+        Already on Bellow? <Link to='/login'>Login</Link>
       </div>
     );
   }
@@ -116,16 +113,30 @@ class SessionForm extends React.Component {
             <input type="submit" value="Log In" />
           </div>
         </form>
+        New to Bellow? <Link to='/signup'>Sign Up!</Link>
       </div>
     );
   }
 
-  render() {
+  formChoice() {
     if (this.props.formType === 'signup') {
       return this.signupForm();
     } else {
       return this.loginForm();
     }
+  }
+
+  render() {
+    return (
+      <div className="content-container">
+        <div className="alpha-container">
+          {this.formChoice()}
+        </div>
+        <div className="bravo-container">
+
+        </div>
+      </div>
+    );
   }
 
 }
