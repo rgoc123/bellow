@@ -22,11 +22,7 @@
   "directories": {
     "test": "test"
   },
-<<<<<<< HEAD
-  "engines" :{
-=======
   "engines": {
->>>>>>> auth
     "node": "6.9.1",
     "npm": "3.10.8"
   },
