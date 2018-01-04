@@ -16,12 +16,16 @@ const App = () => (
   <div>
 
     <header>
-      <h1>This. Is. Bellow!</h1>
-      <GreetingContainer />
+      <div>
+        <h1>Bellow!</h1>
+        <GreetingContainer />
+        <Link to="/login">Login</Link>
+        <Link to="/signup">Sign Up!</Link>
+      </div>
     </header>
 
     <AuthRoute path="/login" component={SessionFormContainer} />
-    <AuthRoute path="/signup" component={SessionFormContainer} />    
+    <AuthRoute path="/signup" component={SessionFormContainer} />
 
   </div>
 );
