@@ -19,7 +19,6 @@ header h1 {
 }
 
 header a {
-  float: right;
   text-decoration: none;
   border: 3px white solid;
   border-radius: 3px;
@@ -30,8 +29,26 @@ header a {
   font-family: "Helvetica Neue";
 }
 
+header button {
+  position: relative;
+  bottom: 8px;
+  text-decoration: none;
+  border: 3px white solid;
+  margin-right: 10px;
+  border-radius: 3px;
+  padding: 5px 10px;
+  background: red;
+  color: white;
+  font-family: "Helvetica Neue";
+}
+
+.header-button-container {
+  position: absolute;
+  right: 0;
+  top: 23px;
+}
+
 .header-button {
-  float: right;
   text-decoration: none;
   border: 3px white solid;
   border-radius: 3px;
