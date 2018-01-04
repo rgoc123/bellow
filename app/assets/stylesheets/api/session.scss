@@ -2,6 +2,34 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+header {
+  background-color: #d90007;
+  height: 40px;
+  padding: 12px 0;
+  position: relative;
+}
+
+header h1 {
+  text-align: center;
+  -webkit-text-stroke: .8px white;
+  color: black;
+  font-size: 32px;
+  font-weight: 700;
+  font-family: "Helvetica Neue";
+}
+
+header a {
+  float: right;
+  text-decoration: none;
+  border: 3px white solid;
+  border-radius: 3px;
+  margin: 10px;
+  padding: 5px 10px;
+  background: red;
+  color: white;
+  font-family: "Helvetica Neue";
+}
+
 .content-container {
   width: 960px;
   margin: 0 auto;
@@ -10,7 +38,16 @@
 .login-form-container {
   width: 300px;
   height: 584px;
+  padding: 30px;
   font-size: 16px;
+}
+
+.session_h2 {
+  color: rgb(211, 35, 35);
+  font-family: "Helvetica Neue";
+  text-align: center;
+  font-size: 22px;
+  font-weight: 700;
 }
 
 .login-form input {
@@ -24,25 +61,35 @@
 
 .login-input {
   width: 100%;
+  max-width: 280px;
 }
 
 .login-input-name {
+  max-width: 127px;
   width: 43%;
   margin-top: 3px;
   padding: 0 3px;
 }
 
-#signup-button {
-  width: 300px;
+.session-button {
+  width: 280px;
   height: 48px;
   color: white;
   font-size: 16px;
-  font-weight: bold;
+  font-weight: 700;
   background-color: #d90007;
   background: linear-gradient(#d90007, #c91400);
   border-color: #8d0005;
   border-radius: 3px;
   text-align: center;
+}
+
+#fname {
+  margin-right: 3px;
+}
+
+#lname {
+  margin-left: 3px;
 }
 
 a {

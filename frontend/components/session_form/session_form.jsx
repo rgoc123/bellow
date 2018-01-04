@@ -48,7 +48,7 @@ class SessionForm extends React.Component {
     return (
       <div className="login-form-container">
         <form onSubmit={this.handleSubmit} className="login-form-box">
-          Sign Up for Bellow
+          <h2 className="session_h2">Sign Up for Bellow</h2>
           <br/>
 
           <div className="login-form">
@@ -56,12 +56,14 @@ class SessionForm extends React.Component {
               value={this.first_name}
               onChange={this.update('first_name')}
               className="login-input-name"
+              id="fname"
               placeholder="First Name"
             />
             <input type="text"
               value={this.last_name}
               onChange={this.update('last_name')}
               className="login-input-name"
+              id="lname"
               placeholder="Last Name"
             />
             <br/>
@@ -79,10 +81,10 @@ class SessionForm extends React.Component {
               placeholder="Password"
             />
             <br/>
-            <input id="signup-button" type="submit" value="Sign Up" />
+            <input class="session-button" type="submit" value="Sign Up" />
           </div>
         </form>
-        Already on Bellow? <Link to='/login'>Login</Link>
+        Already on Bellow? <Link to='/login'>Log In</Link>
       </div>
     );
   }
@@ -91,26 +93,24 @@ class SessionForm extends React.Component {
     return (
       <div className="login-form-container">
         <form onSubmit={this.handleSubmit} className="login-form-box">
-          Log In to Bellow
+          <h2 className="session_h2">Log In to Bellow</h2>
           <br/>
 
           <div className="login-form">
-            <label>Email:
               <input type="text"
                 value={this.email}
                 onChange={this.update('email')}
                 className="login-input"
+                placeholder="Email"
               />
-            </label>
             <br/>
-            <label>Password:
-              <input type="text"
-                value={this.password}
-                onChange={this.update('password')}
-                className="login-input"
-              />
-            </label>
-            <input type="submit" value="Log In" />
+            <input type="text"
+              value={this.password}
+              onChange={this.update('password')}
+              className="login-input"
+              placeholder="Password"
+            />
+            <input class="session-button" type="submit" value="Log In" />
           </div>
         </form>
         New to Bellow? <Link to='/signup'>Sign Up!</Link>
