@@ -17,12 +17,6 @@ const App = () => (
 
     <header>
 
-      <h1>This. Is. Bellow!</h1>
-      <GreetingContainer />
-      <Link to="/login">Login</Link>
-      <br/>
-      <Link to="/signup">Sign Up!</Link>
-
       <div>
         <h1>Bellow!</h1>
         <GreetingContainer />
