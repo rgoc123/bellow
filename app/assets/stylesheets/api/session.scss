@@ -30,6 +30,18 @@ header a {
   font-family: "Helvetica Neue";
 }
 
+.header-button {
+  float: right;
+  text-decoration: none;
+  border: 3px white solid;
+  border-radius: 3px;
+  margin: 10px;
+  padding: 5px 10px;
+  background: red;
+  color: white;
+  font-family: "Helvetica Neue";
+}
+
 .content-container {
   width: 960px;
   margin: 0 auto;

@@ -12,6 +12,7 @@ const sessionLinks = () => (
 const personalGreeting = (currentUser, logout) => (
   <hgroup className="header-group">
     <h2 className="header-name">Welcome, {currentUser.email}!</h2>
+    <h2>Thanks for visiting! This is it for now, but come back tomorrow for more.</h2>
     <button className="header-button" onClick={logout}>Log Out</button>
   </hgroup>
 );
