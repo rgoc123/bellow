@@ -10,7 +10,7 @@ window.login = login;
 //Testing end
 
 document.addEventListener('DOMContentLoaded', () => {
-  // window.$ = $;
+  window.$ = $;
   const root = document.getElementById('root');
   let store = configureStore();
   window.getState = store.getState;

@@ -81,7 +81,7 @@ class SessionForm extends React.Component {
               placeholder="Password"
             />
             <br/>
-            <input class="session-button" type="submit" value="Sign Up" />
+            <input className="session-button" type="submit" value="Sign Up" />
           </div>
         </form>
         Already on Bellow? <Link to='/login'>Log In</Link>
@@ -110,7 +110,7 @@ class SessionForm extends React.Component {
               className="login-input"
               placeholder="Password"
             />
-            <input class="session-button" type="submit" value="Log In" />
+          <input className="session-button" type="submit" value="Log In" />
           </div>
         </form>
         New to Bellow? <Link to='/signup'>Sign Up!</Link>
