@@ -14,7 +14,9 @@ export const receiveBusinesses = businesses => {
 
 //thunk actions
 export const fetchBusinesses = () => dispatch => {
-  return(APIUtilBusiness.fetchBusinesses().then(businesses => (
-    dispatch(receiveBusinesses(businesses)))
-  ));
+  return(
+    APIUtilBusiness.fetchBusinesses().then(businesses => (
+    dispatch(receiveBusinesses(businesses))
+  ))
+  );
 };
