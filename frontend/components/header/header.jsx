@@ -32,7 +32,7 @@ const Header = (props) => {
   if (props.currentUser) {
     headerButtons = (
       <div className="header-button-container">
-        <button onClick={props.logout}>Log Out</button>
+        <Link to="/" onClick={props.logout}>Log Out</Link>
       </div>
     );
   } else {

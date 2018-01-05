@@ -6,10 +6,15 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-User.destroy_all
-User.create!(email: "bobby", password: "password", first_name: "Bobby", last_name: "O'Connor")
-User.create!(email: "Carib", password: "password", first_name: "Carib", last_name: "Guerra")
-User.create!(email: "annmo900@gmail.com", password: "password", first_name: "Ann", last_name: "O'Connor")
+# User.destroy_all
+# User.create!(email: "bobby", password: "password", first_name: "Bobby", last_name: "O'Connor")
+# User.create!(email: "Carib", password: "password", first_name: "Carib", last_name: "Guerra")
+# User.create!(email: "annmo900@gmail.com", password: "password", first_name: "Ann", last_name: "O'Connor")
+# User.create!(email: "Bethoconnor123@gmail.com", password: "password", first_name: "Beth", last_name: "O'Connor")
+# User.create!(email: "tlav123@gmail.com", password: "password", first_name: "Tom", last_name: "Lavander")
+# User.create!(email: "jonrao314@gmail.com", password: "password", first_name: "Jonathan", last_name: "Rao")
+# User.create!(email: "jr4119@stern.nyu.edu", password: "password", first_name: "Jon", last_name: "Rao")
+# User.create!(email: "jndunten@gmail.com", password: "password", first_name: "J", last_name: "Dawg")
 
 Business.destroy_all
 Business.create!(name: "JG Melon's", rating: 5, price: 2, neighborhood: "Lenox Hill", address: "1234 3rd Ave, New York, NY 10075", phone_number: "212-646-1234")
