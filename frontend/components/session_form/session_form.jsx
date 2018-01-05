@@ -35,15 +35,19 @@ class SessionForm extends React.Component {
   }
 
   renderErrors() {
-    return(
-      <ul>
-        {this.props.errors.map((error, i) => (
-          <li className="errorLI" key={`error-${i}`}>
-            {error}
-          </li>
-        ))}
-      </ul>
-    );
+    if (!this.props.errors) {
+      return null;
+    } else {
+      return(
+        <ul>
+          {this.props.errors.map((error, i) => (
+            <li className="errorLI" key={`error-${i}`}>
+              {error}
+            </li>
+          ))}
+        </ul>
+      );
+    }
   }
 
   signupForm() {

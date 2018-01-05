@@ -11,6 +11,7 @@ import {
 import HeaderContainer from './header/header_container';
 import SessionFormContainer from './session_form/session_form_container';
 import BusinessIndexContainer from './business/business_index_container';
+import BusinessShowContainer from './business/business_show_container';
 import { AuthRoute, ProtectedRoute } from '../util/route_util';
 
 
@@ -23,6 +24,7 @@ const App = () => (
     <AuthRoute path="/login" component={SessionFormContainer} />
     <AuthRoute path="/signup" component={SessionFormContainer} />
     <Route exact path="/businesses" component={BusinessIndexContainer} />
+    <Route exact path="/businesses/:businessId" component={BusinessShowContainer} />
 
   </div>
 );
