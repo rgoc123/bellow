@@ -22,7 +22,7 @@ const App = () => (
 
     <AuthRoute path="/login" component={SessionFormContainer} />
     <AuthRoute path="/signup" component={SessionFormContainer} />
-    <Route exact path="/" component={BusinessIndexContainer} />
+    <Route exact path="/businesses" component={BusinessIndexContainer} />
 
   </div>
 );

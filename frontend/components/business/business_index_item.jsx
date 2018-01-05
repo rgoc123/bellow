@@ -6,6 +6,7 @@ const BusinessIndexItem = ({ business }) => {
     <li className="regular-search-result">
       <div className="biz-listing">
         <div className="main-attributes">
+          <div className="search-result-image"></div>
           <h2>{business.name}</h2>
           <span>Rating: {business.rating}</span>
           <span>Price: {business.price}</span>

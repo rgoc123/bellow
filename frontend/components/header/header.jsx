@@ -20,25 +20,32 @@ const personalGreeting = (currentUser) => {
   }
 };
 
-const Header = ({ currentUser, logout }) => {
+const Header = (props) => {
   let headerButtons;
-  if (currentUser) {
+  let headerClass;
+
+  if (props.location.pathname === "/") {
+    headerClass = "header-landing";
+  } else {
+    headerClass = "header-normal";
+  }
+  if (props.currentUser) {
     headerButtons = (
       <div className="header-button-container">
-        <button onClick={logout}>Log Out</button>
+        <button onClick={props.logout}>Log Out</button>
       </div>
-    )
+    );
   } else {
     headerButtons =  (
       <div className="header-button-container">
-        <Link to="/login">Login</Link>
-        <Link to="/signup">Sign Up!</Link>
+        <Link to="/login" className="lILink">Login</Link>
+        <Link to="/signup" className="sULink">Sign Up!</Link>
       </div>
-    )
+    );
   }
   return (
-    <header>
-      <div>
+    <header className={headerClass}>
+      <div className="content-container">
         <h1>Bellow!</h1>
         {headerButtons}
       </div>

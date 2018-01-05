@@ -2,7 +2,55 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-header {
+.landing-content-container {
+  width: 960px;
+  margin: 0 auto;
+  padding: 15px;
+}
+
+.header-landing {
+  background-image: url(https://s3-media3.fl.yelpcdn.com/assets/srv0/yelp_large_assets/252051bf4fce/assets/img/home/hero_photos/oYJx-YOK9dqe0F56bS2tDQ.jpg);
+  height: 570px;
+  width: 100%;
+  background-position-x: 50%;
+  background-position-y: 50%;
+  background-size: cover;
+}
+
+.header-landing h1 {
+  position: relative;
+  top: 165px;
+  font-size: 48px;
+}
+
+.header-landing a {
+  background: rgba(0,0,0,0);
+  border: none;
+  border-radius: 0;
+}
+
+.header-landing a:hover {
+  border-bottom: 2px solid #fff;
+}
+
+.header-landing .lILink {
+  width: 42px;
+  padding: 8px 12px;
+}
+
+.header-landing .sULink {
+  border: 2px solid #fff;
+  border-radius: 4px;
+  width: 52px;
+  padding: 7px 24px;
+}
+
+.header-landing .sULink:hover {
+  background: #fff;
+  color: #666;
+}
+
+.header-normal {
   background-color: #d90007;
   height: 40px;
   padding: 12px 0;
@@ -40,6 +88,15 @@ header button {
   background: red;
   color: white;
   font-family: "Helvetica Neue";
+}
+
+.errorLI {
+  background-color: rgb(252, 214, 211);
+  font-family: "Helvetica Neue";
+  height: 60px;
+  border-radius: 3px;
+  line-height: 60px;
+  padding-left: 20px;
 }
 
 .header-button-container {

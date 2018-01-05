@@ -14,11 +14,11 @@ class SessionForm extends React.Component {
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
-  componentWillReceiveProps(nextProps) {
-    if (nextProps.loggedIn) {
-      this.props.history.push('/');
-    }
-  }
+  // componentWillReceiveProps(nextProps) {
+  //   if (nextProps.loggedIn) {
+  //     this.props.history.push('/');
+  //   }
+  // }
 
   update(field) {
     return e => this.setState({
@@ -29,20 +29,22 @@ class SessionForm extends React.Component {
   handleSubmit(e) {
     e.preventDefault();
     const user = Object.assign({}, this.state);
-    this.props.processForm(user);
+    this.props.processForm(user).then(() => {
+      this.props.history.push('/businesses');
+    });
   }
 
-  // renderErrors() {
-  //   return(
-  //     <ul>
-  //       {this.props.errors.map((error, i) => (
-  //         <li key={`error-${i}`}>
-  //           {error}
-  //         </li>
-  //       ))}
-  //     </ul>
-  //   );
-  // }
+  renderErrors() {
+    return(
+      <ul>
+        {this.props.errors.map((error, i) => (
+          <li className="errorLI" key={`error-${i}`}>
+            {error}
+          </li>
+        ))}
+      </ul>
+    );
+  }
 
   signupForm() {
     return (
@@ -50,7 +52,6 @@ class SessionForm extends React.Component {
         <form onSubmit={this.handleSubmit} className="login-form-box">
           <h2 className="session_h2">Sign Up for Bellow</h2>
           <br/>
-
           <div className="login-form">
             <input type="text"
               value={this.first_name}
@@ -74,7 +75,7 @@ class SessionForm extends React.Component {
               placeholder="Email"
             />
             <br/>
-            <input type="text"
+            <input type="password"
               value={this.password}
               onChange={this.update('password')}
               className="login-input"
@@ -95,7 +96,6 @@ class SessionForm extends React.Component {
         <form onSubmit={this.handleSubmit} className="login-form-box">
           <h2 className="session_h2">Log In to Bellow</h2>
           <br/>
-
           <div className="login-form">
               <input type="text"
                 value={this.email}
@@ -104,7 +104,7 @@ class SessionForm extends React.Component {
                 placeholder="Email"
               />
             <br/>
-            <input type="text"
+            <input type="password"
               value={this.password}
               onChange={this.update('password')}
               className="login-input"
@@ -129,6 +129,7 @@ class SessionForm extends React.Component {
   render() {
     return (
       <div className="content-container">
+        {this.renderErrors()}
         <div className="alpha-container">
           {this.formChoice()}
         </div>
