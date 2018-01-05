@@ -5,3 +5,11 @@ export const fetchBusinesses = () => {
     error: (err) => console.log(err)
   });
 };
+
+export const fetchBusiness = id => {
+  return $.ajax({
+    url: `/api/businesses/${id}`,
+    method: 'GET',
+    error: (err) => console.log(err)
+  });
+};

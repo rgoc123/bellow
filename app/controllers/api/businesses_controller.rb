@@ -4,6 +4,10 @@ class Api::BusinessesController < ApplicationController
     @businesses = Business.all
   end
 
+  def show
+    @business = Business.find(params[:id])
+  end
+
   def create
   end
 

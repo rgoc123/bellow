@@ -17,6 +17,7 @@
   height: 90px;
   width: 90px;
   border: 1px red solid;
+  margin-right: 10px;
 }
 
 .biz-listing {
@@ -24,10 +25,12 @@
   height: 91px;
   display: block;
   font-family: "Helvetica Neue";
+  display: flex;
+  justify-content: space-between;
 }
 
 .biz-listing div {
-  float: left;
+
 }
 
 .biz-listing span {
@@ -36,6 +39,7 @@
 
 .main-attributes {
   width: 412.5px;
+  display: flex;
 }
 
 .secondary-attributes {
