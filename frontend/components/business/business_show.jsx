@@ -29,6 +29,9 @@ class BusinessShow extends React.Component {
               </div>
             </div>
           </div>
+          <div className="bottom-shelf">
+            <div className="review-feed"></div>
+          </div>
         </div>
       );
     }
