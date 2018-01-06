@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom';
 
 import { login, logout, signup } from './actions/session_actions';
 import { fetchBusinesses, fetchBusiness } from './actions/business_actions';
+import { fetchReviews } from './util/review_api_util';
 import configureStore from './store/store';
 import Root from './components/root';
 
@@ -25,6 +26,6 @@ document.addEventListener('DOMContentLoaded', () => {
     window.getState = store.getState;
     window.dispatch = store.dispatch;
   }
-  window.fetchBusiness = fetchBusiness;
+  window.fetchReviews = fetchReviews;
   ReactDOM.render(<Root store={ store } />, root);
 });

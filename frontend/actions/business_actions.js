@@ -24,8 +24,8 @@ export const receiveBusiness = business => {
 export const fetchBusinesses = () => dispatch => {
   return(
     APIUtilBusiness.fetchBusinesses().then(businesses => (
-    dispatch(receiveBusinesses(businesses))
-  ))
+      dispatch(receiveBusinesses(businesses))
+    ))
   );
 };
 

@@ -29,6 +29,7 @@ const Header = (props) => {
   } else {
     headerClass = "header-normal";
   }
+
   if (props.currentUser) {
     headerButtons = (
       <div className="header-button-container">
@@ -43,6 +44,7 @@ const Header = (props) => {
       </div>
     );
   }
+  
   return (
     <header className={headerClass}>
       <div className="content-container">
