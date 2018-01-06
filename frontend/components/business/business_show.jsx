@@ -1,5 +1,7 @@
 import React from 'react';
 
+import ReviewIndexContainer from '../review/review_index_container';
+
 class BusinessShow extends React.Component {
 
   componentDidMount() {
@@ -30,7 +32,9 @@ class BusinessShow extends React.Component {
             </div>
           </div>
           <div className="bottom-shelf">
-            <div className="review-feed"></div>
+            <div className="review-feed">
+              <ReviewIndexContainer />
+            </div>
           </div>
         </div>
       );
