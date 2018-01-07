@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link, withRouter } from 'react-router-dom';
 
 import ReviewIndexContainer from '../review/review_index_container';
 
@@ -21,6 +22,9 @@ class BusinessShow extends React.Component {
                 <h1>{business.name}</h1>
                 <span>Rating: {business.rating}</span>
                 <span>Price: {business.price}</span>
+              </div>
+              <div className="biz-page-header-left">
+                <Link to={`/businesses/${business.id}/reviews/new`}>Write a review</Link>
               </div>
             </div>
             <div className="mapbox-container">
