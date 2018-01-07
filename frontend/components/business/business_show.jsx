@@ -33,7 +33,7 @@ class BusinessShow extends React.Component {
           </div>
           <div className="bottom-shelf">
             <div className="review-feed">
-              <ReviewIndexContainer />
+              <ReviewIndexContainer businessId={this.props.business.id} />
             </div>
           </div>
         </div>

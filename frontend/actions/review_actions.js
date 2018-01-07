@@ -13,9 +13,9 @@ export const receiveReviews = reviews => {
 
 
 //thunk actions
-export const fetchReviews = () => dispatch => {
+export const fetchReviews = (businessId) => dispatch => {
   return(
-    APIUtilReview.fetchReviews().then(reviews => (
+    APIUtilReview.fetchReviews(businessId).then(reviews => (
       dispatch(receiveReviews(reviews))
     ))
   );

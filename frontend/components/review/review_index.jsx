@@ -10,7 +10,7 @@ class ReviewIndex extends React.Component {
   }
 
   componentDidMount() {
-    this.props.fetchReviews();
+    // this.props.fetchReviews(this.props.businessId);
   }
 
   render() {
@@ -20,7 +20,6 @@ class ReviewIndex extends React.Component {
           review => <ReviewIndexItem key={review.id} review={review} />
         )}
       </ul>
-
     );
   }
 
