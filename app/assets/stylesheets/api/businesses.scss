@@ -86,3 +86,24 @@
   height: 135px;
   background-color: #70db70;
 }
+
+#write-review-button {
+  color: white;
+  font-size: 14px;
+  font-weight: 700;
+  background-color: #d90007;
+  background: linear-gradient(#d90007, #c91400);
+  text-decoration: none;
+  border-color: #8d0005;
+  border-radius: 3px;
+  padding: 8px 19px 9px 19px;
+  position: relative;
+}
+
+.fa-star {
+  font-size: 20px;
+  padding-right: 5px;
+  position: absolute;
+  top: 10px;
+  margin-right: 20px;
+}
