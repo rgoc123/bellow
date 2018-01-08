@@ -6,9 +6,10 @@ const ReviewIndexItem = ({ review }) => {
     <div className="review">
       <div className="review-sidebar">
         <div className="avatar-img-placeholder"></div>
+        <div>{review.first_name} {review.last_name.slice(0,1)}.</div>
       </div>
       <div className="review-wrapper">
-        <div>Rating: {review.rating}</div>
+        <div>Rating: {review.rating}  {review.updated_at}</div>
         <div>{review.body}</div>
       </div>
     </div>

@@ -2,12 +2,15 @@
 
 .review {
   display: flex;
+  border-bottom: 1px solid rgb(230, 230, 230);
+  padding: 18px 0 17px 0;
 }
 
 .review-sidebar {
   width: 247px;
   height: 222px;
   padding: 0 15px;
+  display: flex;
 }
 
 .review-wrapper {
@@ -18,6 +21,7 @@
 .avatar-img-placeholder {
   width: 60px;
   height: 60px;
+  margin-right: 9px;
   border: 1px solid red;
   border-radius: 5px;
 }

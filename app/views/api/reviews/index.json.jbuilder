@@ -7,9 +7,10 @@ json.partial! "api/reviews/review", review: @review
     json.business_id review.business_id
     json.rating review.rating
     json.body review.body
+    json.updated_at review.updated_at
 
     json.partial! "api/users/user", user: @user
-    json.user review.user.first_name
+    json.user review.user
 
   end
 end
