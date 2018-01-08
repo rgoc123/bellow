@@ -17,3 +17,8 @@
  @import "./api/session.scss";
  @import "./api/businesses.scss";
  @import "./api/reviews.scss";
+
+ #map-container {
+   width: 300px;
+   height: 300px;
+ }

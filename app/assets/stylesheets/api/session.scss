@@ -117,9 +117,10 @@ header button {
 }
 
 .content-container {
-  width: 960px;
+  width: 990px;
   margin: 0 auto;
   padding: 15px;
+  display: flex;
 }
 
 .login-form-container {
