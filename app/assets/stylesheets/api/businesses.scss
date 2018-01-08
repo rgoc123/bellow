@@ -59,6 +59,8 @@
 
 .biz-page-header {
   font-family: "Helvetica Neue";
+  display: flex;
+  align-items: center;
 }
 
 .biz-page-header-left {
@@ -96,14 +98,21 @@
   text-decoration: none;
   border-color: #8d0005;
   border-radius: 3px;
-  padding: 8px 19px 9px 19px;
-  position: relative;
+  padding: 10px 19px 10px 19px;
+  align-items: center;
+  // position: absolute;
+  height: 36px;
+  width: 176px;
+}
+
+#write-review-button:hover {
+  background-color: #ed0008;
+  background: linear-gradient(#ed0008, #dd1600);
 }
 
 .fa-star {
   font-size: 20px;
   padding-right: 5px;
-  position: absolute;
-  top: 10px;
-  margin-right: 20px;
+  // position: absolute;
+  margin-right: 2px;
 }
