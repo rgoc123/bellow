@@ -24,7 +24,7 @@ class BusinessShow extends React.Component {
                 <span>Price: {business.price}</span>
               </div>
               <div className="biz-page-header-right">
-                <Link class="write-review-button" to={`/businesses/${business.id}/reviews/new`}><i class="fa fa-star" aria-hidden="true"></i><span id="review-button-text">Write a review</span></Link>
+                <Link className="write-review-button" to={`/businesses/${business.id}/reviews/new`}><i className="fa fa-star" aria-hidden="true"></i><span id="review-button-text">Write a review</span></Link>
               </div>
             </div>
             <div className="mapbox-container">
