@@ -3,7 +3,15 @@ import { Link } from 'react-router-dom';
 
 const ReviewIndexItem = ({ review }) => {
   return (
-    <div>{review.body}</div>
+    <div className="review">
+      <div className="review-sidebar">
+        <div className="avatar-img-placeholder"></div>
+      </div>
+      <div className="review-wrapper">
+        <div>Rating: {review.rating}</div>
+        <div>{review.body}</div>
+      </div>
+    </div>
   );
 }
 
