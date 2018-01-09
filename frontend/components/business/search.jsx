@@ -1,16 +1,27 @@
 import React from 'react';
 import { Link, withRouter } from 'react-router-dom';
 
-import BusinessIndex from './business_index';
+import BusinessIndexContainer from './business_index_container';
+import FilterForm from './filter_form';
 
-const Search = (props) => {
+class Search extends React.Component {
 
-  return (
-    <div>
-      <BusinessIndex updateBounds={this.props.updateBounds}/>
-    </div>
-  );
+  constructor(props) {
+    super(props);
+  }
 
-};
+  render() {
+
+    return (
+      <div>
+        <FilterForm />
+        <div>
+          <BusinessIndexContainer updateBounds={this.props.updateBounds}/>
+        </div>
+      </div>
+    );
+  }
+
+}
 
 export default Search;
