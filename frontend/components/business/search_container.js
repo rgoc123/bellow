@@ -1,6 +1,7 @@
 import { connect } from 'react-redux';
 
 import { fetchBusinesses } from '../../actions/business_actions';
+import { updateBounds } from '../../actions/filter_actions';
 import BusinessIndex from './business_index';
 
 const mapStateToProps = (state) => {
@@ -11,7 +12,8 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = dispatch => {
   return {
-    fetchBusinesses: () => dispatch(fetchBusinesses())
+    fetchBusinesses: () => dispatch(fetchBusinesses()),
+    updateBounds: (bounds) => dispatch(updateBounds(bounds))
   };
 };
 

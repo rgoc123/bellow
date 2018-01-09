@@ -3,15 +3,12 @@ class Business < ApplicationRecord
   has_many :reviews
 
   def self.in_bounds(bounds)
-
+    self.where("lat < ?", bounds[:northEast][:lat])
+      .where("lat > ?", bounds[:southWest][:lat])
+      .where("lng > ?", bounds[:southWest][:long])
+      .where("lng < ?", bounds[:northEast][:long])
   end
 
-  private
-  def business_params
-    params.require(:business).permit(
-      :lat,
-      :long
-    )
-  end
+
 
 end

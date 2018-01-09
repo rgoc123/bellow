@@ -1,9 +1,9 @@
 class Api::BusinessesController < ApplicationController
 
-  #if this doesn't work, the original was just
+  #if this doesn't work, the original index was just Business.all
 
   def index
-    @businesses = Business.all
+    @businesses = bounds ? Business.in_bounds(bounds) : Business.all
   end
 
   def show
@@ -14,15 +14,15 @@ class Api::BusinessesController < ApplicationController
   end
 
   private
-  # def business_params
-  #   params.require(:business).permit(
-  #     :lat,
-  #     :long
-  #   )
-  # end
-  #
-  # def bounds
-  #   params[:bounds]
-  # end
+  def business_params
+    params.require(:business).permit(
+      :lat,
+      :long
+    )
+  end
+
+  def bounds
+    params[:bounds]
+  end
 
 end
