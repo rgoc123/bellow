@@ -1,5 +1,7 @@
 class Api::BusinessesController < ApplicationController
 
+  #if this doesn't work, the original was just
+
   def index
     @businesses = Business.all
   end
@@ -10,5 +12,17 @@ class Api::BusinessesController < ApplicationController
 
   def create
   end
+
+  private
+  # def business_params
+  #   params.require(:business).permit(
+  #     :lat,
+  #     :long
+  #   )
+  # end
+  #
+  # def bounds
+  #   params[:bounds]
+  # end
 
 end
