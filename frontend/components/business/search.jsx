@@ -7,7 +7,7 @@ const Search = (props) => {
 
   return (
     <div>
-      <BusinessIndex />
+      <BusinessIndex updateBounds={this.props.updateBounds}/>
     </div>
   );
 
