@@ -11,6 +11,7 @@ class BusinessShow extends React.Component {
 
   render() {
     const business = this.props.business;
+
     if (!business) {
       return null;
     } else {
@@ -29,7 +30,9 @@ class BusinessShow extends React.Component {
             </div>
             <div className="mapbox-container">
               <div className="mapbox">
-                <div className="map-img-placeholder"></div>
+                <div className="map-img-placeholder">
+                  <img className="map-img" alt="map" src={`https://maps.googleapis.com/maps/api/staticmap?center=40.771086,-73.959327&zoom=20&size=400x400&key=AIzaSyCymYcKpJFirE0tB-R5qil-6Hx_nuOVAis&`} />
+                </div>
                 <span>{business.address}</span>
                 <span>{business.phone_number}</span>
               </div>

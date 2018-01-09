@@ -14,7 +14,7 @@ class BusinessIndex extends React.Component {
   render() {
     return (
 
-      <div className="content-container">
+      <div className="biz-index-content-container">
         <div className="biz-column-alpha">
           <ul>
             {this.props.businesses.map(
@@ -23,7 +23,7 @@ class BusinessIndex extends React.Component {
           </ul>
         </div>
         <div className="biz-column-bravo">
-          <BusinessMap />
+          <BusinessMap businesses={this.props.businesses} />
         </div>
       </div>
 

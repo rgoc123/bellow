@@ -25,3 +25,64 @@
   border: 1px solid red;
   border-radius: 5px;
 }
+
+
+// review form
+.review-form-column-alpha {
+  font-family: "Helvetica Neue";
+}
+
+.review-form-column-alpha a {
+  font-family: "Helvetica Neue";
+  color: rgb(0, 115, 187);
+  text-decoration: none;
+  font-size: 36px;
+  font-weight: 700;
+}
+
+.review-form-column-alpha a:hover {
+  text-decoration: underline;
+}
+
+.review-form-container {
+
+}
+
+.review-form {
+  border: 1px solid rgb(204, 204, 204);
+  border-radius: 4px;
+  width: 587px;
+  height: 346px;
+  padding: 18px;
+}
+
+.review-form input {
+  display: block;
+}
+
+.review-form textarea {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.post-review-button {
+  color: white;
+  font-size: 14px;
+  font-weight: 700;
+  background-color: #d90007;
+  background: linear-gradient(#d90007, #c91400);
+  text-decoration: none;
+  border-color: #8d0005;
+  border-radius: 3px;
+  width: 202px;
+  height: 21px;
+  align-items: center;
+  padding: 10px 19px 10px 19px;
+  text-align: center;
+}
+
+.post-review-button:hover {
+  background-color: #ed0008;
+  background: linear-gradient(#ed0008, #dd1600);
+}

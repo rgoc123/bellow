@@ -7,5 +7,7 @@
     json.neighborhood business.neighborhood
     json.address business.address
     json.phone_number business.phone_number
+    json.lat business.lat
+    json.long business.long
   end
 end

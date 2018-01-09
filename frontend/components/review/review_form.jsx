@@ -41,21 +41,26 @@ class ReviewForm extends React.Component {
       return null;
     } else {
       return(
-        <div>
-          <div>
-            <form onSubmit={this.handleSubmit}>
-              <input type="text"
-                value={this.rating}
-                onChange={this.update('rating')}
-                placeholder="Rating"></input>
-              <textarea value={this.body}
-                onChange={this.update('body')}
-                placeholder="Your review helps others learn about
-                great local businesses.  Please don't review this business
-                if you received a freebie for writing this review, or if
-                you're connected in any way to the owner or employees."></textarea>
-              <input type="submit" value="Post Review"></input>
-            </form>
+        <div className="content-container">
+          <div className="review-form-column-alpha">
+            <Link to={`/businesses/${this.props.business.id}`}>{this.props.business.name}</Link>
+            <div className="review-form-container">
+                <form onSubmit={this.handleSubmit}>
+                  <div className="review-form">
+                    <input type="text"
+                      value={this.rating}
+                      onChange={this.update('rating')}
+                      placeholder="Rating"></input>
+                    <textarea value={this.body}
+                      onChange={this.update('body')}
+                      placeholder="Your review helps others learn about
+                      great local businesses.  Please don't review this business
+                      if you received a freebie for writing this review, or if
+                      you're connected in any way to the owner or employees."></textarea>
+                  </div>
+                  <input className="post-review-button" type="submit" value="Post Review"></input>
+                </form>
+            </div>
           </div>
         </div>
       );

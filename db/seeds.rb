@@ -20,7 +20,7 @@ Business.destroy_all
 biz1 = Business.create!(name: "JG Melon's", rating: 5, price: 2, neighborhood: "Lenox Hill", address: "1234 3rd Ave, New York, NY 10075", phone_number: "(212) 646-1234", lat: 40.771086, long: -73.959327)
 biz2 = Business.create!(name: "Bar Coastal", rating: 5, price: 2, neighborhood: "Lenox Hill", address: "5678 1st Ave, New York, NY 10075", phone_number: "(212) 646-5678", lat: 40.772061, long: -73.953422)
 biz3 = Business.create!(name: "Calexico", rating: 4, price: 2, neighborhood: "Lenox Hill", address: "9012 2nd Ave, New York, NY 10075", phone_number: "(212) 646-9012", lat: 40.772643, long: -73.955910)
-biz4 = Business.create!(name: "Paseo", rating: 5, price: 2, neighborhood: "Fremont", address: "4225 Fremont Ave N, Seattle, WA 98103", phone_number: "(206) 545-7440"), lat: 47.658561, long: -122.350309)
+biz4 = Business.create!(name: "Paseo", rating: 5, price: 2, neighborhood: "Fremont", address: "4225 Fremont Ave N, Seattle, WA 98103", phone_number: "(206) 545-7440", lat: 47.658561, long: -122.350309)
 
 Review.destroy_all
 Review.create!(user_id: bobby.id, business_id: biz1.id, body: "The best burgers in the city", rating: 5)
