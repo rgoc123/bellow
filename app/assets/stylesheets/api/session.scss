@@ -190,15 +190,17 @@ a {
 .search-form-container {
   display: flex;
   background: white;
-  padding: 11px;
-  border-radius: 4px 0 0 4px;
-  position: absolute;
-  top: 300px;
+  border-radius: 4px;
+  position: relative;
+  width: 525px;
+  top: 225px;
   left: 200px;
 }
 
 .search-form-container span {
   margin-right: 12px;
+  margin-left: 11px;
+  margin-top: 13px;
 }
 
 .search-form-container form {
@@ -208,14 +210,27 @@ a {
 .search-biz-input {
   width: 409px;
   height: 23px;
+  margin-top: 10px;
 }
 
 .search-button {
+  background: #d32323;
   margin: 0px;
   padding: 0px;
+  top: 0;
+  border: 0;
+  border-radius: 0 4px 4px 0;
+  width: 64px;
+  height: 45px;
+}
+
+.search-button:hover {
+  background: #be2020;
 }
 
 .fa-search {
-  background: red;
+  background: transparent;
   color: white;
+  margin: 0 22px;
+  font-size: 20px;
 }
