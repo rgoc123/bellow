@@ -10,14 +10,24 @@ class BusinessIndex extends React.Component {
     this.props.fetchBusinesses();
   }
 
+  filtersChoice() {
+    if (JSON.stringify(this.props.filters.prices) === JSON.stringify([])) {
+      return this.props.businesses.map(business => <BusinessIndexItem key={business.id} business={business} />);
+    } else {
+      return this.props.businesses.map(business => {
+        if (this.props.filters.prices.includes(business.price)) {
+          return <BusinessIndexItem key={business.id} business={business} />;
+        }
+      });
+    }
+  }
+
   render() {
     return (
       <div className="biz-index-content-container">
         <div className="biz-column-alpha">
           <ul>
-            {this.props.businesses.map(
-              business => <BusinessIndexItem key={business.id} business={business} />
-            )}
+            {this.filtersChoice()}
           </ul>
         </div>
         <div className="biz-column-bravo">
