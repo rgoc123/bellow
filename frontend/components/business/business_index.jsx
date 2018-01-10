@@ -11,11 +11,23 @@ class BusinessIndex extends React.Component {
   }
 
   filtersChoice() {
-    if (JSON.stringify(this.props.filters.prices) === JSON.stringify([])) {
+    if ((JSON.stringify(this.props.filters.prices) === JSON.stringify([])) && (this.props.filters.searchInput === "") ) {
       return this.props.businesses.map(business => <BusinessIndexItem key={business.id} business={business} />);
-    } else {
+    } else if ((this.props.filters.prices.length > 0) && (this.props.filters.searchInput != "")) {
+      return this.props.businesses.map(business => {
+        if ((this.props.filters.prices.includes(business.price)) && (business.name.includes(this.props.filters.searchInput))) {
+          return <BusinessIndexItem key={business.id} business={business} />;
+        }
+      });
+    } else if (this.props.filters.prices.length > 0) {
       return this.props.businesses.map(business => {
         if (this.props.filters.prices.includes(business.price)) {
+          return <BusinessIndexItem key={business.id} business={business} />;
+        }
+      });
+    } else {
+      return this.props.businesses.map(business => {
+        if (business.name.includes(this.props.filters.searchInput)) {
           return <BusinessIndexItem key={business.id} business={business} />;
         }
       });
