@@ -1,6 +1,8 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
+import SearchForm from '../business/search_form';
+
 const sessionLinks = () => (
   <nav className="login-signup">
     <Link to='/login'>Login</Link>
@@ -21,6 +23,7 @@ const personalGreeting = (currentUser) => {
 };
 
 const Header = (props) => {
+
   let headerButtons;
   let headerClass;
 
@@ -44,12 +47,13 @@ const Header = (props) => {
       </div>
     );
   }
-  
+
   return (
     <header className={headerClass}>
       <div className="content-container">
         <h1>Bellow!</h1>
         {headerButtons}
+        <SearchForm props={props}/>
       </div>
     </header>
   );

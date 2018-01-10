@@ -19,7 +19,7 @@ class FilterForm extends React.Component {
 
     priceChange() {
       let priceKeys = Object.keys(this.state.prices).filter(el => this.state.prices[el]).map(el => parseInt(el));
-
+      debugger
       this.props.updateFilter("prices", priceKeys);
     }
 
@@ -37,13 +37,20 @@ class FilterForm extends React.Component {
     render() {
 
       return (
-        <div className="price-form">
+        <div className="content-container price-form-container">
+          <h1>Best Restaurants</h1>
           <ul>
-            <li>
-              <input onChange={this.changePrice(1)} type="checkbox" value="1" />1
+            <li>$
+              <input className="price-filter-input" onChange={this.changePrice(1)} type="checkbox" value="1" />
             </li>
-            <li>
-              <input onChange={this.changePrice(2)} type="checkbox" value="2" />2
+            <li>$$
+              <input className="price-filter-input" onChange={this.changePrice(2)} type="checkbox" value="2" />
+            </li>
+            <li>$$$
+              <input className="price-filter-input" onChange={this.changePrice(3)} type="checkbox" value="3" />
+            </li>
+            <li>$$$$
+              <input className="price-filter-input" onChange={this.changePrice(4)} type="checkbox" value="4" />
             </li>
           </ul>
         </div>
