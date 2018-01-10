@@ -25,7 +25,7 @@ class BusinessMap extends React.Component{
         northEast: { lat: north, lng: east },
         southWest: { lat: south, lng: west } };
 
-      this.props.updateBounds(bounds);
+      // this.props.updateBounds(bounds);
     });
 
   }

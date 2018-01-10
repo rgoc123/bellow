@@ -6,7 +6,8 @@ import Search from './search';
 
 const mapStateToProps = (state) => {
   return {
-    businesses: Object.values(state.entities.businesses)
+    businesses: Object.values(state.entities.businesses),
+    filters: state.ui.filters
   };
 };
 

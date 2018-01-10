@@ -3,15 +3,19 @@ import { Link, withRouter } from 'react-router-dom';
 
 class FilterForm extends React.Component {
 
+    priceChange(price) {
+
+    }
+
     render() {
       return (
-        <div>
+        <div className="price-form">
           <ul>
             <li>
-              <input type="radio" value="1" />1
+              <input onChange={this.priceChange(1)} type="checkbox" value="1" />1
             </li>
             <li>
-              <input type="radio" value="2" />2
+              <input type="checkbox" value="2" />2
             </li>
           </ul>
         </div>
