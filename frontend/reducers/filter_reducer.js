@@ -12,7 +12,10 @@ const filterReducer = (state = _nullFilters, action) => {
     case UPDATE_BOUNDS:
       return action.bounds;
     case UPDATE_FILTER:
-      return merge({}, state, {[action.filter]: action.value});
+      const newFilter = {
+        [action.filter]: action.value
+      };
+      return newFilter;
     default:
       return state;
   }
