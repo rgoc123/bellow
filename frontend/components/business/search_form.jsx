@@ -25,21 +25,52 @@ class SearchForm extends React.Component {
     });
   }
 
-  render() {
+  chooseHeaderClass() {
+    if (this.props.props.location.pathname === "/") {
+      return "search-form-container-landing";
+    } else {
+      return "search-form-container";
+    }
+  }
 
+  chooseFindClass() {
+    if (this.props.props.location.pathname === "/") {
+      return "search-find-landing";
+    } else {
+      return "search-find";
+    }
+  }
+
+  chooseBizInput() {
+    if (this.props.props.location.pathname === "/") {
+      return "search-biz-input-landing";
+    } else {
+      return "search-biz-input";
+    }
+  }
+
+  chooseSearchButton() {
+    if (this.props.props.location.pathname === "/") {
+      return "search-button-landing";
+    } else {
+      return "search-button";
+    }
+  }
+
+  render() {
     return (
-      <div className="search-form-container">
-        <span className="search-find">Find</span>
+      <div className={this.chooseHeaderClass()}>
+        <span className={this.chooseFindClass()}>Find</span>
         <form onSubmit={this.handleSubmit}>
           <input
-            className="search-biz-input"
+            className={this.chooseBizInput()}
             type="text"
             value={this.state.searchInput}
             onChange={this.update('searchInput')}
             placeholder="burgers, barbers, spas, handypeople..."
             />
 
-          <button className="search-button"><i className="fa fa-search" aria-hidden="true"></i></button>
+          <button className={this.chooseSearchButton()}><i className="fa fa-search" aria-hidden="true"></i></button>
 
         </form>
       </div>
