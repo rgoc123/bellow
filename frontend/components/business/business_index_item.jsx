@@ -9,7 +9,7 @@ const BusinessIndexItem = ({ business }) => {
           <div className="search-result-image"></div>
           <div>
             <Link to={`/businesses/${business.id}`}>{business.name}</Link>
-            <span>Rating: {business.rating}</span>
+            <div className={`rating-img-${business.rating}`}></div>
             <span>Price: {business.price}</span>
           </div>
         </div>

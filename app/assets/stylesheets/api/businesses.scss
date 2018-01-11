@@ -164,6 +164,47 @@
   padding: 0 15px;
 }
 
+.rating-img-5 {
+  width: 102px;
+  height: 18px;
+  background: asset-url('stars.png');
+  background-position: 0px -402px;
+}
+
+.rating-img-4 {
+  width: 102px;
+  height: 18px;
+  background: asset-url('stars.png');
+  background-position: 0px -366px;
+}
+
+.rating-img-3 {
+  width: 102px;
+  height: 18px;
+  background: asset-url('stars.png');
+  background-position: 0px -330px;
+}
+
+.rating-img-2 {
+  width: 102px;
+  height: 18px;
+  background: asset-url('stars.png');
+  background-position: 0px -294px;
+}
+
+.rating-img-1 {
+  width: 102px;
+  height: 18px;
+  background: asset-url('stars.png');
+  background-position: 0px -258px;
+}
+
+//index 5: 0 -402px
+//index 4: 0 -366px
+//index 3: 0 -330px
+//index 2: 0 -294px
+//index 1: 0 -258px
+
 
 // business_show
 
