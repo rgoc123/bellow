@@ -22,6 +22,16 @@ biz2 = Business.create!(name: "Bar Coastal", rating: 5, price: 2, neighborhood: 
 biz3 = Business.create!(name: "Calexico", rating: 4, price: 2, neighborhood: "Lenox Hill", address: "9012 2nd Ave, New York, NY 10075", phone_number: "(212) 646-9012", lat: 40.772643, long: -73.955910)
 biz4 = Business.create!(name: "Paseo", rating: 5, price: 2, neighborhood: "Fremont", address: "4225 Fremont Ave N, Seattle, WA 98103", phone_number: "(206) 545-7440", lat: 47.658561, long: -122.350309)
 biz5 = Business.create!(name: "Sables", rating: 3, price: 1, neighborhood: "Lenox Hill", address: "1489 2nd Ave, New York, NY 10075", phone_number: "(212) 249-6177", lat: 40.772590, long: -73.956045)
+biz6 = Business.create!(name: "Red Farm", rating: 3, price: 3, neighborhood: "Upper West Side", address: "2170 Broadway, New York, NY 10024", phone_number: "(212) 249-6177", lat: 40.782177, long: -73.980642)
+biz7 = Business.create!(name: "Red Farm", rating: 3, price: 3, neighborhood: "West Village", address: "529 Hudson St, New York, NY 10014", phone_number: "(212) 249-6177", lat: 40.734205, long: -74.006460)
+biz8 = Business.create!(name: "Joe's Pizza", rating: 5, price: 1, neighborhood: "West Village", address: "7 Carmine St, New York, NY 10014", phone_number: "(212) 249-6177", lat: 40.730600, long: -74.002140)
+biz9 = Business.create!(name: "The Horsebox", rating: 5, price: 1, neighborhood: "East Village", address: "218 Avenue A, New York, NY 10009", phone_number: "(212) 249-6177", lat: 40.730022, long: -73.980445)
+biz10 = Business.create!(name: "Lois", rating: 5, price: 2, neighborhood: "East Village", address: "98 Avenue C, New York, NY 10009", phone_number: "(212) 249-6177", lat: 40.723706, long: -73.978878)
+biz11 = Business.create!(name: "Zum Schneider", rating: 4, price: 2, neighborhood: "East Village", address: "107 Avenue C, New York, NY 10009", phone_number: "(212) 249-6177", lat: 40.724272, long: -73.978814)
+biz12 = Business.create!(name: "Daniel", rating: 5, price: 4, neighborhood: "Upper East Side", address: "60 E 65th St, New York, NY 10065", phone_number: "(212) 249-6177", lat: 40.766788, long: -73.967601)
+biz13 = Business.create!(name: "Dovetail", rating: 4, price: 4, neighborhood: "Upper West Side", address: "103 W 77th St, New York, NY 10024", phone_number: "(212) 249-6177", lat: 40.780869, long: -73.976670)
+biz14 = Business.create!(name: "Sushi Nakazawa", rating: 4, price: 4, neighborhood: "West Village", address: "23 Commerce St, New York, NY 10009", phone_number: "(212) 249-6177", lat: 40.731815, long: -74.00491)
+biz15 = Business.create!(name: "Shuko", rating: 4, price: 4, neighborhood: "Union Square", address: "47 E 12th St, New York, NY 10003", phone_number: "(212) 249-6177", lat: 40.733648, long: -73.991613)
 
 Review.destroy_all
 Review.create!(user_id: bobby.id, business_id: biz1.id, body: "The best burgers in the city", rating: 5)

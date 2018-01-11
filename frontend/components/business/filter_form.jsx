@@ -37,22 +37,21 @@ class FilterForm extends React.Component {
     render() {
 
       return (
-        <div className="content-container price-form-container">
-          <h1>Best Restaurants</h1>
-          <ul>
-            <li>$
-              <input className="price-filter-input" onChange={this.changePrice(1)} type="checkbox" value="1" />
-            </li>
-            <li>$$
-              <input className="price-filter-input" onChange={this.changePrice(2)} type="checkbox" value="2" />
-            </li>
-            <li>$$$
-              <input className="price-filter-input" onChange={this.changePrice(3)} type="checkbox" value="3" />
-            </li>
-            <li>$$$$
-              <input className="price-filter-input" onChange={this.changePrice(4)} type="checkbox" value="4" />
-            </li>
-          </ul>
+        <div className="background-gray">
+          <div className="content-container price-form-container">
+            <h1>Browsing Restaurants in Manhattan, NY</h1>
+            <div className="price-form">
+            {
+              [1, 2, 3, 4].map( num => (
+                <div className="price-filter-checkbox">
+                  <input id={`price-filter-${num}`} className="price-filter-input" onChange={this.changePrice(num)} type="checkbox" value={num} />
+                  <label for={`price-filter-${num}`}>$</label>
+                </div>
+              ))
+            }
+            </div>
+
+          </div>
         </div>
       );
     }
