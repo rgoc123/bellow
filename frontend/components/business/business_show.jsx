@@ -12,6 +12,18 @@ class BusinessShow extends React.Component {
   render() {
     const business = this.props.business;
 
+    let dollaSign;
+
+    if (this.props.business.price === 1) {
+      dollaSign = '$';
+    } else if (this.props.business.price === 2) {
+      dollaSign = '$$';
+    } else if (this.props.business.price === 3) {
+      dollaSign = '$$$';
+    } else if (this.props.business.price === 4) {
+      dollaSign = '$$$$';
+    }
+
     if (!business) {
       return null;
     } else {
@@ -22,8 +34,7 @@ class BusinessShow extends React.Component {
               <div className="biz-page-header-left">
                 <h1>{business.name}</h1>
                 <div className={`show-rating-img-${business.rating}`}></div>
-                <span>Rating: {business.rating}</span>
-                <span>Price: {business.price}</span>
+                <span>{dollaSign}</span>
               </div>
               <div className="biz-page-header-right">
                 <Link className="write-review-button" to={`/businesses/${business.id}/reviews/new`}><i className="fa fa-star" aria-hidden="true"></i><span id="review-button-text">Write a review</span></Link>

@@ -17,6 +17,7 @@ rao2 = User.create!(email: "jr4119@stern.nyu.edu", password: "password", first_n
 jes = User.create!(email: "jndunten@gmail.com", password: "password", first_name: "J", last_name: "Dawg")
 
 Business.destroy_all
+biza = Business.create!(name: "Earl's Beer and Cheese", rating: 5, price: 2, neighborhood: "Harlem", address: "1259 Park Ave, New York, NY 10029", phone_number: "(212) 289-1581", lat: 40.787318, long: -73.951556)
 biz1 = Business.create!(name: "JG Melon's", rating: 5, price: 2, neighborhood: "Lenox Hill", address: "1234 3rd Ave, New York, NY 10075", phone_number: "(212) 646-1234", lat: 40.771086, long: -73.959327)
 biz2 = Business.create!(name: "Bar Coastal", rating: 5, price: 2, neighborhood: "Lenox Hill", address: "5678 1st Ave, New York, NY 10075", phone_number: "(212) 646-5678", lat: 40.772061, long: -73.953422)
 biz3 = Business.create!(name: "Calexico", rating: 4, price: 2, neighborhood: "Lenox Hill", address: "9012 2nd Ave, New York, NY 10075", phone_number: "(212) 646-9012", lat: 40.772643, long: -73.955910)
