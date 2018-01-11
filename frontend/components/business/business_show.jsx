@@ -21,6 +21,7 @@ class BusinessShow extends React.Component {
             <div className="biz-page-header">
               <div className="biz-page-header-left">
                 <h1>{business.name}</h1>
+                <div className={`show-rating-img-${business.rating}`}></div>
                 <span>Rating: {business.rating}</span>
                 <span>Price: {business.price}</span>
               </div>

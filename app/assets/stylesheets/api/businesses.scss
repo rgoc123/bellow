@@ -199,12 +199,40 @@
   background-position: 0px -258px;
 }
 
-//index 5: 0 -402px
-//index 4: 0 -366px
-//index 3: 0 -330px
-//index 2: 0 -294px
-//index 1: 0 -258px
+.show-rating-img-5 {
+  width: 132px;
+  height: 24px;
+  background: asset-url('stars.png');
+  background-position: 0px -216px;
+}
 
+.show-rating-img-4 {
+  width: 132px;
+  height: 24px;
+  background: asset-url('stars.png');
+  background-position: 0px -168px;
+}
+
+.show-rating-img-3 {
+  width: 132px;
+  height: 24px;
+  background: asset-url('stars.png');
+  background-position: 0px -120px;
+}
+
+.show-rating-img-2 {
+  width: 132px;
+  height: 24px;
+  background: asset-url('stars.png');
+  background-position: 0px -72px;
+}
+
+.show-rating-img-1 {
+  width: 132px;
+  height: 24px;
+  background: asset-url('stars.png');
+  background-position: 0px -24px;
+}
 
 // business_show
 
