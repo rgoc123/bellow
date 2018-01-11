@@ -34,6 +34,18 @@ class FilterForm extends React.Component {
       };
     }
 
+    dollaSignChooser(num) {
+      if (num === 1) {
+        return "$";
+      } else if (num === 2) {
+        return "$$";
+      } else if (num === 3) {
+        return "$$$";
+      } else {
+        return "$$$$";
+      }
+    }
+
     render() {
 
       return (
@@ -45,7 +57,7 @@ class FilterForm extends React.Component {
               [1, 2, 3, 4].map( num => (
                 <div className="price-filter-checkbox">
                   <input id={`price-filter-${num}`} className="price-filter-input" onChange={this.changePrice(num)} type="checkbox" value={num} />
-                  <label for={`price-filter-${num}`}>$</label>
+                  <label for={`price-filter-${num}`}>{this.dollaSignChooser(num)}</label>
                 </div>
               ))
             }
