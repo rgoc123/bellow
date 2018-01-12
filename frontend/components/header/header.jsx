@@ -11,17 +11,6 @@ const sessionLinks = () => (
   </nav>
 );
 
-const personalGreeting = (currentUser) => {
-  if (currentUser) {
-    return (
-      <hgroup className="header-group">
-        <h2 className="header-name">Welcome, {currentUser.first_name}!</h2>
-        <h2>Thanks for visiting! This is it for now, but come back tomorrow for more.</h2>
-      </hgroup>
-    );
-  }
-};
-
 const Header = (props) => {
 
   let headerButtons;
@@ -51,7 +40,7 @@ const Header = (props) => {
   return (
     <header className={headerClass}>
       <div className="content-container">
-        <h1>Bellow!</h1>
+        <h1>Bellow!<Link className="b-link" to="/search"></Link></h1>
         {headerButtons}
         <SearchForm props={props}/>
       </div>
