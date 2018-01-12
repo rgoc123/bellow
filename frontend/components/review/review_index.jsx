@@ -14,10 +14,11 @@ class ReviewIndex extends React.Component {
   }
 
   render() {
+    
     return (
       <ul>
         {this.props.reviews.map(
-          review => <ReviewIndexItem key={review.id} review={review} />
+          review => <ReviewIndexItem currentUser={this.props.currentUser} key={review.id} review={review} />
         )}
       </ul>
     );

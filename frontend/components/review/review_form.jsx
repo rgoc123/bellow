@@ -6,6 +6,7 @@ class ReviewForm extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
+      id: this.props.review.id,
       rating: this.props.review.rating,
       body: this.props.review.body
     };
@@ -22,12 +23,23 @@ class ReviewForm extends React.Component {
   handleSubmit(e) {
     e.preventDefault();
     // const review = Object.assign({}, this.state);
-    this.props.createReview({
-      body: this.state.body,
-      rating: this.state.rating,
-      user_id: this.props.currentUser.id,
-      business_id: this.props.business.id
-    });
+    if (this.props.formType === 'new') {
+      this.props.createReview({
+        body: this.state.body,
+        rating: this.state.rating,
+        user_id: this.props.currentUser.id,
+        business_id: this.props.business.id
+      });
+    } else {
+      this.props.updateReview({
+        id: this.state.id,
+        body: this.state.body,
+        rating: this.state.rating,
+        user_id: this.props.currentUser.id,
+        business_id: this.props.business.id
+      });
+    }
+
     this.props.history.push(`/businesses/${this.props.business.id}`);
   }
 
@@ -35,8 +47,15 @@ class ReviewForm extends React.Component {
 
   }
 
-  render() {
+  chooseButtonType() {
+    if (this.props.formType === 'new') {
+      return "Post Review";
+    } else {
+      return "Edit Review";
+    }
+  }
 
+  render() {
     if (this.props.business === undefined) {
       return null;
     } else {
@@ -58,7 +77,7 @@ class ReviewForm extends React.Component {
                       if you received a freebie for writing this review, or if
                       you're connected in any way to the owner or employees."></textarea>
                   </div>
-                  <input className="post-review-button" type="submit" value="Post Review"></input>
+                  <input className="post-review-button" type="submit" value={this.chooseButtonType()}></input>
                 </form>
             </div>
           </div>
