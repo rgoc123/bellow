@@ -13,7 +13,24 @@ class Api::ReviewsController < ApplicationController
     else
       render json: @review.errors.full_messages, status: 422
     end
+  end
 
+  def edit
+    @review = Review.find(params[:id])
+  end
+
+  def update
+    @review = Review.find(params[:id])
+    if @review.update(review_params)
+      render json: @review
+    else
+      render json: @review.errors.full_messages, status: 422
+    end
+  end
+
+  def delete
+    @review = Review.find(params[:id])
+    @review.destroy
   end
 
   private

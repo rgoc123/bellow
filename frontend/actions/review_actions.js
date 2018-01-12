@@ -2,7 +2,7 @@ import * as APIUtilReview from '../util/review_api_util';
 
 export const RECEIVE_REVIEWS = 'RECEIVE_REVIEWS';
 export const RECEIVE_REVIEW = 'RECEIVE_REVIEW';
-
+export const REMOVE_REVIEW = 'REMOVE_REVIEW';
 
 //async actions
 export const receiveReviews = reviews => {
@@ -16,6 +16,13 @@ export const receiveReview = review => {
   return {
     type: RECEIVE_REVIEW,
     review
+  };
+};
+
+export const removeReview = reviewId => {
+  return {
+    type: REMOVE_REVIEW,
+    reviewId
   };
 };
 
@@ -36,3 +43,19 @@ export const createReview = review => dispatch => {
     ))
   );
 };
+
+export const updateReview = review => dispatch => {
+  return (
+    APIUtilReview.updateReview(review).then(review => (
+      dispatch(receiveReview(review))
+    ))
+  );
+};
+
+export const deleteReview = reviewId => dispatch => {
+  return (
+    APIUtilReview.deleteReview(reviewId).then(review => (
+      dispatch(removeReview(review.id))
+    ))
+  );
+}
