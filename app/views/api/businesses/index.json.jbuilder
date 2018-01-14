@@ -9,5 +9,6 @@
     json.phone_number business.phone_number
     json.lat business.lat
     json.long business.long
+    json.image_url asset_path(business.main_image.url)
   end
 end

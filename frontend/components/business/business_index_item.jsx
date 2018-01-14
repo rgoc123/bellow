@@ -19,7 +19,7 @@ const BusinessIndexItem = ({ business }) => {
     <li className="regular-search-result">
       <div className="biz-listing">
         <div className="main-attributes">
-          <div className="search-result-image"><img src={window.staticImages.default_dish} /></div>
+          <div className="search-result-image"><img src={business.image_url} /></div>
           <div>
             <Link to={`/businesses/${business.id}`}>{business.name}</Link>
             <div className={`rating-img-${business.rating}`}></div>
