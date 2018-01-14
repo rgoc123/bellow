@@ -41,10 +41,10 @@
 
 .price-filter-checkbox {
   // border: 1px solid rgb(204, 204, 204);
-  width: 36px;
-  height: 36px;
+  // width: 36px;
+  // height: 36px;
   position: relative;
-  border-right: 0px;
+  // border-right: 0px;
 }
 
 .price-filter-checkbox label {
@@ -70,16 +70,17 @@
 }
 
 #price-filter-2 {
-
+  width: 42px;
 }
 
 #price-filter-3 {
-
+  width: 50px;
 }
 
 #price-filter-4 {
   border-radius: 0 4px 4px 0;
   border-right: 1px solid rgb(204, 204, 204);
+  width: 58px;
 }
 
 .price-filter-checkbox {
