@@ -23,6 +23,7 @@ class ReviewForm extends React.Component {
   handleSubmit(e) {
     e.preventDefault();
     // const review = Object.assign({}, this.state);
+    debugger
     if (this.props.formType === 'new') {
       this.props.createReview({
         body: this.state.body,

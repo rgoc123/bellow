@@ -10,23 +10,25 @@ class BusinessShow extends React.Component {
   }
 
   render() {
+
     const business = this.props.business;
-
-    let dollaSign;
-
-    if (this.props.business.price === 1) {
-      dollaSign = '$';
-    } else if (this.props.business.price === 2) {
-      dollaSign = '$$';
-    } else if (this.props.business.price === 3) {
-      dollaSign = '$$$';
-    } else if (this.props.business.price === 4) {
-      dollaSign = '$$$$';
-    }
 
     if (!business) {
       return null;
     } else {
+
+      let dollaSign;
+
+      if (this.props.business.price === 1) {
+        dollaSign = '$';
+      } else if (this.props.business.price === 2) {
+        dollaSign = '$$';
+      } else if (this.props.business.price === 3) {
+        dollaSign = '$$$';
+      } else if (this.props.business.price === 4) {
+        dollaSign = '$$$$';
+      }
+
       return (
         <div className="content-container">
           <div className="top-shelf">

@@ -14,14 +14,18 @@ class ReviewIndex extends React.Component {
   }
 
   render() {
-    
-    return (
-      <ul>
-        {this.props.reviews.map(
-          review => <ReviewIndexItem currentUser={this.props.currentUser} key={review.id} review={review} />
-        )}
-      </ul>
-    );
+    debugger
+    if (this.props.reviews === undefined) {
+      return null;
+    } else {
+      return (
+        <ul>
+          {this.props.reviews.map(
+            review => <ReviewIndexItem currentUser={this.props.currentUser} key={review.id} review={review} />
+          )}
+        </ul>
+      );
+    }
   }
 
 }
