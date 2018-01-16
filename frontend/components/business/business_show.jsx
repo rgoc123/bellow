@@ -5,14 +5,23 @@ import ReviewIndexContainer from '../review/review_index_container';
 
 class BusinessShow extends React.Component {
 
-  
+
 
   componentDidMount() {
     this.props.fetchBusiness(this.props.match.params.businessId);
   }
 
-  render() {
+  reviewLink() {
+    const business = this.props.business
+    if (!this.props.currentUser) {
+      return <Link className="write-review-button" to="/login"><i className="fa fa-star" aria-hidden="true"></i><span id="review-button-text">Write a review</span></Link>;
+    } else {
+      return <Link className="write-review-button" to={`/businesses/${business.id}/reviews/new`}><i className="fa fa-star" aria-hidden="true"></i><span id="review-button-text">Write a review</span></Link>;
+    }
+  }
 
+  render() {
+    debugger
     const business = this.props.business;
 
     if (!business) {
@@ -41,7 +50,7 @@ class BusinessShow extends React.Component {
                 <span>{dollaSign}</span>
               </div>
               <div className="biz-page-header-right">
-                <Link className="write-review-button" to={`/businesses/${business.id}/reviews/new`}><i className="fa fa-star" aria-hidden="true"></i><span id="review-button-text">Write a review</span></Link>
+                {this.reviewLink()}
               </div>
             </div>
             <div className="mapbox-container">
