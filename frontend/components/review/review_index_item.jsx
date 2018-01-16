@@ -10,13 +10,15 @@ class ReviewIndexItem extends React.Component {
   }
 
   editLink() {
-      if (this.props.currentUser.id === this.props.review.user_id) {
+      if (!this.props.currentUser) {
+        return null;
+      } else if (this.props.currentUser.id === this.props.review.user_id) {
         return <Link to={`/businesses/${this.props.review.business_id}/reviews/${this.props.review.id}/edit`}>Edit</Link>;
       }
   }
 
   render() {
-    
+
     return (
       <div className="review">
         <div className="review-sidebar">
