@@ -6,6 +6,7 @@ import ReviewIndex from './review_index';
 
 
 const mapStateToProps = (state) => {
+  
   return {
     reviews: Object.values(state.entities.reviews),
     currentUser: state.session.currentUser

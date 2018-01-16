@@ -1,5 +1,6 @@
 class Api::ReviewsController < ApplicationController
   def index
+    
     @reviews = Review.all
   end
 
@@ -8,7 +9,7 @@ class Api::ReviewsController < ApplicationController
     @review.business_id = params[:business_id]
     @review.user_id = current_user.id
     if @review.save
-      render json: @review
+      render 'api/reviews/show'
     else
       render json: @review.errors.full_messages, status: 422
     end

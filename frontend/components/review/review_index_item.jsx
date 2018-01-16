@@ -16,7 +16,7 @@ class ReviewIndexItem extends React.Component {
   }
 
   render() {
-    debugger
+    
     return (
       <div className="review">
         <div className="review-sidebar">

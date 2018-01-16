@@ -10,11 +10,11 @@ class ReviewIndex extends React.Component {
   }
 
   componentDidMount() {
-    // this.props.fetchReviews(this.props.businessId);
+    
   }
 
   render() {
-    debugger
+    
     if (this.props.reviews === undefined) {
       return null;
     } else {

@@ -23,14 +23,14 @@ class ReviewForm extends React.Component {
   handleSubmit(e) {
     e.preventDefault();
     // const review = Object.assign({}, this.state);
-    debugger
+    
     if (this.props.formType === 'new') {
       this.props.createReview({
         body: this.state.body,
         rating: this.state.rating,
         user_id: this.props.currentUser.id,
         business_id: this.props.business.id
-      });
+      }).then(() => this.props.history.push(`/businesses/${this.props.business.id}`));
     } else {
       this.props.updateReview({
         id: this.state.id,
@@ -38,10 +38,10 @@ class ReviewForm extends React.Component {
         rating: this.state.rating,
         user_id: this.props.currentUser.id,
         business_id: this.props.business.id
-      });
+      }).then(() => this.props.history.push(`/businesses/${this.props.business.id}`));
     }
 
-    this.props.history.push(`/businesses/${this.props.business.id}`);
+    ;
   }
 
   componentDidMount() {

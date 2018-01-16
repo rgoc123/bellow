@@ -37,7 +37,7 @@ export const fetchReviews = (businessId) => dispatch => {
 };
 
 export const createReview = review => dispatch => {
-  debugger
+  
   return (
     APIUtilReview.createReview(review).then(review => (
       dispatch(receiveReview(review))
