@@ -60,14 +60,14 @@ class SearchForm extends React.Component {
   render() {
     return (
       <div className={this.chooseHeaderClass()}>
-        <span className={this.chooseFindClass()}>Find</span>
+        <span className={this.chooseFindClass()}>Search</span>
         <form onSubmit={this.handleSubmit}>
           <input
             className={this.chooseBizInput()}
             type="text"
             value={this.state.searchInput}
             onChange={this.update('searchInput')}
-            placeholder="burgers, barbers, spas, handypeople..."
+            placeholder="restaurant names..."
             />
 
           <button className={this.chooseSearchButton()}><i className="fa fa-search" aria-hidden="true"></i></button>
