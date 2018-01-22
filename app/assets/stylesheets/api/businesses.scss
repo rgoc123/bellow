@@ -62,7 +62,7 @@
   height: 36px;
   border: 0px;
   -webkit-appearance: none;
-  content: "$$";
+  // content: "$$";
 }
 
 #price-filter-1 {
@@ -269,6 +269,11 @@
   display: block;
 }
 
+.biz-page-main {
+  width: 960px;
+  display: flex;
+}
+
 .mapbox-container {
   height: 345px;
   width: 288px;
@@ -285,6 +290,22 @@
 .map-img {
   width: 286px;
   height: 135px;
+}
+
+.photo-case {
+  display: flex;
+  vertical-align: middle;
+  margin-top: 68.5px;
+}
+
+.biz-photo {
+  width: 220px;
+  height: 220px;
+}
+
+.biz-photo img {
+  width: 220px;
+  height: 220px;
 }
 
 .write-review-button {

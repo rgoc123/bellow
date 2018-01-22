@@ -34,7 +34,6 @@ biz14 = Business.create!(name: "Sushi Nakazawa", rating: 4, price: 4, neighborho
 biz15 = Business.create!(name: "Shuko", rating: 4, price: 4, neighborhood: "Union Square", address: "47 E 12th St, New York, NY 10003", phone_number: "(212) 249-6177", lat: 40.733648, long: -73.991613, main_image: File.open('./app/assets/images/shuko_prof.jpg'))
 biz16 = Business.create!(name: "Paseo", rating: 5, price: 2, neighborhood: "Fremont", address: "4225 Fremont Ave N, Seattle, WA 98103", phone_number: "(206) 545-7440", lat: 47.658561, long: -122.350309, main_image: File.open('./app/assets/images/paseo_prof.jpg'))
 
-
 Review.destroy_all
 Review.create!(user_id: bobby.id, business_id: biz2.id, body: "The best burgers in the city", rating: 5)
 Review.create!(user_id: jes.id, business_id: biz2.id, body: "Amazing burgers, but late night service can be iffy", rating: 4)
@@ -42,3 +41,8 @@ Review.create!(user_id: rao.id, business_id: biz2.id, body: "I like burgers", ra
 Review.create!(user_id: bobby.id, business_id: biz4.id, body: "Clutch texican food, great margaritas", rating: 4)
 Review.create!(user_id: jes.id, business_id: biz4.id, body: "Never been here, but Rob is making me comment on this", rating: 4)
 Review.create!(user_id: rao.id, business_id: biz4.id, body: "I like chimichangas", rating: 4)
+
+
+Photo.destroy_all
+Photo.create!(business_id: biz2.id, image: File.open('./app/assets/images/jg_1.jpg'))
+Photo.create!(business_id: biz2.id, image: File.open('./app/assets/images/jg_2.jpg'))

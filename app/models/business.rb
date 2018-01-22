@@ -2,6 +2,8 @@ class Business < ApplicationRecord
 
   has_many :reviews
 
+  has_many :photos
+
   has_attached_file :main_image, default_url: "default_dish.jpg"
 
   validates_attachment_content_type :main_image, content_type: /\Aimage\/.*\Z/

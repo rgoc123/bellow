@@ -12,7 +12,7 @@ class BusinessShow extends React.Component {
   }
 
   reviewLink() {
-    const business = this.props.business
+    const business = this.props.business;
     if (!this.props.currentUser) {
       return <Link className="write-review-button" to="/login"><i className="fa fa-star" aria-hidden="true"></i><span id="review-button-text">Write a review</span></Link>;
     } else {
@@ -21,7 +21,7 @@ class BusinessShow extends React.Component {
   }
 
   render() {
-    debugger
+
     const business = this.props.business;
 
     if (!business) {
@@ -53,13 +53,20 @@ class BusinessShow extends React.Component {
                 {this.reviewLink()}
               </div>
             </div>
-            <div className="mapbox-container">
-              <div className="mapbox">
-                <div className="map-img-placeholder">
-                  <img className="map-img" alt="map" src={`https://maps.googleapis.com/maps/api/staticmap?center=40.771086,-73.959327&zoom=20&size=400x400&key=AIzaSyCymYcKpJFirE0tB-R5qil-6Hx_nuOVAis&`} />
+            <div className="biz-page-main">
+              <div className="mapbox-container">
+                <div className="mapbox">
+                  <div className="map-img-placeholder">
+                    <img className="map-img" alt="map" src={`https://maps.googleapis.com/maps/api/staticmap?center=40.771086,-73.959327&zoom=20&size=400x400&key=AIzaSyCymYcKpJFirE0tB-R5qil-6Hx_nuOVAis&`} />
+                  </div>
+                  <span>{business.address}</span>
+                  <span>{business.phone_number}</span>
                 </div>
-                <span>{business.address}</span>
-                <span>{business.phone_number}</span>
+              </div>
+              <div className="photo-case">
+                <div className="biz-photo"><img src={business.image0} /></div>
+                <div className="biz-photo"><img src={business.image_url} /></div>
+                <div className="biz-photo"><img src={business.image1} /></div>
               </div>
             </div>
           </div>
