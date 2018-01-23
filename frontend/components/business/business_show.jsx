@@ -9,6 +9,7 @@ class BusinessShow extends React.Component {
 
   componentDidMount() {
     this.props.fetchBusiness(this.props.match.params.businessId);
+    debugger
   }
 
   reviewLink() {
@@ -17,6 +18,22 @@ class BusinessShow extends React.Component {
       return <Link className="write-review-button" to="/login"><i className="fa fa-star" aria-hidden="true"></i><span id="review-button-text">Write a review</span></Link>;
     } else {
       return <Link className="write-review-button" to={`/businesses/${business.id}/reviews/new`}><i className="fa fa-star" aria-hidden="true"></i><span id="review-button-text">Write a review</span></Link>;
+    }
+  }
+
+  bizimg0() {
+    if (!this.props.business.image0) {
+      return null;
+    } else {
+      return this.props.business.image0;
+    }
+  }
+
+  bizimg1() {
+    if (!this.props.business.image1) {
+      return null;
+    } else {
+      return this.props.business.image1;
     }
   }
 
@@ -64,9 +81,9 @@ class BusinessShow extends React.Component {
                 </div>
               </div>
               <div className="photo-case">
-                <div className="biz-photo"><img src={business.image0} /></div>
+                <div className="biz-photo"><img alt="bizimage0" src={this.bizimg0()} /></div>
                 <div className="biz-photo"><img src={business.image_url} /></div>
-                <div className="biz-photo"><img src={business.image1} /></div>
+                <div className="biz-photo"><img alt="bizimage1" src={this.bizimg1()} /></div>
               </div>
             </div>
           </div>
