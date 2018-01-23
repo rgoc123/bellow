@@ -7,14 +7,15 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 User.destroy_all
-bobby = User.create!(email: "bobby", password: "password", first_name: "Bobby", last_name: "O'Connor")
+bobby = User.create!(email: "bobby", password: "password", first_name: "Bobby", last_name: "O'Connor", image: File.open('./app/assets/images/bobby.png'))
 carib = User.create!(email: "Carib", password: "password", first_name: "Carib", last_name: "Guerra")
 mom = User.create!(email: "annmo900@gmail.com", password: "password", first_name: "Ann", last_name: "O'Connor")
 beth = User.create!(email: "Bethoconnor123@gmail.com", password: "password", first_name: "Beth", last_name: "O'Connor")
-tommy = User.create!(email: "tlav123@gmail.com", password: "password", first_name: "Tom", last_name: "Lavander")
-rao = User.create!(email: "jonrao314@gmail.com", password: "password", first_name: "Jonathan", last_name: "Rao")
+tommy = User.create!(email: "tlav123@gmail.com", password: "password", first_name: "Tom", last_name: "Lavander", image: File.open('./app/assets/images/tommy.png'))
+rao = User.create!(email: "jonrao314@gmail.com", password: "password", first_name: "Jonathan", last_name: "Rao", image: File.open('./app/assets/images/rao.png'))
 rao2 = User.create!(email: "jr4119@stern.nyu.edu", password: "password", first_name: "Jon", last_name: "Rao")
-jes = User.create!(email: "jndunten@gmail.com", password: "password", first_name: "J", last_name: "Dawg")
+jes = User.create!(email: "jndunten@gmail.com", password: "password", first_name: "J", last_name: "Dawg", image: File.open('./app/assets/images/jes.jpg'))
+marco = User.create!(email: "marco.carranza1@gmail.com", password: "password", first_name: "Marco", last_name: "Carranza", image: File.open('./app/assets/images/marco.png'))
 
 Business.destroy_all
 biz1 = Business.create!(name: "Earl's Beer and Cheese", rating: 5, price: 2, neighborhood: "Harlem", address: "1259 Park Ave, New York, NY 10029", phone_number: "(212) 289-1581", lat: 40.787318, long: -73.951556, main_image: File.open('./app/assets/images/earls_profile.png'))

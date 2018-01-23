@@ -13,6 +13,7 @@ json.partial! "api/reviews/review", review: @review
     json.user review.user
     json.first_name review.user.first_name
     json.last_name review.user.last_name
+    json.image asset_path(review.user.image)
 
   end
 end

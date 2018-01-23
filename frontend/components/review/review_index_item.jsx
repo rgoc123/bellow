@@ -22,7 +22,7 @@ class ReviewIndexItem extends React.Component {
     return (
       <div className="review">
         <div className="review-sidebar">
-          <div className="avatar-img-placeholder"></div>
+          <div className="avatar-img-placeholder"><img src={this.props.review.image} /></div>
           <div>{this.props.review.first_name} {this.props.review.last_name.slice(0,1)}.</div>
         </div>
         <div className="review-wrapper">
