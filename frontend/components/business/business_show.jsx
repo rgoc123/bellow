@@ -9,7 +9,6 @@ class BusinessShow extends React.Component {
 
   componentDidMount() {
     this.props.fetchBusiness(this.props.match.params.businessId);
-    debugger
   }
 
   reviewLink() {
