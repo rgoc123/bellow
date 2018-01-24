@@ -14,7 +14,7 @@ const BusinessIndexItem = ({ business }) => {
   } else if (business.price === 4) {
     dollaSign = '$$$$'
   };
-
+  debugger
   return (
     <li className="regular-search-result">
       <div className="biz-listing">
@@ -22,7 +22,7 @@ const BusinessIndexItem = ({ business }) => {
           <div className="search-result-image"><img src={business.image_url} /></div>
           <div>
             <Link to={`/businesses/${business.id}`}>{business.name}</Link>
-            <div className={`rating-img-${business.rating}`}></div>
+            <div className={`rating-img-${business.calculate_rating}`}></div>
             <span>{dollaSign}</span>
           </div>
         </div>

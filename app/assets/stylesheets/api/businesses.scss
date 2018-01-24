@@ -207,6 +207,13 @@
   background-position: 0px -258px;
 }
 
+.rating-img-0 {
+  width: 102px;
+  height: 18px;
+  background: asset-url('stars.png');
+  background-position: 0px -240px;
+}
+
 .show-rating-img-5 {
   width: 132px;
   height: 24px;
@@ -240,6 +247,13 @@
   height: 24px;
   background: asset-url('stars.png');
   background-position: 0px -24px;
+}
+
+.show-rating-img-0 {
+  width: 132px;
+  height: 24px;
+  background: asset-url('stars.png');
+  background-position: 0px 0px;
 }
 
 // business_show

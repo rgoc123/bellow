@@ -37,7 +37,7 @@ class BusinessShow extends React.Component {
   }
 
   render() {
-
+    debugger
     const business = this.props.business;
 
     if (!business) {
@@ -62,7 +62,7 @@ class BusinessShow extends React.Component {
             <div className="biz-page-header">
               <div className="biz-page-header-left">
                 <h1>{business.name}</h1>
-                <div className={`show-rating-img-${business.rating}`}></div>
+                <div className={`show-rating-img-${business.calculate_rating}`}></div>
                 <span>{dollaSign}</span>
               </div>
               <div className="biz-page-header-right">

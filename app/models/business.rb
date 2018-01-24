@@ -15,6 +15,9 @@ class Business < ApplicationRecord
       .where("lng < ?", bounds[:northEast][:long])
   end
 
-
+  def calculate_rating
+    return 0 unless !!self.reviews
+    (self.reviews.average(:rating).to_i)
+  end
 
 end

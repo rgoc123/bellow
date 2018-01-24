@@ -10,6 +10,8 @@
     json.lat business.lat
     json.long business.long
     json.image_url asset_path(business.main_image.url)
-    
+    json.reviews business.reviews
+    json.calculate_rating business.calculate_rating
+
   end
 end
