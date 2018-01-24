@@ -23,7 +23,7 @@ class ReviewForm extends React.Component {
   handleSubmit(e) {
     e.preventDefault();
     // const review = Object.assign({}, this.state);
-    
+
     if (this.props.formType === 'new') {
       this.props.createReview({
         body: this.state.body,
@@ -40,8 +40,6 @@ class ReviewForm extends React.Component {
         business_id: this.props.business.id
       }).then(() => this.props.history.push(`/businesses/${this.props.business.id}`));
     }
-
-    ;
   }
 
   componentDidMount() {
@@ -67,10 +65,23 @@ class ReviewForm extends React.Component {
             <div className="review-form-container">
                 <form onSubmit={this.handleSubmit}>
                   <div className="review-form">
-                    <input type="text"
-                      value={this.rating}
-                      onChange={this.update('rating')}
-                      placeholder="Rating"></input>
+                    <ul className="review-form-rating-list">
+                      <label>
+                        <input type="radio" name="radio-rating" value="1" onChange={this.update('rating')} />1
+                      </label>
+                      <label>
+                        <input type="radio" name="radio-rating" value="2" onChange={this.update('rating')} />2
+                      </label>
+                      <label>
+                        <input type="radio" name="radio-rating" value="3" onChange={this.update('rating')} />3
+                      </label>
+                      <label>
+                        <input type="radio" name="radio-rating" value="4" onChange={this.update('rating')} />4
+                      </label>
+                      <label>
+                        <input type="radio" name="radio-rating" value="5" onChange={this.update('rating')} />5
+                      </label>
+                    </ul>
                     <textarea value={this.body}
                       onChange={this.update('body')}
                       placeholder="Your review helps others learn about

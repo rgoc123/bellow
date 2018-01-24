@@ -8,7 +8,7 @@
 
 User.destroy_all
 bobby = User.create!(email: "bobby", password: "password", first_name: "Bobby", last_name: "O'Connor", image: File.open('./app/assets/images/bobby.png'))
-carib = User.create!(email: "Carib", password: "password", first_name: "Carib", last_name: "Guerra")
+dan = User.create()(email: "Daniel.e.oneill@gmail.com", password: "password", first_name: "Daniel", last_name: "O'Neill", image: File.open('./app/assets/images/bobby.png'))
 mom = User.create!(email: "annmo900@gmail.com", password: "password", first_name: "Ann", last_name: "O'Connor")
 beth = User.create!(email: "Bethoconnor123@gmail.com", password: "password", first_name: "Beth", last_name: "O'Connor")
 tommy = User.create!(email: "tlav123@gmail.com", password: "password", first_name: "Tom", last_name: "Lavander", image: File.open('./app/assets/images/tommy.png'))

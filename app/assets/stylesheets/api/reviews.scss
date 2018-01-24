@@ -62,7 +62,11 @@
 }
 
 .review-form input {
-  display: block;
+  display: inline;
+}
+
+.reviw-formt-rating-list {
+  display: flex;
 }
 
 .review-form textarea {
