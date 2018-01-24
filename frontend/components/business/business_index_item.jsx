@@ -14,7 +14,7 @@ const BusinessIndexItem = ({ business }) => {
   } else if (business.price === 4) {
     dollaSign = '$$$$'
   };
-  debugger
+
   return (
     <li className="regular-search-result">
       <div className="biz-listing">

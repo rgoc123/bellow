@@ -5,8 +5,6 @@ import ReviewIndexContainer from '../review/review_index_container';
 
 class BusinessShow extends React.Component {
 
-
-
   componentDidMount() {
     this.props.fetchBusiness(this.props.match.params.businessId);
   }
@@ -37,7 +35,7 @@ class BusinessShow extends React.Component {
   }
 
   render() {
-    debugger
+
     const business = this.props.business;
 
     if (!business) {
