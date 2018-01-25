@@ -71,10 +71,13 @@ class BusinessShow extends React.Component {
               <div className="mapbox-container">
                 <div className="mapbox">
                   <div className="map-img-placeholder">
-                    <img className="map-img" alt="map" src={`https://maps.googleapis.com/maps/api/staticmap?center=40.771086,-73.959327&zoom=20&size=400x400&key=AIzaSyCymYcKpJFirE0tB-R5qil-6Hx_nuOVAis&`} />
+                    <img className="map-img" alt="map" src={`https://maps.googleapis.com/maps/api/staticmap?center=${business.lat},${business.long}&zoom=15&size=286x135&markers=color:red|${business.lat},${business.long}|&key=AIzaSyCymYcKpJFirE0tB-R5qil-6Hx_nuOVAis&`} />
                   </div>
-                  <span>{business.address}</span>
-                  <span>{business.phone_number}</span>
+                  <ul>
+                    <li><i className="fa fa-map-marker" aria-hidden="true"></i><span>{business.address}</span></li>
+                    <li><i className="fa" aria-hidden="true"></i><span>{business.neighborhood}</span></li>
+                    <li><i className="fa fa-phone" aria-hidden="true"></i><span>{business.phone_number}</span></li>
+                  </ul>
                 </div>
               </div>
               <div className="photo-case">

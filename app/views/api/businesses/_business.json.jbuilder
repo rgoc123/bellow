@@ -1,4 +1,4 @@
-json.extract! business, :id, :name, :rating, :price, :address, :phone_number, :lat, :long, :calculate_rating
+json.extract! business, :id, :name, :rating, :price, :address, :neighborhood, :phone_number, :lat, :long, :calculate_rating
 
 json.image_url business.main_image
 
