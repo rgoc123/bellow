@@ -103,6 +103,43 @@ class BusinessShow extends React.Component {
             <div className="review-feed">
               <ReviewIndexContainer businessId={this.props.business.id} />
             </div>
+            <div className="additional-info">
+              <div className="today-info">
+              </div>
+              <div className="hours">
+                <h5>Hours</h5>
+                <ul>
+                  <li>
+                    <p>Mon</p>
+                    <p>11:00 am - 10:00 pm</p>
+                  </li>
+                  <li>
+                    <p>Tue</p>
+                    <p>11:00 am - 10:00 pm</p>
+                  </li>
+                  <li>
+                    <p>Wed</p>
+                    <p>11:00 am - 10:00 pm</p>
+                  </li>
+                  <li>
+                    <p>Thu</p>
+                    <p>11:00 am - 10:00 pm</p>
+                  </li>
+                  <li>
+                    <p>Fri</p>
+                    <p>11:00 am - 10:00 pm</p>
+                  </li>
+                  <li>
+                    <p>Sat</p>
+                    <p>11:00 am - 10:00 pm</p>
+                  </li>
+                  <li>
+                    <p>Sun</p>
+                    <p>11:00 am - 10:00 pm</p>
+                  </li>
+                </ul>
+              </div>
+            </div>
           </div>
         </div>
       );
