@@ -145,6 +145,14 @@
   border-radius: 4px;
 }
 
+.biz-idx-link {
+  text-decoration: none;
+}
+
+.biz-idx-link:hover {
+  text-decoration: underline;
+}
+
 .biz-listing {
   width: 660px;
   height: 91px;
