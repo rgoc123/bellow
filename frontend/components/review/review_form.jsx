@@ -67,19 +67,24 @@ class ReviewForm extends React.Component {
                   <div className="review-form">
                     <ul className="review-form-rating-list">
                       <label>
-                        <input type="radio" name="radio-rating" value="1" onChange={this.update('rating')} />1
+                        <i className="fa fa-star" aria-hidden="true"></i>
+                        <input type="radio" name="radio-rating" value="1" onChange={this.update('rating')} />
                       </label>
                       <label>
-                        <input type="radio" name="radio-rating" value="2" onChange={this.update('rating')} />2
+                        <i className="fa fa-star" aria-hidden="true"></i>
+                        <input type="radio" name="radio-rating" value="2" onChange={this.update('rating')} />
                       </label>
                       <label>
-                        <input type="radio" name="radio-rating" value="3" onChange={this.update('rating')} />3
+                        <i className="fa fa-star" aria-hidden="true"></i>
+                        <input type="radio" name="radio-rating" value="3" onChange={this.update('rating')} />
                       </label>
                       <label>
-                        <input type="radio" name="radio-rating" value="4" onChange={this.update('rating')} />4
+                        <i className="fa fa-star" aria-hidden="true"></i>
+                        <input type="radio" name="radio-rating" value="4" onChange={this.update('rating')} />
                       </label>
                       <label>
-                        <input type="radio" name="radio-rating" value="5" onChange={this.update('rating')} />5
+                        <i className="fa fa-star" aria-hidden="true"></i>
+                        <input type="radio" name="radio-rating" value="5" onChange={this.update('rating')} />
                       </label>
                     </ul>
                     <textarea value={this.body}

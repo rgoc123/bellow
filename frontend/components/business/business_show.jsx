@@ -74,9 +74,20 @@ class BusinessShow extends React.Component {
                     <img className="map-img" alt="map" src={`https://maps.googleapis.com/maps/api/staticmap?center=${business.lat},${business.long}&zoom=15&size=286x135&markers=color:red|${business.lat},${business.long}|&key=AIzaSyCymYcKpJFirE0tB-R5qil-6Hx_nuOVAis&`} />
                   </div>
                   <ul>
-                    <li><i className="fa fa-map-marker" aria-hidden="true"></i><span>{business.address}</span></li>
-                    <li><i className="fa" aria-hidden="true"></i><span>{business.neighborhood}</span></li>
-                    <li><i className="fa fa-phone" aria-hidden="true"></i><span>{business.phone_number}</span></li>
+                    <li>
+                      <i className="fa fa-map-marker" aria-hidden="true"></i>
+                      <div className="mapbox-info">
+                        <span className="map-address">{business.address}</span>
+                        <br></br>
+                        <span className="map-address">{business.city}</span>
+                        <br></br>
+                        <span>{business.neighborhood}</span>
+                      </div>
+                    </li>
+                    <li>
+                      <i className="fa fa-phone" aria-hidden="true"></i>
+                      <span className="mapbox-info">{business.phone_number}</span>
+                    </li>
                   </ul>
                 </div>
               </div>
