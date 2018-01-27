@@ -63,11 +63,53 @@
 
 .review-form input {
   display: inline;
+  -webkit-appearance: none;
 }
 
-.reviw-formt-rating-list {
+.review-form-rating-list {
   display: flex;
+  width: 181px;
+  flex-direction: row-reverse;
 }
+
+.default {
+  height: 32px;
+  width: 32px;
+  background-color: #CCCCCC;
+  color: white;
+  display: flex;
+  justify-content: center;
+  border-radius: 5px;
+  font-size: 23px;
+  cursor: pointer;
+  border: 2px solid white;
+}
+.pale-yellow {
+  background-color: #F2BC82;
+}
+.yellow {
+  background-color: #FDC116;
+}
+.orangy  {
+  background-color: #FF9151;
+}
+.pale-red {
+  background-color: #F25A54;
+}
+.red {
+  background-color: #D4202B;
+}
+
+.review-form-rating-list>label:nth-child(5):hover,
+.review-form-rating-list>label:nth-child(5):hover ~ label{background-color: #F2BC82;}
+.review-form-rating-list>label:nth-child(4):hover,
+.review-form-rating-list>label:nth-child(4):hover ~ label{background-color: #FDC116;}
+.review-form-rating-list>label:nth-child(3):hover,
+.review-form-rating-list>label:nth-child(3):hover ~ label{background-color: #FF9151;}
+.review-form-rating-list>label:nth-child(2):hover,
+.review-form-rating-list>label:nth-child(2):hover ~ label{background-color: #F25A54;}
+.review-form-rating-list>label:nth-child(1):hover,
+.review-form-rating-list>label:nth-child(1):hover ~ label{background-color: #D4202B;}
 
 .review-form textarea {
   display: block;
