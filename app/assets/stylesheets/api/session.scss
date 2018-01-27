@@ -55,11 +55,21 @@
   height: 40px;
   padding: 12px 0;
   position: relative;
+  margin-bottom: 33px;
+}
+
+.header-normal .content-container {
+  padding-bottom: 0;
 }
 
 .header-normal h1 {
   position: absolute;
   top: 12px;
+}
+
+.underbar {
+  height: 27px;
+  background-color: rgb(189, 31, 31);
 }
 
 .b-link {

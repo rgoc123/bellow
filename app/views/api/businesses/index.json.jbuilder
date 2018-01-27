@@ -6,6 +6,7 @@
     json.price business.price
     json.neighborhood business.neighborhood
     json.address business.address
+    json.city business.city
     json.phone_number business.phone_number
     json.lat business.lat
     json.long business.long

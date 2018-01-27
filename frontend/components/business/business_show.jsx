@@ -92,6 +92,7 @@ class BusinessShow extends React.Component {
                 </div>
               </div>
               <div className="photo-case">
+                <div className="grayness"></div>
                 <div className="biz-photo"><img alt="bizimage0" src={this.bizimg0()} /></div>
                 <div className="biz-photo"><img src={business.image_url} /></div>
                 <div className="biz-photo"><img alt="bizimage1" src={this.bizimg1()} /></div>

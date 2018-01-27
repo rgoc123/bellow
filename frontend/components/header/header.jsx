@@ -44,6 +44,8 @@ const Header = (props) => {
         {headerButtons}
         <SearchForm props={props}/>
       </div>
+      <div className="underbar"></div>
+      
     </header>
   );
 };

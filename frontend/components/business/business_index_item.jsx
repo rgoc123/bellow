@@ -29,6 +29,7 @@ const BusinessIndexItem = ({ business }) => {
         <div className="secondary-attributes">
           <span>{business.neighborhood}</span>
           <span>{business.address}</span>
+          <span>{business.city}</span>
           <span>{business.phone_number}</span>
         </div>
       </div>
