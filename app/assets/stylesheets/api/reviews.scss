@@ -31,10 +31,20 @@
   border-radius: 5px;
 }
 
+.review-top {
+  display: flex;
+  margin: 6px 0;
+}
+
 
 // review form
 .review-form-column-alpha {
   font-family: "Helvetica Neue";
+}
+
+.review-date {
+  color: #666;
+  font-weight: normal;
 }
 
 .review-form-column-alpha a {

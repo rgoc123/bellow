@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-
+import dateFormat from 'dateformat';
 
 
 class ReviewIndexItem extends React.Component {
@@ -22,6 +22,7 @@ class ReviewIndexItem extends React.Component {
     if (!this.props.review) {
       return null;
     } else {
+      const date = dateFormat(this.props.review.updated_at, 'mm/dd/yyyy');
       return (
         <div className="review">
           <div className="review-sidebar">
@@ -29,7 +30,10 @@ class ReviewIndexItem extends React.Component {
             <div>{this.props.review.first_name} {this.props.review.last_name.slice(0,1)}.</div>
           </div>
           <div className="review-wrapper">
-            <div><div className={`rating-img-${this.props.review.rating}`}></div>   {this.props.review.updated_at}</div>
+            <div className="review-top">
+              <div className={`rating-img-${this.props.review.rating}`}></div>
+              <div className="review-date">{date}</div>
+            </div>
             <div>{this.props.review.body}</div>
             {this.editLink()}
           </div>

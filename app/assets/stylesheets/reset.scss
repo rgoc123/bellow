@@ -1,3 +1,7 @@
+* {
+  font-family: "Helvetica Neue";
+}
+
 html, body, header, nav, h1, a,
 ul, li, strong, main, button, i,
 section, img, div, h2, p, form,
@@ -7,7 +11,7 @@ span, article, footer, time, small {
   padding: 0;
   border: 0;
   outline: 0;
-  font: inherit;
+  // font: inherit;
   color: inherit;
   text-align: inherit;
   text-decoration: inherit;

@@ -108,9 +108,10 @@ class BusinessShow extends React.Component {
                 <ul>
                   <li>
                     <i className="fa fa-clock-o" aria-hidden="true"></i>
-                    <p>Today</p>
+                    <p>Today <strong>11:00 am - 10:00 pm</strong></p>
                   </li>
                   <li>
+                    <span>{dollaSign}</span>
                     <p>Price range </p>
                   </li>
                 </ul>
