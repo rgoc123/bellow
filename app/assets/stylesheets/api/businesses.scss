@@ -398,12 +398,36 @@
 
 .review-feed {
   width: 629px;
+  padding-right: 30px;
 }
 
 .additional-info {
   font-family: "Helvetica Neue";
+  width: 300px;
+  padding-right: 30px;
+}
+
+.today-info {
+  background: #f5f5f5;
+  border: 1px solid #e6e6e6;
+  border-radius: 4px;
+}
+
+.today-info li {
+  display: flex;
+}
+
+.hours h5 {
+  color: #d32323;
+  font-size: 16px;
+  font-weight: bold;
 }
 
 .hours li {
   display: flex;
+}
+
+.day {
+  width: 58px;
+  font-weight: bold;
 }

@@ -105,36 +105,45 @@ class BusinessShow extends React.Component {
             </div>
             <div className="additional-info">
               <div className="today-info">
+                <ul>
+                  <li>
+                    <i className="fa fa-clock-o" aria-hidden="true"></i>
+                    <p>Today</p>
+                  </li>
+                  <li>
+                    <p>Price range </p>
+                  </li>
+                </ul>
               </div>
               <div className="hours">
                 <h5>Hours</h5>
                 <ul>
                   <li>
-                    <p>Mon</p>
+                    <p class="day">Mon</p>
                     <p>11:00 am - 10:00 pm</p>
                   </li>
                   <li>
-                    <p>Tue</p>
+                    <p class="day">Tue</p>
                     <p>11:00 am - 10:00 pm</p>
                   </li>
                   <li>
-                    <p>Wed</p>
+                    <p class="day">Wed</p>
                     <p>11:00 am - 10:00 pm</p>
                   </li>
                   <li>
-                    <p>Thu</p>
+                    <p class="day">Thu</p>
                     <p>11:00 am - 10:00 pm</p>
                   </li>
                   <li>
-                    <p>Fri</p>
+                    <p class="day">Fri</p>
                     <p>11:00 am - 10:00 pm</p>
                   </li>
                   <li>
-                    <p>Sat</p>
+                    <p class="day">Sat</p>
                     <p>11:00 am - 10:00 pm</p>
                   </li>
                   <li>
-                    <p>Sun</p>
+                    <p class="day">Sun</p>
                     <p>11:00 am - 10:00 pm</p>
                   </li>
                 </ul>
