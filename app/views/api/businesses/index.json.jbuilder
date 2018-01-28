@@ -8,6 +8,7 @@
     json.address business.address
     json.city business.city
     json.phone_number business.phone_number
+    json.webstie business.website
     json.lat business.lat
     json.long business.long
     json.image_url asset_path(business.main_image.url)

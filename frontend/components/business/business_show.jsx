@@ -88,6 +88,10 @@ class BusinessShow extends React.Component {
                       <i className="fa fa-phone" aria-hidden="true"></i>
                       <span className="mapbox-info">{business.phone_number}</span>
                     </li>
+                    <li>
+                      <i className="img-website"></i>
+                      <a className="mapbox-info" target="_blank" href={business.website}>{business.website}</a>
+                    </li>
                   </ul>
                 </div>
               </div>
@@ -120,31 +124,31 @@ class BusinessShow extends React.Component {
                 <h5>Hours</h5>
                 <ul>
                   <li>
-                    <p class="day">Mon</p>
+                    <p className="day">Mon</p>
                     <p>11:00 am - 10:00 pm</p>
                   </li>
                   <li>
-                    <p class="day">Tue</p>
+                    <p className="day">Tue</p>
                     <p>11:00 am - 10:00 pm</p>
                   </li>
                   <li>
-                    <p class="day">Wed</p>
+                    <p className="day">Wed</p>
                     <p>11:00 am - 10:00 pm</p>
                   </li>
                   <li>
-                    <p class="day">Thu</p>
+                    <p className="day">Thu</p>
                     <p>11:00 am - 10:00 pm</p>
                   </li>
                   <li>
-                    <p class="day">Fri</p>
+                    <p className="day">Fri</p>
                     <p>11:00 am - 10:00 pm</p>
                   </li>
                   <li>
-                    <p class="day">Sat</p>
+                    <p className="day">Sat</p>
                     <p>11:00 am - 10:00 pm</p>
                   </li>
                   <li>
-                    <p class="day">Sun</p>
+                    <p className="day">Sun</p>
                     <p>11:00 am - 10:00 pm</p>
                   </li>
                 </ul>

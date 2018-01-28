@@ -354,6 +354,12 @@
   font-weight: 700;
 }
 
+.img-website {
+  background: asset-url('website.png');
+  height: 16px;
+  width: 16px;
+}
+
 .photo-case {
   display: flex;
   vertical-align: middle;
