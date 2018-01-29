@@ -15,6 +15,7 @@ const Header = (props) => {
 
   let headerButtons;
   let headerClass;
+  let underBar;
 
   if (props.location.pathname === "/") {
     headerClass = "header-landing";
@@ -37,6 +38,14 @@ const Header = (props) => {
     );
   }
 
+  if (headerClass === "header-normal") {
+    underBar = (
+      <div className="underbar"></div>
+    );
+  } else {
+    underBar = null;
+  }
+
   return (
     <header className={headerClass}>
       <div className="content-container">
@@ -44,8 +53,7 @@ const Header = (props) => {
         {headerButtons}
         <SearchForm props={props}/>
       </div>
-      <div className="underbar"></div>
-      
+      {underBar}
     </header>
   );
 };
