@@ -3,14 +3,52 @@ import { Link, withRouter } from 'react-router-dom';
 
 class ReviewForm extends React.Component {
 
+  componentWillReceiveProps(newProps) {
+    debugger
+    if (!this.state) {
+      this.props.fetchBusiness(this.props.match.params.businessId);
+      this.props.fetchReview(this.props.review);
+
+      this.setState(
+        {id: this.props.review.id,
+        rating: this.props.review.rating,
+        body: this.props.review.body,
+        classColor: "default"}
+      );
+    }
+  }
+
+  componentWillMount() {
+    debugger
+    this.props.fetchBusiness(this.props.match.params.businessId);
+  }
+
+  componentDidMount() {
+    debugger
+    this.props.fetchBusiness(this.props.match.params.businessId);
+    this.props.fetchReview(this.props.match.params.reviewId);
+  }
+
   constructor(props) {
+    debugger
     super(props);
-    this.state = {
-      id: this.props.review.id,
-      rating: this.props.review.rating,
-      body: this.props.review.body,
-      classColor: "default"
-    };
+
+    if (!this.props.review) {
+      this.state = {
+        id: this.props.match.params.reviewId,
+        rating: "",
+        body: "",
+        classColor: "default"
+      };
+    } else {
+      this.state = {
+        id: this.props.review.id,
+        rating: this.props.review.rating,
+        body: this.props.review.body,
+        classColor: "default"
+      };
+    }
+
 
     this.handleSubmit = this.handleSubmit.bind(this);
     this.oneCheck = this.oneCheck.bind(this);
@@ -30,7 +68,6 @@ class ReviewForm extends React.Component {
 
   handleSubmit(e) {
     e.preventDefault();
-    // const review = Object.assign({}, this.state);
 
     if (this.props.formType === 'new') {
       this.props.createReview({
@@ -48,10 +85,6 @@ class ReviewForm extends React.Component {
         business_id: this.props.business.id
       }).then(() => this.props.history.push(`/businesses/${this.props.business.id}`));
     }
-  }
-
-  componentDidMount() {
-
   }
 
   chooseButtonType() {
@@ -161,7 +194,7 @@ class ReviewForm extends React.Component {
   }
 
   render() {
-    if (this.props.business === undefined) {
+    if (!this.props.review || !this.props.business) {
       return null;
     } else {
       return(

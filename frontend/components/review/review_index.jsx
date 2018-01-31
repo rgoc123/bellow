@@ -10,18 +10,18 @@ class ReviewIndex extends React.Component {
   }
 
   componentDidMount() {
-    
+
   }
 
   render() {
-    
+
     if (this.props.reviews === undefined) {
       return null;
     } else {
       return (
         <ul>
           {this.props.reviews.map(
-            review => <ReviewIndexItem currentUser={this.props.currentUser} key={review.id} review={review} />
+            review => <ReviewIndexItem currentUser={this.props.currentUser} key={review.id} review={review} deleteReview={this.props.deleteReview} />
           )}
         </ul>
       );

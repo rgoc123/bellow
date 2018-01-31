@@ -1,7 +1,8 @@
 import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';
 
-import { createReview, updateReview } from '../../actions/review_actions';
+import { createReview, updateReview, fetchReview } from '../../actions/review_actions';
+import { fetchBusiness, fetchBusinesses } from '../../actions/business_actions';
 import ReviewForm from './review_form';
 
 
@@ -22,6 +23,7 @@ const mapStateToProps = (state, ownProps) => {
       currentUser: state.session.currentUser
     };
   } else if (ownProps.match.path.includes("edit")) {
+
     return {
       formType: "edit",
       review: state.entities.reviews[ownProps.match.params.reviewId],
@@ -36,11 +38,15 @@ const mapDispatchToProps = (dispatch, ownProps) => {
 
   if (ownProps.match.path.includes("new")) {
     return {
-      createReview: (review) => dispatch(createReview(review))
+      createReview: (review) => dispatch(createReview(review)),
+      fetchBusiness: (businessId) => dispatch(fetchBusiness(businessId)),
+      fetchReview: (reviewId) => dispatch(fetchReview(reviewId))
     };
   } else {
     return {
-      updateReview: (review) => dispatch(updateReview(review))
+      updateReview: (review) => dispatch(updateReview(review)),
+      fetchBusiness: (businessId) => dispatch(fetchBusiness(businessId)),
+      fetchReview: (reviewId) => dispatch(fetchReview(reviewId))
     };
   }
 

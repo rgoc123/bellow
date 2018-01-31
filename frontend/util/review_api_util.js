@@ -5,6 +5,13 @@ export const fetchReviews = businessId => {
   });
 };
 
+export const fetchReview = (reviewId) => (
+  $.ajax({
+    method: "GET",
+    url: `api/reviews/reviewId`,
+  })
+);
+
 export const createReview = review => {
   return $.ajax({
     url: `/api/businesses/${review.business_id}/reviews`,

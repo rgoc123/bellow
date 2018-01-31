@@ -1,4 +1,5 @@
 import { RECEIVE_BUSINESSES, RECEIVE_BUSINESS } from '../actions/business_actions';
+import { RECEIVE_PRICES } from '../actions/filter_actions';
 import merge from 'lodash/merge';
 
 const businessesReducer = (state = {}, action) => {

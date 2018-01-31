@@ -1,6 +1,6 @@
 class Api::ReviewsController < ApplicationController
   def index
-    
+
     @reviews = Review.all
   end
 
@@ -28,7 +28,7 @@ class Api::ReviewsController < ApplicationController
     end
   end
 
-  def delete
+  def destroy
     @review = Review.find(params[:id])
     @review.destroy
   end
