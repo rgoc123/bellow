@@ -3,6 +3,7 @@ import { Link, withRouter } from 'react-router-dom';
 
 import BusinessIndexItem from './business_index_item';
 import BusinessMap from '../map/business_map';
+import MarkerManager from '../../util/marker_manager';
 
 class BusinessIndex extends React.Component {
 
@@ -43,7 +44,7 @@ class BusinessIndex extends React.Component {
           </ul>
         </div>
         <div className="biz-column-bravo">
-          <BusinessMap updateBounds={this.props.updateBounds} businesses={this.props.businesses} />
+          <BusinessMap updateBounds={this.props.updateBounds} businesses={this.props.businesses} prices={this.props.filters.prices}/>
         </div>
       </div>
 

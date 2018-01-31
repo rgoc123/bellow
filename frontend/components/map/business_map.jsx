@@ -15,8 +15,11 @@ class BusinessMap extends React.Component{
     this.map = new google.maps.Map(this.mapNode, mapOptions);
 
     this.MarkerManager = new MarkerManager(this.map);
-    this.MarkerManager.updateMarkers(this.props.businesses);
-
+    this.props.businesses.forEach(biz => {
+      this.MarkerManager.createMarkerFromBusiness(biz);
+    });
+    // this.MarkerManager.updateMarkers(this.props.businesses);
+    
     google.maps.event.addListener(this.map, 'idle', () => {
 
       const { north, south, east, west } = this.map.getBounds().toJSON();
@@ -44,7 +47,35 @@ class BusinessMap extends React.Component{
   }
 
   componentDidUpdate() {
-    this.MarkerManager.updateMarkers(this.props.businesses);
+    let prices = this.props.prices;
+    let bizzys;
+    bizzys = this.props.businesses.filter(biz =>
+      prices.includes(biz.price)
+    );
+
+    if (bizzys.length === 0) {
+      this.props.businesses.forEach(biz => {
+        if (this.MarkerManager.markers[biz.id]) {
+          this.MarkerManager.removeMarker(this.MarkerManager.markers[biz.id]);
+        }
+
+      });
+      this.props.businesses.forEach(biz => {
+        this.MarkerManager.createMarkerFromBusiness(biz);
+      });
+    } else {
+
+      this.props.businesses.forEach(biz => {
+        if (this.MarkerManager.markers[biz.id]) {
+          this.MarkerManager.removeMarker(this.MarkerManager.markers[biz.id]);
+        }
+
+      });
+      bizzys.forEach(biz => {
+        this.MarkerManager.createMarkerFromBusiness(biz);
+      });
+    }
+    // this.MarkerManager.updateMarkers(this.props.businesses);
   }
 
   render() {

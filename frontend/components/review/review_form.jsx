@@ -4,7 +4,7 @@ import { Link, withRouter } from 'react-router-dom';
 class ReviewForm extends React.Component {
 
   componentWillReceiveProps(newProps) {
-    debugger
+
     if (!this.state) {
       this.props.fetchBusiness(this.props.match.params.businessId);
       this.props.fetchReview(this.props.review);
@@ -19,18 +19,18 @@ class ReviewForm extends React.Component {
   }
 
   componentWillMount() {
-    debugger
+
     this.props.fetchBusiness(this.props.match.params.businessId);
   }
 
   componentDidMount() {
-    debugger
+
     this.props.fetchBusiness(this.props.match.params.businessId);
     this.props.fetchReview(this.props.match.params.reviewId);
   }
 
   constructor(props) {
-    debugger
+
     super(props);
 
     if (!this.props.review) {

@@ -28,4 +28,9 @@ export default class MarkerManager {
     this.markers[marker.businessId] = marker;
   }
 
+  removeMarker(marker) {
+    this.markers[marker.businessId].setMap(null);
+    delete this.markers[marker.businessId];
+  }
+
 }
