@@ -4,18 +4,87 @@
   display: flex;
   border-bottom: 1px solid rgb(230, 230, 230);
   padding: 18px 0 17px 0;
+  height: 222px;
 }
 
 .review-sidebar {
+  height: 153px;
+}
+
+.reviewer-info {
   width: 247px;
-  height: 222px;
   padding: 0 15px;
   display: flex;
+}
+
+
+
+.edit {
+  margin-top: 6px;
+  padding-left: 15px;
+  font-size: 12px;
+  position: absolute;
+  left: 0px;
+}
+
+.edit a {
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.edit a:hover {
+  text-decoration: underline;
+}
+
+.fa-pencil {
+  width: 18px;
+  height: 18px;
+}
+
+.delete-review {
+  width: 37px;
+  height: 39px;
+  position: absolute;
+  bottom: 0px;
+  right: 0px;
+}
+
+.fa-trash {
+  display: inline-block;
+  width: 25px;
+  padding: 5px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+  font-size: 18px;
+  line-height: 1.5em;
+  color: #999;
+  background: transparent;
+  box-shadow: none;
+  white-space: nowrap;
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+  text-align: center;
+  position: absolute;
+  bottom: 0px;
+  right: 0px;
+}
+
+.fa-trash:hover {
+  background: #f8f8f8;
+  background: -webkit-linear-gradient(#fff, #eee);
+  background: linear-gradient(#fff, #eee);
+  text-decoration: none;
+  color: #333;
+  border-color: #cdcdcd;
+  border-color: rgba(0,0,0,0.2);
+  -webkit-box-shadow: 0 1px 1px rgba(0,0,0,0.1), inset 0 1px 0 rgba(255,255,255,0.5);
+  box-shadow: 0 1px 1px rgba(0,0,0,0.1), inset 0 1px 0 rgba(255,255,255,0.5);
 }
 
 .review-wrapper {
   width: 412px;
   padding: 0 15px;
+  position: relative;
 }
 
 .avatar-img-placeholder {
@@ -34,6 +103,16 @@
 .review-top {
   display: flex;
   margin: 6px 0;
+}
+
+.review-top .show-review {
+  margin-top: 0px;
+  margin-bottom: 0px;
+}
+
+.unreviewed {
+  text-align: center;
+  padding-top: 64px;
 }
 
 
@@ -60,7 +139,7 @@
 }
 
 .review-form-container {
-
+  margin-top: 12px;
 }
 
 .review-form {
@@ -80,6 +159,7 @@
   display: flex;
   width: 181px;
   flex-direction: row-reverse;
+  margin-bottom: 18px;
 }
 
 .review-form-rating-list i {
@@ -130,6 +210,8 @@
   display: block;
   width: 100%;
   height: 100%;
+  font-size: 18px;
+  resize: none;
 }
 
 .post-review-button {
@@ -145,6 +227,7 @@
   height: 21px;
   align-items: center;
   padding: 10px 19px 10px 19px;
+  margin: 18px 0;
   text-align: center;
 }
 

@@ -14,10 +14,21 @@ class ReviewIndexItem extends React.Component {
         return null;
       } else if (this.props.currentUser.id === this.props.review.user_id) {
         return (
-          <div>
+          <div className="edit">
+            <i className="fa fa-pencil" aria-hidden="true"></i>
             <Link to={`/businesses/${this.props.review.business_id}/reviews/${this.props.review.id}/edit`}>Edit</Link>
-            <br></br>
-            <button onClick={() => this.props.deleteReview(this.props.review.id)}>Delete</button>
+          </div>
+        );
+      }
+  }
+
+  deleteLink() {
+      if (!this.props.currentUser) {
+        return null;
+      } else if (this.props.currentUser.id === this.props.review.user_id) {
+        return (
+          <div>
+            <button className="delete-review" onClick={() => this.props.deleteReview(this.props.review.id)}><i class="fa fa-trash"></i></button>
           </div>
         );
       }
@@ -32,16 +43,19 @@ class ReviewIndexItem extends React.Component {
       return (
         <div className="review">
           <div className="review-sidebar">
-            <div className="avatar-img-placeholder"><img src={this.props.review.image} /></div>
-            <div>{this.props.review.first_name} {this.props.review.last_name.slice(0,1)}.</div>
+            <div className="reviewer-info">
+              <div className="avatar-img-placeholder"><img src={this.props.review.image} /></div>
+              <div>{this.props.review.first_name} {this.props.review.last_name.slice(0,1)}.</div>
+            </div>
           </div>
           <div className="review-wrapper">
             <div className="review-top">
-              <div className={`rating-img-${this.props.review.rating}`}></div>
+              <div className={`rating-img-${this.props.review.rating} show-review`}></div>
               <div className="review-date">{date}</div>
             </div>
             <div>{this.props.review.body}</div>
             {this.editLink()}
+            {this.deleteLink()}
           </div>
         </div>
       );

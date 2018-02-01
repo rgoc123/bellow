@@ -229,7 +229,7 @@ class ReviewForm extends React.Component {
                     <textarea value={this.body}
                       onChange={this.update('body')}
                       placeholder="Your review helps others learn about
-                      great local businesses.  Please don't review this business
+                      great local businesses.&#10;Please don't review this business
                       if you received a freebie for writing this review, or if
                       you're connected in any way to the owner or employees."></textarea>
                   </div>

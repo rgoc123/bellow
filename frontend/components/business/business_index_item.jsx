@@ -23,11 +23,11 @@ const BusinessIndexItem = ({ business }) => {
           <div>
             <Link className="biz-idx-link" to={`/businesses/${business.id}`}>{business.name}</Link>
             <div className={`rating-img-${business.calculate_rating}`}></div>
-            <span>{dollaSign}</span>
+            <span className="dollas">{dollaSign}</span>
           </div>
         </div>
         <div className="secondary-attributes">
-          <span>{business.neighborhood}</span>
+          <span className="neighborhood">{business.neighborhood}</span>
           <span>{business.address}</span>
           <span>{business.city}</span>
           <span>{business.phone_number}</span>
