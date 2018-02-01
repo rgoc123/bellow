@@ -443,14 +443,26 @@ div [class^="show-rating-img-"] {
   background: #f5f5f5;
   border: 1px solid #e6e6e6;
   border-radius: 4px;
+  padding: 3px 6px;
 }
 
 .fa-clock-o {
   color: #41a700;
+  font-size: 24px;
+  margin-right: 9px;
 }
 
 .today-info li {
   display: flex;
+  padding: 9px 0 9px 9px;
+}
+
+.today-info li:first-of-type {
+  border-bottom: 1px solid #e6e6e6;
+}
+
+.todays-dollas {
+  margin-right: 11px;
 }
 
 .hours h5 {

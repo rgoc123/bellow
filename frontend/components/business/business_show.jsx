@@ -115,7 +115,7 @@ class BusinessShow extends React.Component {
                     <p>Today <strong>11:00 am - 10:00 pm</strong></p>
                   </li>
                   <li>
-                    <span>{dollaSign}</span>
+                    <span className="todays-dollas">{dollaSign}</span>
                     <p>Price range </p>
                   </li>
                 </ul>
