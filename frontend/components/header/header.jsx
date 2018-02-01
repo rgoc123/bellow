@@ -49,7 +49,7 @@ const Header = (props) => {
   return (
     <header className={headerClass}>
       <div className="content-container">
-        <h1>Bellow!<Link className="b-link" to="/search"></Link></h1>
+        <h1>Bellow!<Link className="b-link" to="/"></Link></h1>
         <SearchForm props={props}/>
         {headerButtons}
       </div>

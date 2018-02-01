@@ -321,6 +321,7 @@ div [class^="show-rating-img-"] {
   z-index: -1;
   position: absolute;
   top: 0;
+  // width: calc(100vw);
   right: -9999px;
   bottom: 0;
   left: -9999px;
