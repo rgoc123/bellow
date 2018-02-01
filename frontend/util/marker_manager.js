@@ -25,7 +25,29 @@ export default class MarkerManager {
       businessId: business.id
     });
 
+    let markerInfo = '<div>' +
+      '<ul>' +
+      '<li>' + business.name + '</li>' +
+      '<li>' + business.rating + '</li>' +
+      '<li>' + business.price + '</li>' +
+      '<li>' + business.address + ', ' + business.city + '</li>' +
+      '</ul>' +
+      '</div>';
+
+    let infoWindow = new google.maps.InfoWindow({
+      content: markerInfo
+    });
+
+    marker.addListener('mouseover', () => {
+      infoWindow.open(this.map, marker);
+    });
+
+    marker.addListener('mouseout', () => {
+      infoWindow.close();
+    });
+
     this.markers[marker.businessId] = marker;
+    return marker;
   }
 
   removeMarker(marker) {
