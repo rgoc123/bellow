@@ -105,6 +105,21 @@
   color: white;
 }
 
+.header-normal #logout {
+  padding: 6px 12px;
+  min-width: 80px;
+  text-align: center;
+  line-height: 24px;
+  background: #bd1f1f;
+  border: none;
+  height: 30px;
+}
+
+.header-normal #logout {
+  background: #a71c1c;
+  color: white;
+}
+
 .underbar {
   height: 27px;
   background-color: rgb(189, 31, 31);
@@ -311,6 +326,8 @@ a {
   left: 200px;
   margin: 0;
 }
+
+
 
 .search-form-container span {
   margin: 9px 5px 0 12px;
