@@ -1,3 +1,4 @@
+
 export default class MarkerManager {
 
   constructor(map) {
@@ -22,15 +23,44 @@ export default class MarkerManager {
     const marker = new google.maps.Marker({
       position,
       map: this.map,
-      businessId: business.id
+      businessId: business.id,
+      url: "/#/businesses/" + business.id
     });
 
-    let markerInfo = '<div>' +
+    let ratingClass;
+    if (business.calculate_rating === 5) {
+      ratingClass = "rating-img-5";
+    } else if (business.calculate_rating === 4) {
+      ratingClass = "rating-img-4";
+    } else if (business.calculate_rating === 3) {
+      ratingClass = "rating-img-3";
+    } else if (business.calculate_rating === 2) {
+      ratingClass = "rating-img-2";
+    } else if (business.calculate_rating === 1) {
+      ratingClass = "rating-img-1";
+    } else if (business.calculate_rating === 0) {
+      ratingClass = "rating-img-0";
+    }
+
+    let dollaSign;
+    if (business.price === 1) {
+      dollaSign = '$';
+    } else if (business.price === 2) {
+      dollaSign = '$$';
+    } else if (business.price === 3) {
+      dollaSign = '$$$';
+    } else if (business.price === 4) {
+      dollaSign = '$$$$';
+    }
+
+    let markerInfo = '<div class="marker">' +
       '<ul>' +
       '<li>' + business.name + '</li>' +
-      '<li>' + business.rating + '</li>' +
-      '<li>' + business.price + '</li>' +
-      '<li>' + business.address + ', ' + business.city + '</li>' +
+      '<li>' + '<div class="' + ratingClass + '"></div>' + '</li>' +
+      '<li>' + dollaSign + '</li>' +
+      '<li>' + business.address + '</li>' +
+      '<li>' + business.city + '</li>' +
+      '<li>' + '<img class="marker-main-image" src="' + business.main_image +'" />' + '</li>' +
       '</ul>' +
       '</div>';
 
@@ -44,6 +74,10 @@ export default class MarkerManager {
 
     marker.addListener('mouseout', () => {
       infoWindow.close();
+    });
+
+    marker.addListener('click', () => {
+      window.location.href = marker.url;
     });
 
     this.markers[marker.businessId] = marker;

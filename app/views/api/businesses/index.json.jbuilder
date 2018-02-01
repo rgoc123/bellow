@@ -11,9 +11,12 @@
     json.webstie business.website
     json.lat business.lat
     json.long business.long
+    json.main_image business.main_image
     json.image_url asset_path(business.main_image.url)
     json.reviews business.reviews
     json.calculate_rating business.calculate_rating
+    json.image0 asset_path(business.photos[0].image)
+    json.image1 asset_path(business.photos[1].image)
 
   end
 end

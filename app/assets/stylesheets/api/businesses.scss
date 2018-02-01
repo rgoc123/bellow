@@ -184,9 +184,25 @@
   padding: 0 15px;
 }
 
+.image0 {
+  width: 90px;
+  height: 90px;
+  // background-image: asset_path(business.photos[0].image);
+}
+
 div [class^="rating-img-"] {
   margin-top: 6px;
   margin-bottom: 6px;
+}
+
+.marker {
+  font-family: "Helvetica Neue";
+}
+
+.marker-main-image {
+  width: 60px;
+  height: 60px;
+  border-radius: 4px;
 }
 
 .rating-img-5 {
