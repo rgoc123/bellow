@@ -13,6 +13,7 @@ import SessionFormContainer from './session_form/session_form_container';
 import SearchContainer from './business/search_container';
 import BusinessIndexContainer from './business/business_index_container';
 import BusinessShowContainer from './business/business_show_container';
+import HotBusinesses from './business/hot_businesses';
 import ReviewIndexContainer from './review/review_index_container';
 import ReviewFormContainer from './review/review_form_container';
 import { AuthRoute, ProtectedRoute } from '../util/route_util';
@@ -24,6 +25,7 @@ const App = () => (
 
     <HeaderContainer />
 
+    <Route exact path="/" component={HotBusinesses} />
     <AuthRoute path="/login" component={SessionFormContainer} />
     <AuthRoute path="/signup" component={SessionFormContainer} />
     <Route exact path="/search" component={SearchContainer} />

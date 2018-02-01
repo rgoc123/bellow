@@ -340,3 +340,59 @@ a {
 .search-button:hover {
   background: #be2020;
 }
+
+.hot-businesses {
+  display: flex;
+}
+
+.hot-and-new-container {
+  width: 300px;
+  height: 321px;
+  border: 1px solid #e6e6e6;
+  border-radius: 4px;
+  background: #fff;
+  margin: 0px 15px;
+}
+
+.hot-and-new-container:first-of-type {
+  margin-left: 0px;
+}
+
+#lois {
+  width: 298px;
+  height: 180px;
+  background-image: url('lois_hot.jpg');
+}
+
+#joes {
+  width: 298px;
+  height: 180px;
+  background-image: url('joes_hot.jpg');
+}
+
+#jgs {
+  width: 298px;
+  height: 180px;
+  background-image: url('jgs_hot.jpg');
+}
+
+#pop-biz {
+  text-align: center;
+  color: #d90007;
+  font-size: 28px;
+  margin-top: 28px;
+  margin-bottom: 28px;
+}
+
+.hot-info {
+  padding: 12px 12px 0 12px;
+}
+
+.hot-info a {
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.hot-info a:hover {
+  text-decoration: underline;
+}
