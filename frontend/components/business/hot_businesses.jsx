@@ -12,7 +12,7 @@ class HotBusinesses extends React.Component {
         <h1 id="pop-biz">Popular Businesses</h1>
         <div className="hot-businesses">
           <div className="hot-and-new-container">
-            <div id="lois"></div>
+            <a id="lois" href="/#/businesses/180"><div id="lois"></div></a>
             <div className="hot-info">
               <a href="/#/businesses/180">Lois</a>
               <div className="rating-img-5"></div>
@@ -21,7 +21,7 @@ class HotBusinesses extends React.Component {
             </div>
           </div>
           <div className="hot-and-new-container">
-            <div id="joes"></div>
+            <a id="joes" href="/#/businesses/178"><div id="joes"></div></a>
             <div className="hot-info">
               <a href="/#/businesses/178">Joe's Pizza</a>
               <div className="rating-img-5"></div>
@@ -30,7 +30,7 @@ class HotBusinesses extends React.Component {
             </div>
           </div>
           <div className="hot-and-new-container">
-            <div id="jgs"></div>
+            <a id="jgs" href="/#/businesses/172"><div id="jgs"></div></a>
             <div className="hot-info">
               <a href="/#/businesses/172">JG Melon's</a>
               <div className="rating-img-5"></div>
