@@ -32,8 +32,8 @@ const Header = (props) => {
   } else {
     headerButtons =  (
       <div className="header-button-container">
-        <Link to="/login" className="lILink">Login</Link>
         <Link to="/signup" className="sULink">Sign Up!</Link>
+        <Link to="/login" className="lILink">Log In</Link>
       </div>
     );
   }
@@ -50,8 +50,8 @@ const Header = (props) => {
     <header className={headerClass}>
       <div className="content-container">
         <h1>Bellow!<Link className="b-link" to="/search"></Link></h1>
-        {headerButtons}
         <SearchForm props={props}/>
+        {headerButtons}
       </div>
       {underBar}
     </header>
