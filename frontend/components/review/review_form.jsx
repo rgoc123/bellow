@@ -19,12 +19,10 @@ class ReviewForm extends React.Component {
   }
 
   componentWillMount() {
-
     this.props.fetchBusiness(this.props.match.params.businessId);
   }
 
   componentDidMount() {
-
     this.props.fetchBusiness(this.props.match.params.businessId);
     this.props.fetchReview(this.props.match.params.reviewId);
   }
