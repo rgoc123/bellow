@@ -49,11 +49,11 @@ class ReviewForm extends React.Component {
 
 
     this.handleSubmit = this.handleSubmit.bind(this);
-    this.oneCheck = this.oneCheck.bind(this);
-    this.twoCheck = this.twoCheck.bind(this);
-    this.threeCheck = this.threeCheck.bind(this);
-    this.fourCheck = this.fourCheck.bind(this);
-    this.fiveCheck = this.fiveCheck.bind(this);
+    this.giveOneStars = this.giveOneStars.bind(this);
+    this.giveTwoStars = this.giveTwoStars.bind(this);
+    this.giveThreeStars = this.giveThreeStars.bind(this);
+    this.giveFourStars = this.giveFourStars.bind(this);
+    this.giveFiveStars = this.giveFiveStars.bind(this);
     this.clearRating = this.clearRating.bind(this);
     this.clickedRating = this.clickedRating.bind(this);
   }
