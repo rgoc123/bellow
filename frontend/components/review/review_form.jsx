@@ -93,6 +93,7 @@ class ReviewForm extends React.Component {
     }
   }
 
+  //The below functions for changing the rating star colors is credited to Corey Ladovsky
   giveOneStars() {
     switch (parseInt(this.state.rating)) {
       case 1:
