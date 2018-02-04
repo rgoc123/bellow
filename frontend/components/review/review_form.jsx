@@ -54,8 +54,8 @@ class ReviewForm extends React.Component {
     this.threeCheck = this.threeCheck.bind(this);
     this.fourCheck = this.fourCheck.bind(this);
     this.fiveCheck = this.fiveCheck.bind(this);
-    this.clearClass = this.clearClass.bind(this);
-    this.reinstateClass = this.reinstateClass.bind(this);
+    this.clearRating = this.clearRating.bind(this);
+    this.clickedRating = this.clickedRating.bind(this);
   }
 
   update(field) {
@@ -93,56 +93,55 @@ class ReviewForm extends React.Component {
     }
   }
 
-  oneCheck() {
+  giveOneStars() {
     switch (parseInt(this.state.rating)) {
       case 1:
-        return "pale-yellow  default";
+        return "one-star default";
       case 2:
-        return "yellow  default";
+        return "two-star default";
       case 3:
-        return "orangy  default";
+        return "three-star default";
       case 4:
-        return "pale-red  default";
+        return "four-star default";
       case 5:
-        return "red  default";
+        return "five-star default";
        default:
         return " default";
     }
   }
-  twoCheck() {
+  giveTwoStars() {
     switch (parseInt(this.state.rating)) {
       case 1:
         return " default";
       case 2:
-        return "yellow  default";
+        return "two-star default";
       case 3:
-        return "orangy  default";
+        return "three-star default";
       case 4:
-        return "pale-red  default";
+        return "four-star default";
       case 5:
-        return "red  default";
+        return "five-star default";
        default:
         return " default";
     }
   }
-
-  threeCheck() {
+  giveThreeStars() {
     switch (parseInt(this.state.rating)) {
       case 1:
         return " default";
       case 2:
         return " default";
       case 3:
-        return "orangy  default";
+        return "three-star default";
       case 4:
-        return "pale-red  default";
+        return "four-star default";
       case 5:
-        return "red  default";
+        return "five-star default";
        default:
         return " default";
     }
   }
-  fourCheck() {
+  giveFourStars() {
     switch (parseInt(this.state.rating)) {
       case 1:
         return " default";
@@ -151,17 +150,17 @@ class ReviewForm extends React.Component {
       case 3:
         return " default";
       case 4:
-        return "pale-red  default";
+        return "four-star default";
       case 5:
-        return "red  default";
-       default:
+        return "five-star default";
+      default:
         return " default";
     }
   }
-  fiveCheck() {
+  giveFiveStars() {
     switch (parseInt(this.state.rating)) {
       case 1:
-        return "  default";
+        return " default";
       case 2:
         return " default";
       case 3:
@@ -169,21 +168,21 @@ class ReviewForm extends React.Component {
       case 4:
         return " default";
       case 5:
-        return "  red default";
+        return "five-star default";
       default:
         return " default";
     }
   }
 
-  reinstateClass() {
-    document.getElementById("five").className = this.fiveCheck();
-    document.getElementById("four").className = this.fourCheck();
-    document.getElementById("three").className = this.threeCheck();
-    document.getElementById("two").className =  this.twoCheck();
-    document.getElementById("one").className = this.oneCheck();
+  clickedRating() {
+    document.getElementById("five").className = this.giveOneStars();
+    document.getElementById("four").className = this.giveTwoStars();
+    document.getElementById("three").className = this.giveThreeStars();
+    document.getElementById("two").className =  this.giveFourStars();
+    document.getElementById("one").className = this.giveFiveStars();
   }
 
-  clearClass() {
+  clearRating() {
     document.getElementById("five").className = " default";
     document.getElementById("four").className = " default" ;
     document.getElementById("three").className = " default";
@@ -202,7 +201,7 @@ class ReviewForm extends React.Component {
             <div className="review-form-container">
                 <form onSubmit={this.handleSubmit}>
                   <div className="review-form">
-                    <ul className="review-form-rating-list" onMouseOver={this.clearClass} onMouseOut={this.reinstateClass}>
+                    <ul className="review-form-rating-list" onMouseOver={this.clearRating} onMouseOut={this.clickedRating}>
                       <label id="five" className={this.fiveCheck()} >
                         <i className="fa fa-star" aria-hidden="true"></i>
                         <input type="radio" name="radio-rating" value="5" onChange={this.update('rating')} />
