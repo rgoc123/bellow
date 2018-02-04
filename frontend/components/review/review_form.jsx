@@ -97,15 +97,15 @@ class ReviewForm extends React.Component {
   giveOneStars() {
     switch (parseInt(this.state.rating)) {
       case 1:
-        return " one-star default";
+        return " one-star  default";
       case 2:
-        return " two-star default";
+        return " two-star  default";
       case 3:
-        return " three-star default";
+        return " three-star  default";
       case 4:
-        return " four-star default";
+        return " four-star  default";
       case 5:
-        return " five-star default";
+        return " five-star  default";
        default:
         return " default";
     }
@@ -115,13 +115,13 @@ class ReviewForm extends React.Component {
       case 1:
         return " default";
       case 2:
-        return " two-star default";
+        return " two-star  default";
       case 3:
-        return " three-star default";
+        return " three-star  default";
       case 4:
-        return " four-star default";
+        return " four-star  default";
       case 5:
-        return " five-star default";
+        return " five-star  default";
        default:
         return " default";
     }
@@ -133,11 +133,11 @@ class ReviewForm extends React.Component {
       case 2:
         return " default";
       case 3:
-        return " three-star default";
+        return " three-star  default";
       case 4:
-        return " four-star default";
+        return " four-star  default";
       case 5:
-        return " five-star default";
+        return " five-star  default";
        default:
         return " default";
     }
@@ -151,9 +151,9 @@ class ReviewForm extends React.Component {
       case 3:
         return " default";
       case 4:
-        return " four-star default";
+        return " four-star  default";
       case 5:
-        return " five-star default";
+        return " five-star  default";
       default:
         return " default";
     }
@@ -161,7 +161,7 @@ class ReviewForm extends React.Component {
   giveFiveStars() {
     switch (parseInt(this.state.rating)) {
       case 1:
-        return " default";
+        return "  default";
       case 2:
         return " default";
       case 3:
@@ -169,7 +169,7 @@ class ReviewForm extends React.Component {
       case 4:
         return " default";
       case 5:
-        return " five-star default";
+        return "  five-star default";
       default:
         return " default";
     }
