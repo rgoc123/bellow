@@ -176,11 +176,11 @@ class ReviewForm extends React.Component {
   }
 
   clickedRating() {
-    document.getElementById("five").className = this.giveOneStars();
-    document.getElementById("four").className = this.giveTwoStars();
+    document.getElementById("five").className = this.giveFiveStars();
+    document.getElementById("four").className = this.giveFourStars();
     document.getElementById("three").className = this.giveThreeStars();
-    document.getElementById("two").className =  this.giveFourStars();
-    document.getElementById("one").className = this.giveFiveStars();
+    document.getElementById("two").className =  this.giveTwoStars();
+    document.getElementById("one").className = this.giveOneStars();
   }
 
   clearRating() {
