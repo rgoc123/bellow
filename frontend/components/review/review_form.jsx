@@ -203,23 +203,23 @@ class ReviewForm extends React.Component {
                 <form onSubmit={this.handleSubmit}>
                   <div className="review-form">
                     <ul className="review-form-rating-list" onMouseOver={this.clearRating} onMouseOut={this.clickedRating}>
-                      <label id="five" className={this.fiveCheck()} >
+                      <label id="five" className={this.giveFiveStars()} >
                         <i className="fa fa-star" aria-hidden="true"></i>
                         <input type="radio" name="radio-rating" value="5" onChange={this.update('rating')} />
                       </label>
-                      <label id="four" className={this.fourCheck()} >
+                      <label id="four" className={this.giveFourStars()} >
                         <i className="fa fa-star" aria-hidden="true"></i>
                         <input type="radio" name="radio-rating" value="4" onChange={this.update('rating')} />
                       </label>
-                      <label id="three" className={this.threeCheck()} >
+                      <label id="three" className={this.giveThreeStars()} >
                         <i className="fa fa-star" aria-hidden="true"></i>
                         <input type="radio" name="radio-rating" value="3" onChange={this.update('rating')} />
                       </label>
-                      <label id="two" className={this.twoCheck()} >
+                      <label id="two" className={this.giveTwoStars()} >
                         <i className="fa fa-star" aria-hidden="true"></i>
                         <input type="radio" name="radio-rating" value="2" onChange={this.update('rating')} />
                       </label>
-                      <label id="one" className={this.oneCheck()} >
+                      <label id="one" className={this.giveOneStars()} >
                         <i className="fa fa-star" aria-hidden="true"></i>
                         <input type="radio" name="radio-rating" value="1" onChange={this.update('rating')} />
                       </label>
