@@ -55,9 +55,9 @@ class FilterForm extends React.Component {
             <div className="price-form">
             {
               [1, 2, 3, 4].map( num => (
-                <div className="price-filter-checkbox">
+                <div className="price-filter-checkbox" key={num}>
                   <input id={`price-filter-${num}`} className="price-filter-input" onChange={this.changePrice(num)} type="checkbox" value={num} />
-                  <label for={`price-filter-${num}`}>{this.dollaSignChooser(num)}</label>
+                  <label htmlFor={`price-filter-${num}`}>{this.dollaSignChooser(num)}</label>
                 </div>
               ))
             }
