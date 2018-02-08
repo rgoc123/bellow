@@ -7,17 +7,37 @@ class NewSearch extends React.Component {
 
   constructor(props) {
     super(props);
+    this.state = {
+      searchInput: ""
+    };
     this.dataSource = [];
+    this.handleSubmit = this.handleSubmit.bind(this);
+    this.handleUpdateInput = this.handleUpdateInput.bind(this);
   }
 
   componentDidMount() {
     this.props.fetchBusinesses();
   }
 
-  // itemClick() {
-  //   //may need e.preventDefault();
-  //   this.props.props.history.push(`/businesses/${business.id}`);
+  handleSubmit(e) {
+    e.preventDefault();
+    this.props.props.updateSearchInput(this.state.searchInput);
+    this.props.props.history.push('/search');
+  }
+
+  // update(field) {
+  //   return (
+  //     this.setState({
+  //       [field]: this.refs.search.getValue()
+  //     })
+  //   );
   // }
+
+  handleUpdateInput(value) {
+    return (this.setState({
+      searchInput: value
+    }));
+  }
 
   updateDataSource() {
     this.props.businesses.forEach(business => {
@@ -28,23 +48,25 @@ class NewSearch extends React.Component {
           onClick={() => {this.props.props.history.push(`/businesses/${business.id}`);}} />)
       });
     });
-    // return (
-    //   this.dataSource = this.props.businesses.map(business => {
-    //     return <MenuItem primaryText={business.name} />;
-    //   })
-    // );
   }
 
   render() {
     this.updateDataSource();
-    debugger
     return (
-      <div className="">
-        <AutoComplete
-          hintText="text-value data"
-          filter={AutoComplete.fuzzyFilter}
-          dataSource={this.dataSource}
-        />
+      <div className="search-form-container-landing">
+        <span className="search-find-landing">Search</span>
+        <form onSubmit={this.handleSubmit}>
+          <AutoComplete
+            ref='search'
+            className="search-biz-input-landing"
+            hintText="text-value data"
+            filter={AutoComplete.fuzzyFilter}
+            dataSource={this.dataSource}
+            onUpdateInput={this.handleUpdateInput}
+            maxSearchResults={5}
+          />
+          <button className="search-button-landing"><i className="fa fa-search" aria-hidden="true"></i></button>
+        </form>
       </div>
     );
   }

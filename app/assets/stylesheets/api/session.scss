@@ -289,9 +289,32 @@ a {
 }
 
 .search-biz-input-landing {
-  width: 409px;
-  height: 23px;
-  margin-top: 10px;
+  width: 409px !important;
+  height: 23px !important;
+  margin-top: 10px !important;
+  background: white !important;
+  padding: 0px;
+  position: relative;
+  width: 100%;
+  border: none;
+  outline: none;
+  background-color: rgba(0, 0, 0, 0);
+  color: rgba(0, 0, 0, 0.87);
+  cursor: inherit;
+  font-style: inherit;
+  font-variant: inherit;
+  font-weight: inherit;
+  font-stretch: inherit;
+  font-size: inherit;
+  line-height: inherit;
+  font-family: inherit;
+  opacity: 1;
+  -webkit-tap-highlight-color: none;
+  height: 100%;
+}
+
+.search-biz-input-landing div {
+  display: none !important;
 }
 
 .search-button-landing {

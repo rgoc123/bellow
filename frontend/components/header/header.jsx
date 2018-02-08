@@ -59,7 +59,7 @@ const Header = (props) => {
       </div>
       {underBar}
       <MuiThemeProvider>
-        <NewSearchContainer props={props} />
+        <NewSearchContainer className="search-biz-input-landing" props={props} />
       </MuiThemeProvider>
     </header>
   );
