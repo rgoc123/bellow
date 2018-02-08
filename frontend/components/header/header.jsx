@@ -1,7 +1,10 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, withRouter } from 'react-router-dom';
+import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
+
 
 import SearchForm from '../business/search_form';
+import NewSearchContainer from '../business/new_search_container';
 
 const sessionLinks = () => (
   <nav className="login-signup">
@@ -52,8 +55,12 @@ const Header = (props) => {
         <h1>Bellow!<Link className="b-link" to="/"></Link></h1>
         <SearchForm props={props}/>
         {headerButtons}
+
       </div>
       {underBar}
+      <MuiThemeProvider>
+        <NewSearchContainer props={props} />
+      </MuiThemeProvider>
     </header>
   );
 };

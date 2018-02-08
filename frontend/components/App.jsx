@@ -7,6 +7,7 @@ import {
   Link,
   HashRouter
 } from 'react-router-dom';
+import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 
 import HeaderContainer from './header/header_container';
 import SessionFormContainer from './session_form/session_form_container';
@@ -17,13 +18,14 @@ import HotBusinesses from './business/hot_businesses';
 import ReviewIndexContainer from './review/review_index_container';
 import ReviewFormContainer from './review/review_form_container';
 import { AuthRoute, ProtectedRoute } from '../util/route_util';
-
-
+import NewSearchContainer from './business/new_search_container';
 
 const App = () => (
   <div>
 
     <HeaderContainer />
+
+    
 
     <Route exact path="/" component={HotBusinesses} />
     <AuthRoute path="/login" component={SessionFormContainer} />
