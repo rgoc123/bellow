@@ -23,7 +23,6 @@ class BusinessIndexItem extends React.Component {
     return dollaSign;
   }
 
-
   render() {
     return (
       <li className="regular-search-result">
@@ -33,7 +32,7 @@ class BusinessIndexItem extends React.Component {
             <div>
               <Link className="biz-idx-link" to={`/businesses/${this.business.id}`}>{this.business.name}</Link>
               <div className={`rating-img-${this.business.calculate_rating}`}></div>
-              <span className="dollas">{this.chooseDollaSign()}</span>
+              <span className="dollas">{this.chooseDollaSign()} • {this.business.cuisines}</span>
             </div>
           </div>
           <div className="secondary-attributes">

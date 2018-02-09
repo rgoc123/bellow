@@ -17,6 +17,6 @@
     json.calculate_rating business.calculate_rating
     json.image0 asset_path(business.photos[0].image)
     json.image1 asset_path(business.photos[1].image)
-
+    json.cuisines business.cuisines
   end
 end
