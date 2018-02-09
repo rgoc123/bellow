@@ -39,22 +39,24 @@ class BusinessIndex extends React.Component {
     }
   }
 
-  areBusinesses() {
-    if (this.filtersChoice().length === 0) {
-      return (
-        <li className="no-results">Looks like no results match the search or filter criteria!</li>
-        );
-    } else {
-      return this.filtersChoice();
-    }
-  }
+  // areBusinesses() {
+  //   this.filtersChoice().forEach(choice => {
+  //     if (choice !== undefined) {
+  //       return this.filtersChoice();
+  //     }
+  //     return (
+  //       <li className="no-results">Looks like no results match the search or filter criteria!</li>
+  //     );
+  //
+  //   });
+  // }
 
   render() {
     return (
       <div className="biz-index-content-container">
         <div className="biz-column-alpha">
           <ul>
-            {this.areBusinesses()}
+            {this.filtersChoice()}
           </ul>
         </div>
         <div className="biz-column-bravo">

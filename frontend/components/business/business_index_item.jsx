@@ -1,40 +1,51 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-const BusinessIndexItem = ({ business }) => {
+class BusinessIndexItem extends React.Component {
+  constructor(props) {
+    super(props);
+    this.business = this.props.business;
+  }
 
-  let dollaSign;
+  chooseDollaSign() {
+    let dollaSign;
 
-  if (business.price === 1) {
-    dollaSign = '$'
-  } else if (business.price === 2) {
-    dollaSign = '$$'
-  } else if (business.price === 3) {
-    dollaSign = '$$$'
-  } else if (business.price === 4) {
-    dollaSign = '$$$$'
-  };
+    if (this.business.price === 1) {
+      dollaSign = '$';
+    } else if (this.business.price === 2) {
+      dollaSign = '$$';
+    } else if (this.business.price === 3) {
+      dollaSign = '$$$';
+    } else if (this.business.price === 4) {
+      dollaSign = '$$$$';
+    }
 
-  return (
-    <li className="regular-search-result">
-      <div className="biz-listing">
-        <div className="main-attributes">
-          <div className="search-result-image"><Link to={`/businesses/${business.id}`}><img src={business.image_url} /></Link></div>
-          <div>
-            <Link className="biz-idx-link" to={`/businesses/${business.id}`}>{business.name}</Link>
-            <div className={`rating-img-${business.calculate_rating}`}></div>
-            <span className="dollas">{dollaSign}</span>
+    return dollaSign;
+  }
+
+
+  render() {
+    return (
+      <li className="regular-search-result">
+        <div className="biz-listing">
+          <div className="main-attributes">
+            <div className="search-result-image"><Link to={`/businesses/${this.business.id}`}><img src={this.business.image_url} /></Link></div>
+            <div>
+              <Link className="biz-idx-link" to={`/businesses/${this.business.id}`}>{this.business.name}</Link>
+              <div className={`rating-img-${this.business.calculate_rating}`}></div>
+              <span className="dollas">{this.chooseDollaSign()}</span>
+            </div>
+          </div>
+          <div className="secondary-attributes">
+            <span className="neighborhood">{this.business.neighborhood}</span>
+            <span>{this.business.address}</span>
+            <span>{this.business.city}</span>
+            <span>{this.business.phone_number}</span>
           </div>
         </div>
-        <div className="secondary-attributes">
-          <span className="neighborhood">{business.neighborhood}</span>
-          <span>{business.address}</span>
-          <span>{business.city}</span>
-          <span>{business.phone_number}</span>
-        </div>
-      </div>
-    </li>
-  );
+      </li>
+    );
+  }
 }
 
 export default BusinessIndexItem;
