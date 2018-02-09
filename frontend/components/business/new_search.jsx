@@ -21,6 +21,11 @@ class NewSearch extends React.Component {
     this.cuisines = ['American', 'Burgers', 'Wings', 'Mexican', 'Bagels', 'Chinese', 'Pizza', 'Bar', 'Wine', 'German', 'French', 'Sushi', 'Cuban'];
   }
 
+  indexCuisines() {
+    this.props.props.history.push(`/businesses/${business.id}`);
+    
+  }
+
   updateDataSource() {
 
     this.props.businesses.forEach(business => {

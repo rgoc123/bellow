@@ -19,7 +19,8 @@ class BusinessIndex extends React.Component {
     } else if ((this.props.filters.prices.length > 0) && (this.props.filters.searchInput != "")) {
       return this.props.businesses.map(business => {
         let lowerBizName = business.name.toLowerCase();
-        if ((this.props.filters.prices.includes(business.price)) && (lowerBizName.includes(lowerSearchName))) {
+        let lowerCuisine = business.cuisines.toLowerCase();
+        if ((this.props.filters.prices.includes(business.price)) && ((lowerBizName.includes(lowerSearchName)) || lowerCuisine.includes(lowerSearchName))) {
           return <BusinessIndexItem key={business.id} business={business} />;
         }
       });
@@ -32,7 +33,8 @@ class BusinessIndex extends React.Component {
     } else if (this.props.filters.searchInput != "") {
       return this.props.businesses.map(business => {
         let lowerBizName = business.name.toLowerCase();
-        if (lowerBizName.includes(lowerSearchName)) {
+        let lowerCuisine = business.cuisines.toLowerCase();
+        if (lowerBizName.includes(lowerSearchName) || lowerCuisine.includes(lowerSearchName)) {
           return <BusinessIndexItem key={business.id} business={business} />;
         }
       });
