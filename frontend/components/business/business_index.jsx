@@ -12,11 +12,14 @@ class BusinessIndex extends React.Component {
   }
 
   filtersChoice() {
+    let lowerSearchName = this.props.filters.searchInput.toLowerCase();
+
     if ((JSON.stringify(this.props.filters.prices) === JSON.stringify([])) && (this.props.filters.searchInput === "") ) {
       return this.props.businesses.map(business => <BusinessIndexItem key={business.id} business={business} />);
     } else if ((this.props.filters.prices.length > 0) && (this.props.filters.searchInput != "")) {
       return this.props.businesses.map(business => {
-        if ((this.props.filters.prices.includes(business.price)) && (business.name.includes(this.props.filters.searchInput))) {
+        let lowerBizName = business.name.toLowerCase();
+        if ((this.props.filters.prices.includes(business.price)) && (lowerBizName.includes(lowerSearchName))) {
           return <BusinessIndexItem key={business.id} business={business} />;
         }
       });
@@ -26,12 +29,23 @@ class BusinessIndex extends React.Component {
           return <BusinessIndexItem key={business.id} business={business} />;
         }
       });
-    } else {
+    } else if (this.props.filters.searchInput != "") {
       return this.props.businesses.map(business => {
-        if (business.name.includes(this.props.filters.searchInput)) {
+        let lowerBizName = business.name.toLowerCase();
+        if (lowerBizName.includes(lowerSearchName)) {
           return <BusinessIndexItem key={business.id} business={business} />;
         }
       });
+    }
+  }
+
+  areBusinesses() {
+    if (this.filtersChoice().length === 0) {
+      return (
+        <li className="no-results">Looks like no results match the search or filter criteria!</li>
+        );
+    } else {
+      return this.filtersChoice();
     }
   }
 
@@ -40,7 +54,7 @@ class BusinessIndex extends React.Component {
       <div className="biz-index-content-container">
         <div className="biz-column-alpha">
           <ul>
-            {this.filtersChoice()}
+            {this.areBusinesses()}
           </ul>
         </div>
         <div className="biz-column-bravo">
