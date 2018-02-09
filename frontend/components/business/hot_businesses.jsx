@@ -12,27 +12,27 @@ class HotBusinesses extends React.Component {
         <h1 id="pop-biz">Popular Businesses</h1>
         <div className="hot-businesses">
           <div className="hot-and-new-container">
-            <a id="lois" href="/#/businesses/67"><div id="lois"></div></a>
+            <a id="lois" href="/#/businesses/83"><div id="lois"></div></a>
             <div className="hot-info">
-              <a href="/#/businesses/67">Lois</a>
+              <a href="/#/businesses/83">Lois</a>
               <div className="rating-img-5"></div>
               <span>$$</span><br></br>
               <span>East Village</span>
             </div>
           </div>
           <div className="hot-and-new-container">
-            <a id="joes" href="/#/businesses/65"><div id="joes"></div></a>
+            <a id="joes" href="/#/businesses/81"><div id="joes"></div></a>
             <div className="hot-info">
-              <a href="/#/businesses/65">Joe's Pizza</a>
+              <a href="/#/businesses/81">Joe's Pizza</a>
               <div className="rating-img-5"></div>
               <span>$</span><br></br>
               <span>West Village</span>
             </div>
           </div>
           <div className="hot-and-new-container">
-            <a id="jgs" href="/#/businesses/59"><div id="jgs"></div></a>
+            <a id="jgs" href="/#/businesses/75"><div id="jgs"></div></a>
             <div className="hot-info">
-              <a href="/#/businesses/59">JG Melon's</a>
+              <a href="/#/businesses/75">JG Melon's</a>
               <div className="rating-img-5"></div>
               <span>$$</span><br></br>
               <span>Lenox Hill</span>
