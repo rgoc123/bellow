@@ -63,7 +63,7 @@ class BusinessShow extends React.Component {
                 <div className="biz-page-header-left">
                   <h1>{business.name}</h1>
                   <div className={`show-rating-img-${business.calculate_rating}`}></div>
-                  <span>{dollaSign}</span>
+                  <span>{dollaSign} • {this.props.business.cuisines}</span>
                 </div>
                 <div className="biz-page-header-right">
                   {this.reviewLink()}

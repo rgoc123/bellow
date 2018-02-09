@@ -11,21 +11,32 @@ class NewSearch extends React.Component {
       searchInput: ""
     };
     this.dataSource = [];
+    this.cuisines = [];
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleUpdateInput = this.handleUpdateInput.bind(this);
   }
 
   componentDidMount() {
     this.props.fetchBusinesses();
+    this.cuisines = ['American', 'Burgers', 'Wings', 'Mexican', 'Bagels', 'Chinese', 'Pizza', 'Bar', 'Wine', 'German', 'French', 'Sushi', 'Cuban'];
   }
 
   updateDataSource() {
+
     this.props.businesses.forEach(business => {
       this.dataSource.push({
         text: `${business.name}`,
         value: (<MenuItem
           primaryText={business.name}
           onClick={() => {this.props.props.history.push(`/businesses/${business.id}`);}} />)
+      });
+    });
+    this.cuisines.forEach(cuisine => {
+      this.dataSource.push({
+        text: cuisine,
+        value: (<MenuItem
+          primaryText={cuisine}
+        />)
       });
     });
   }
@@ -89,7 +100,7 @@ class NewSearch extends React.Component {
             dataSource={this.dataSource}
             onUpdateInput={this.handleUpdateInput}
             maxSearchResults={5}
-            placeholder="restaurant names"
+            placeholder="restaurant names or cuisines"
           />
           <button className={this.chooseSearchButton()}><i className="fa fa-search" aria-hidden="true"></i></button>
         </form>
