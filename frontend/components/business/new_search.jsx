@@ -22,8 +22,8 @@ class NewSearch extends React.Component {
   }
 
   indexCuisines() {
-    this.props.props.history.push(`/businesses/${business.id}`);
-    
+    this.props.props.updateSearchInput(this.state.searchInput);
+    this.props.props.history.push('/search');
   }
 
   updateDataSource() {
@@ -41,6 +41,7 @@ class NewSearch extends React.Component {
         text: cuisine,
         value: (<MenuItem
           primaryText={cuisine}
+          onClick={() => {this.indexCuisines();}}
         />)
       });
     });
