@@ -19,6 +19,17 @@ class NewSearch extends React.Component {
     this.props.fetchBusinesses();
   }
 
+  updateDataSource() {
+    this.props.businesses.forEach(business => {
+      this.dataSource.push({
+        text: `${business.name}`,
+        value: (<MenuItem
+          primaryText={business.name}
+          onClick={() => {this.props.props.history.push(`/businesses/${business.id}`);}} />)
+      });
+    });
+  }
+
   handleSubmit(e) {
     e.preventDefault();
     this.props.props.updateSearchInput(this.state.searchInput);
@@ -29,17 +40,6 @@ class NewSearch extends React.Component {
     return (this.setState({
       searchInput: value
     }));
-  }
-
-  updateDataSource() {
-    this.props.businesses.forEach(business => {
-      this.dataSource.push({
-        text: `${business.name}`,
-        value: (<MenuItem
-          primaryText={business.name}
-          onClick={() => {this.props.props.history.push(`/businesses/${business.id}`);}} />)
-      });
-    });
   }
 
   chooseHeaderClass() {
@@ -75,16 +75,17 @@ class NewSearch extends React.Component {
   }
 
   render() {
-    this.updateDataSource();
+    if (this.dataSource.length === 0) {
+      this.updateDataSource();
+    }
     return (
       <div className={this.chooseHeaderClass()}>
         <span className={this.chooseFindClass()}>Search</span>
         <form onSubmit={this.handleSubmit}>
           <AutoComplete
-            ref='search'
             className={this.chooseBizInput()}
-            hintText="text-value data"
             filter={AutoComplete.fuzzyFilter}
+            searchText={this.state.searchInput}
             dataSource={this.dataSource}
             onUpdateInput={this.handleUpdateInput}
             maxSearchResults={5}
