@@ -21,7 +21,8 @@ class NewSearch extends React.Component {
     this.cuisines = ['American', 'Burgers', 'Wings', 'Mexican', 'Bagels', 'Chinese', 'Pizza', 'Bar', 'Wine', 'German', 'French', 'Sushi', 'Cuban'];
   }
 
-  indexCuisines() {
+  indexCuisines(cuisine) {
+    this.state.searchInput = cuisine;
     this.props.props.updateSearchInput(this.state.searchInput);
     this.props.props.history.push('/search');
   }
@@ -41,7 +42,7 @@ class NewSearch extends React.Component {
         text: cuisine,
         value: (<MenuItem
           primaryText={cuisine}
-          onClick={() => {this.indexCuisines();}}
+          onClick={() => {this.indexCuisines(cuisine);}}
         />)
       });
     });
