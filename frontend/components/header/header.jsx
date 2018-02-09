@@ -53,14 +53,13 @@ const Header = (props) => {
     <header className={headerClass}>
       <div className="content-container">
         <h1>Bellow!<Link className="b-link" to="/"></Link></h1>
-        <SearchForm props={props}/>
+        <MuiThemeProvider>
+          <NewSearchContainer className="search-biz-input-landing" props={props} />
+        </MuiThemeProvider>
         {headerButtons}
 
       </div>
       {underBar}
-      <MuiThemeProvider>
-        <NewSearchContainer className="search-biz-input-landing" props={props} />
-      </MuiThemeProvider>
     </header>
   );
 };

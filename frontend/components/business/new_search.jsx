@@ -25,14 +25,6 @@ class NewSearch extends React.Component {
     this.props.props.history.push('/search');
   }
 
-  // update(field) {
-  //   return (
-  //     this.setState({
-  //       [field]: this.refs.search.getValue()
-  //     })
-  //   );
-  // }
-
   handleUpdateInput(value) {
     return (this.setState({
       searchInput: value
@@ -50,22 +42,55 @@ class NewSearch extends React.Component {
     });
   }
 
+  chooseHeaderClass() {
+    if (this.props.props.location.pathname === "/") {
+      return "search-form-container-landing";
+    } else {
+      return "search-form-container";
+    }
+  }
+
+  chooseFindClass() {
+    if (this.props.props.location.pathname === "/") {
+      return "search-find-landing";
+    } else {
+      return "search-find";
+    }
+  }
+
+  chooseBizInput() {
+    if (this.props.props.location.pathname === "/") {
+      return "search-biz-input-landing";
+    } else {
+      return "search-biz-input";
+    }
+  }
+
+  chooseSearchButton() {
+    if (this.props.props.location.pathname === "/") {
+      return "search-button-landing";
+    } else {
+      return "search-button";
+    }
+  }
+
   render() {
     this.updateDataSource();
     return (
-      <div className="search-form-container-landing">
-        <span className="search-find-landing">Search</span>
+      <div className={this.chooseHeaderClass()}>
+        <span className={this.chooseFindClass()}>Search</span>
         <form onSubmit={this.handleSubmit}>
           <AutoComplete
             ref='search'
-            className="search-biz-input-landing"
+            className={this.chooseBizInput()}
             hintText="text-value data"
             filter={AutoComplete.fuzzyFilter}
             dataSource={this.dataSource}
             onUpdateInput={this.handleUpdateInput}
             maxSearchResults={5}
+            placeholder="restaurant names"
           />
-          <button className="search-button-landing"><i className="fa fa-search" aria-hidden="true"></i></button>
+          <button className={this.chooseSearchButton()}><i className="fa fa-search" aria-hidden="true"></i></button>
         </form>
       </div>
     );
