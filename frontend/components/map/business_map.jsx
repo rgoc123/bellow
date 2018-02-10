@@ -48,34 +48,64 @@ class BusinessMap extends React.Component{
 
   componentDidUpdate() {
     let prices = this.props.prices;
-    let bizzys;
-    bizzys = this.props.businesses.filter(biz =>
+    let bizzys = this.props.businesses.filter(biz =>
       prices.includes(biz.price)
     );
+    let search = this.props.searchInput.toLowerCase();
+    let newbizzys;
+    if (search !== "") {
+      newbizzys = this.props.businesses.filter(biz =>
+        biz.name.toLowerCase().includes(search) || biz.cuisines.toLowerCase().includes(search)
+      );
+    } else {
+      newbizzys = [];
+    }
 
-    if (bizzys.length === 0) {
+    // let allBizzys = bizzys.concat(newbizzys);
+    let allBizzys;
+    if (prices.length > 0 && search !== "") {
+      allBizzys = this.props.businesses.filter(biz =>
+        prices.includes(biz.price) && ((biz.name.toLowerCase().includes(search)) || biz.cuisines.toLowerCase().includes(search))
+      );
+    } else if (prices.length > 0) {
+      allBizzys = this.props.businesses.filter(biz =>
+        prices.includes(biz.price)
+      );
+    } else if (search !== "") {
+      allBizzys = this.props.businesses.filter(biz =>
+        allBizzys = biz.name.toLowerCase().includes(search) || biz.cuisines.toLowerCase().includes(search)
+      );
+    } else {
+      allBizzys = [];
+    }
+
+    if (allBizzys.length === 0 && (prices.length > 0 || search !== "")) {
+    // if (allBizzys === undefined) {
       this.props.businesses.forEach(biz => {
         if (this.MarkerManager.markers[biz.id]) {
           this.MarkerManager.removeMarker(this.MarkerManager.markers[biz.id]);
         }
-
+      });
+    } else if (allBizzys.length === 0) {
+      this.props.businesses.forEach(biz => {
+        if (this.MarkerManager.markers[biz.id]) {
+          this.MarkerManager.removeMarker(this.MarkerManager.markers[biz.id]);
+        }
       });
       this.props.businesses.forEach(biz => {
         this.MarkerManager.createMarkerFromBusiness(biz);
       });
     } else {
-
       this.props.businesses.forEach(biz => {
         if (this.MarkerManager.markers[biz.id]) {
           this.MarkerManager.removeMarker(this.MarkerManager.markers[biz.id]);
         }
-
       });
-      bizzys.forEach(biz => {
+      allBizzys.forEach(biz => {
         this.MarkerManager.createMarkerFromBusiness(biz);
       });
     }
-    // this.MarkerManager.updateMarkers(this.props.businesses);
+
   }
 
   render() {

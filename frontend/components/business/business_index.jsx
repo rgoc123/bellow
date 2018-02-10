@@ -62,7 +62,7 @@ class BusinessIndex extends React.Component {
           </ul>
         </div>
         <div className="biz-column-bravo">
-          <BusinessMap updateBounds={this.props.updateBounds} businesses={this.props.businesses} prices={this.props.filters.prices}/>
+          <BusinessMap updateBounds={this.props.updateBounds} businesses={this.props.businesses} prices={this.props.filters.prices} searchInput={this.props.filters.searchInput}/>
         </div>
       </div>
 
