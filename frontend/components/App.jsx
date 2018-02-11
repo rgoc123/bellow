@@ -25,8 +25,6 @@ const App = () => (
 
     <HeaderContainer />
 
-    
-
     <Route exact path="/" component={HotBusinesses} />
     <AuthRoute path="/login" component={SessionFormContainer} />
     <AuthRoute path="/signup" component={SessionFormContainer} />

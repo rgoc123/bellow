@@ -7,6 +7,10 @@ import MarkerManager from '../../util/marker_manager';
 
 class BusinessIndex extends React.Component {
 
+  constructor(props) {
+    super(props);
+  }
+
   componentDidMount() {
     this.props.fetchBusinesses();
   }
@@ -15,19 +19,19 @@ class BusinessIndex extends React.Component {
     let lowerSearchName = this.props.filters.searchInput.toLowerCase();
 
     if ((JSON.stringify(this.props.filters.prices) === JSON.stringify([])) && (this.props.filters.searchInput === "") ) {
-      return this.props.businesses.map(business => <BusinessIndexItem key={business.id} business={business} />);
+      return this.props.businesses.map(business => <BusinessIndexItem key={business.id} business={business} updateSearchInput={this.props.updateSearchInput} props={this.props} />);
     } else if ((this.props.filters.prices.length > 0) && (this.props.filters.searchInput != "")) {
       return this.props.businesses.map(business => {
         let lowerBizName = business.name.toLowerCase();
         let lowerCuisine = business.cuisines.toLowerCase();
         if ((this.props.filters.prices.includes(business.price)) && ((lowerBizName.includes(lowerSearchName)) || lowerCuisine.includes(lowerSearchName))) {
-          return <BusinessIndexItem key={business.id} business={business} />;
+          return <BusinessIndexItem key={business.id} business={business} updateSearchInput={this.props.updateSearchInput} props={this.props} />;
         }
       });
     } else if (this.props.filters.prices.length > 0) {
       return this.props.businesses.map(business => {
         if (this.props.filters.prices.includes(business.price)) {
-          return <BusinessIndexItem key={business.id} business={business} />;
+          return <BusinessIndexItem key={business.id} business={business} updateSearchInput={this.props.updateSearchInput} props={this.props} />;
         }
       });
     } else if (this.props.filters.searchInput != "") {
@@ -35,7 +39,7 @@ class BusinessIndex extends React.Component {
         let lowerBizName = business.name.toLowerCase();
         let lowerCuisine = business.cuisines.toLowerCase();
         if (lowerBizName.includes(lowerSearchName) || lowerCuisine.includes(lowerSearchName)) {
-          return <BusinessIndexItem key={business.id} business={business} />;
+          return <BusinessIndexItem key={business.id} business={business} updateSearchInput={this.props.updateSearchInput} props={this.props} />;
         }
       });
     }
@@ -54,6 +58,7 @@ class BusinessIndex extends React.Component {
   // }
 
   render() {
+    debugger
     return (
       <div className="biz-index-content-container">
         <div className="biz-column-alpha">
