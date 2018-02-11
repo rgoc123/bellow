@@ -30,7 +30,7 @@ export const updatePrices = (prices) => {
 };
 
 export const updateSearchInput = (searchInput) => {
-  debugger
+  
   return {
     type: UPDATE_SEARCH_INPUT,
     searchInput

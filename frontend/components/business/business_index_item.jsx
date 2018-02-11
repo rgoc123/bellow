@@ -28,12 +28,11 @@ class BusinessIndexItem extends React.Component {
   }
 
   indexCuisines(cuisine) {
-    debugger
+
     this.state.searchInput = cuisine;
     let currentSearch = this.state.searchInput;
-    debugger
+
     dispatch(updateSearchInput(currentSearch));
-    // this.props.updateSearchInput(currentSearch);
     this.props.props.props.history.push('/search');
   }
 
@@ -42,11 +41,22 @@ class BusinessIndexItem extends React.Component {
       <li className="regular-search-result">
         <div className="biz-listing">
           <div className="main-attributes">
-            <div className="search-result-image"><Link to={`/businesses/${this.business.id}`}><img src={this.business.image_url} /></Link></div>
+            <div className="search-result-image">
+              <Link to={`/businesses/${this.business.id}`}>
+                <img src={this.business.image_url} />
+              </Link>
+            </div>
             <div>
               <Link className="biz-idx-link" to={`/businesses/${this.business.id}`}>{this.business.name}</Link>
               <div className={`rating-img-${this.business.calculate_rating}`}></div>
-              <span className="dollas">{this.chooseDollaSign()}</span> • <span className="biz-index-cuisine" onClick={() => this.indexCuisines(this.business.cuisines)}>{this.business.cuisines}</span>
+              <div className="biz-third-row">
+                <span className="dollas">{this.chooseDollaSign()}</span>
+                <span className="dot-span">•</span>
+                <span
+                  className="biz-index-cuisine"
+                  onClick={() => this.indexCuisines(this.business.cuisines)}
+                  > {this.business.cuisines}</span>
+              </div>
             </div>
           </div>
           <div className="secondary-attributes">

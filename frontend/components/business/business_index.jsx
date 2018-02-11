@@ -58,7 +58,7 @@ class BusinessIndex extends React.Component {
   // }
 
   render() {
-    debugger
+
     return (
       <div className="biz-index-content-container">
         <div className="biz-column-alpha">

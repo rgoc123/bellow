@@ -9,12 +9,23 @@
 
 .biz-index-cuisine {
   color: #0073bb;
+  font-size: 14px;
 }
 
 .biz-index-cuisine:hover {
   text-decoration: underline;
   cursor: pointer;
 }
+
+.biz-third-row {
+  display: flex;
+}
+
+.dot-span {
+  margin: 0 7px;
+}
+
+
 
 // filters
 .background-gray {
@@ -134,6 +145,10 @@
 .biz-column-alpha {
   width: 661px;
   padding: 0 15px;
+}
+
+.biz-column-alpha ul {
+  width: 661px;
 }
 
 .regular-search-result {
