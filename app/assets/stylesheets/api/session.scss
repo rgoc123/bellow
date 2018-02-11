@@ -125,7 +125,11 @@
   background-color: rgb(189, 31, 31);
 }
 
-.b-link {
+.b-link-landing {
+  display: none;
+}
+
+.b-link-normal {
   background: transparent;
   border: 0px;
   position: absolute;

@@ -18,11 +18,14 @@ const Header = (props) => {
 
   let headerButtons;
   let headerClass;
+  let bLinkClass;
   let underBar;
 
   if (props.location.pathname === "/") {
+    bLinkClass = "b-link-landing";
     headerClass = "header-landing";
   } else {
+    bLinkClass = "b-link-normal";
     headerClass = "header-normal";
   }
 
@@ -52,7 +55,7 @@ const Header = (props) => {
   return (
     <header className={headerClass}>
       <div className="content-container">
-        <h1>Bellow!<Link className="b-link" to="/"></Link></h1>
+        <h1>Bellow!<Link className={bLinkClass} to="/"></Link></h1>
         <MuiThemeProvider>
           <NewSearchContainer className="search-biz-input-landing" props={props} />
         </MuiThemeProvider>
