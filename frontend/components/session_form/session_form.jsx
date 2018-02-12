@@ -34,6 +34,18 @@ class SessionForm extends React.Component {
     });
   }
 
+  handleDemo() {
+    return (e) => {
+      e.preventDefault();
+      this.setState({email: "guest@bellow.com", password: "password", first_name: "Guest", last_name: "Guest"}, () => {
+        const user = Object.assign({}, this.state);
+        this.props.processForm(user).then(() => {
+          this.props.history.push('/search');
+        });
+      });
+    };
+  }
+
   renderErrors() {
     if (!this.props.errors) {
       return null;
@@ -101,12 +113,12 @@ class SessionForm extends React.Component {
           <h2 className="session_h2">Log In to Bellow</h2>
           <br/>
           <div className="login-form">
-              <input type="text"
-                value={this.email}
-                onChange={this.update('email')}
-                className="login-input"
-                placeholder="Email"
-              />
+            <input type="text"
+              value={this.email}
+              onChange={this.update('email')}
+              className="login-input"
+              placeholder="Email"
+            />
             <br/>
             <input type="password"
               value={this.password}
@@ -114,7 +126,8 @@ class SessionForm extends React.Component {
               className="login-input"
               placeholder="Password"
             />
-          <input className="session-button" type="submit" value="Log In" />
+            <input className="session-button" type="submit" value="Log In" />
+            <button className="guest-login" onClick={this.handleDemo()} type="submit" value="Guest Log In">Guest Log In</button>
           </div>
         </form>
         New to Bellow? <Link to='/signup'>Sign Up!</Link>

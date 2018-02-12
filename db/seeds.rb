@@ -16,6 +16,7 @@ rao = User.create!(email: "jonrao314@gmail.com", password: "password", first_nam
 rao2 = User.create!(email: "jr4119@stern.nyu.edu", password: "password", first_name: "Jon", last_name: "Rao")
 jes = User.create!(email: "jndunten@gmail.com", password: "password", first_name: "J", last_name: "Dawg", image: File.open('./app/assets/images/jes.jpg'))
 marco = User.create!(email: "marco.carranza1@gmail.com", password: "password", first_name: "Marco", last_name: "Carranza", image: File.open('./app/assets/images/marco.png'))
+guest = User.create!(email: "guest@bellow.com", password: "password", first_name: "Guest", last_name: "Guest", image: File.open('./app/assets/images/bobby.png'))
 
 Business.destroy_all
 biz1 = Business.create!(name: "Earl's Beer and Cheese", rating: 5, price: 2, neighborhood: "Harlem", address: "1259 Park Ave", city: "New York, NY 10029", phone_number: "(212) 289-1581", website: "http://www.earlsny.com/", lat: 40.787318, long: -73.951556, main_image: File.open('./app/assets/images/earls_profile.png'), cuisines: "American")

@@ -1,7 +1,9 @@
 import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';
 
-import { fetchBusiness } from '../../actions/business_actions';
+import { fetchBusiness, fetchBusinesses } from '../../actions/business_actions';
+import { fetchReviews } from '../../actions/review_actions';
+
 import BusinessShow from './business_show';
 
 const mapStateToProps = (state, ownProps) => {
@@ -13,7 +15,9 @@ const mapStateToProps = (state, ownProps) => {
 
 const mapDispatchToProps = id => dispatch => {
   return {
-    fetchBusiness: id => dispatch(fetchBusiness(id))
+    fetchBusiness: id => dispatch(fetchBusiness(id)),
+    fetchReviews: id => dispatch(fetchReviews(id)),
+    fetchBusinesses: () => dispatch(fetchBusinesses())
   };
 };
 
