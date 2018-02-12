@@ -4,7 +4,7 @@ import { Link, withRouter } from 'react-router-dom';
 
 
 class HotBusinesses extends React.Component {
-
+  //Increase by 16 every reseed
   render() {
 
     return (
@@ -30,7 +30,7 @@ class HotBusinesses extends React.Component {
             </div>
           </div>
           <div className="hot-and-new-container">
-            <a id="jgs" href="/#/businesses/91"><div id="jgs"></div></a> //Increase by 16 every reseed
+            <a id="jgs" href="/#/businesses/91"><div id="jgs"></div></a>
             <div className="hot-info">
               <a href="/#/businesses/91">JG Melon's</a>
               <div className="rating-img-5"></div>
