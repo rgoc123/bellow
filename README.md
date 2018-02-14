@@ -17,10 +17,10 @@ There are several important features beyond being able to see a list of restaura
 #### New Features!!
 Two exciting features were added recently. 1) The ability to interact with the Google Maps API by hovering over markers to see which restaurant they belong to and clicking the marker to navigate to the restaurant's page. 2) By implementing the material-UI JavaScript library, the search bar now has a fuzzy filter that speeds up both search and navigation by pre-populating a list of results with clickable dropdown items that can take you to search results for the cuisine you're looking for or directly to a restaurant's page.
 
-Map Marker Hover and Click
+###### Map Marker Hover and Click
 ![alt text](./app/assets/images/map_hover.gif)
 
-Search Bar Fuzzy Filter and Click
+###### Search Bar Fuzzy Filter and Click
 ![alt text](./app/assets/images/fuzzy_filter.gif)
 
 
