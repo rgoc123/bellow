@@ -13,6 +13,7 @@ class BusinessIndex extends React.Component {
 
   componentDidMount() {
     this.props.fetchBusinesses();
+    this.props.clearReviews();
   }
 
   filtersChoice() {
@@ -44,18 +45,6 @@ class BusinessIndex extends React.Component {
       });
     }
   }
-
-  // areBusinesses() {
-  //   this.filtersChoice().forEach(choice => {
-  //     if (choice !== undefined) {
-  //       return this.filtersChoice();
-  //     }
-  //     return (
-  //       <li className="no-results">Looks like no results match the search or filter criteria!</li>
-  //     );
-  //
-  //   });
-  // }
 
   render() {
 

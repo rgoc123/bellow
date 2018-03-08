@@ -1,5 +1,5 @@
-import { RECEIVE_REVIEWS, RECEIVE_REVIEW, REMOVE_REVIEW } from '../actions/review_actions';
-import { RECEIVE_BUSINESS, RECEIVE_BUSINESSES } from '../actions/business_actions';
+import { RECEIVE_REVIEWS, RECEIVE_REVIEW, REMOVE_REVIEW, CLEAR_REVIEWS } from '../actions/review_actions';
+import { RECEIVE_BUSINESS } from '../actions/business_actions';
 import merge from 'lodash/merge';
 
 const reviewsReducer = (state = {}, action) => {
@@ -16,7 +16,7 @@ const reviewsReducer = (state = {}, action) => {
       return newState;
     case RECEIVE_BUSINESS:
       return action.business.reviews || {};
-    case RECEIVE_BUSINESSES:
+    case CLEAR_REVIEWS:
       return {};
     default:
       return state;

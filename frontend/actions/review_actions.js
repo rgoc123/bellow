@@ -3,6 +3,7 @@ import * as APIUtilReview from '../util/review_api_util';
 export const RECEIVE_REVIEWS = 'RECEIVE_REVIEWS';
 export const RECEIVE_REVIEW = 'RECEIVE_REVIEW';
 export const REMOVE_REVIEW = 'REMOVE_REVIEW';
+export const CLEAR_REVIEWS = 'CLEAR_REVIEWS';
 
 //async actions
 export const receiveReviews = reviews => {
@@ -26,6 +27,12 @@ export const removeReview = reviewId => {
   };
 };
 
+export const clearReviews = () => {
+  return {
+    type: CLEAR_REVIEWS
+  }
+}
+
 
 //thunk actions
 export const fetchReviews = (businessId) => dispatch => {
@@ -41,7 +48,6 @@ export const fetchReview = (reviewId) => dispatch => (
 );
 
 export const createReview = review => dispatch => {
-
   return (
     APIUtilReview.createReview(review).then(review => (
       dispatch(receiveReview(review))

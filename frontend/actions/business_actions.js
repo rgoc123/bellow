@@ -3,7 +3,6 @@ import * as APIUtilBusiness from '../util/business_api_util';
 export const RECEIVE_BUSINESSES = 'RECEIVE_BUSINESSES';
 export const RECEIVE_BUSINESS = 'RECEIVE_BUSINESS';
 
-
 //async actions
 export const receiveBusinesses = businesses => {
   return {
@@ -18,7 +17,6 @@ export const receiveBusiness = business => {
     business
   };
 };
-
 
 //thunk actions
 export const fetchBusinesses = () => dispatch => {
