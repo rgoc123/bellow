@@ -2,7 +2,7 @@ import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';
 
 import { fetchBusiness, fetchBusinesses } from '../../actions/business_actions';
-import { fetchReviews } from '../../actions/review_actions';
+import { fetchReviews, clearReviews } from '../../actions/review_actions';
 
 import BusinessShow from './business_show';
 
@@ -17,6 +17,7 @@ const mapDispatchToProps = id => dispatch => {
   return {
     fetchBusiness: id => dispatch(fetchBusiness(id)),
     fetchReviews: id => dispatch(fetchReviews(id)),
+    clearReviews: () => dispatch(clearReviews()),
     fetchBusinesses: () => dispatch(fetchBusinesses())
   };
 };

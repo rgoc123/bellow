@@ -19,6 +19,7 @@ class NewSearch extends React.Component {
   componentDidMount() {
     this.props.fetchBusinesses();
     this.cuisines = ['American', 'Burgers', 'Wings', 'Mexican', 'Bagels', 'Chinese', 'Pizza', 'Bar', 'Wine', 'German', 'French', 'Sushi', 'Cuban'];
+    debugger
   }
 
   indexCuisines(cuisine) {
@@ -28,7 +29,7 @@ class NewSearch extends React.Component {
   }
 
   updateDataSource() {
-
+    debugger
     this.props.businesses.forEach(business => {
       this.dataSource.push({
         text: `${business.name}`,
@@ -96,6 +97,7 @@ class NewSearch extends React.Component {
     if (this.dataSource.length === 0) {
       this.updateDataSource();
     }
+    debugger
     return (
       <div className={this.chooseHeaderClass()}>
         <span className={this.chooseFindClass()}>Search</span>
