@@ -12,16 +12,6 @@ class BusinessShow extends React.Component {
     debugger
   }
 
-  // componentDidMount() {
-  //   this.props.clearReviews();
-  //   this.props.fetchBusiness(this.props.match.params.businessId);
-  // }
-
-  // componentWillMount() {
-  //   this.props.clearReviews();
-  //   this.props.fetchBusiness(this.props.match.params.businessId);
-  // }
-
   reviewLink() {
     const business = this.props.business;
     if (!this.props.currentUser) {
