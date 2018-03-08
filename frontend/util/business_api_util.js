@@ -3,6 +3,7 @@ export const fetchBusinesses = (filters) => {
     url: '/api/businesses',
     method: 'GET',
     data: filters,
+    async: false,
     error: (err) => console.log(err)
   });
 };

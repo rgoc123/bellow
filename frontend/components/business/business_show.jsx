@@ -5,17 +5,21 @@ import ReviewIndexContainer from '../review/review_index_container';
 
 class BusinessShow extends React.Component {
 
-  componentDidMount() {
+  constructor(props) {
+    super(props);
     this.props.clearReviews();
     this.props.fetchBusiness(this.props.match.params.businessId);
-    debugger
   }
 
-  componentDidUpdate() {
-    // this.props.clearReviews();
-    this.props.fetchBusiness(this.props.match.params.businessId);
-    debugger
-  }
+  // componentDidMount() {
+  //   this.props.clearReviews();
+  //   this.props.fetchBusiness(this.props.match.params.businessId);
+  // }
+
+  // componentWillUpdate() {
+  //   this.props.fetchBusiness(this.props.match.params.businessId);
+  //   // this.props.fetchBusinesses();
+  // }
 
   reviewLink() {
     const business = this.props.business;
@@ -43,7 +47,7 @@ class BusinessShow extends React.Component {
   }
 
   render() {
-    debugger
+
     const business = this.props.business;
 
     if (!business) {

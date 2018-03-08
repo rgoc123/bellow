@@ -11,16 +11,16 @@ class NewSearch extends React.Component {
       searchInput: ""
     };
     this.dataSource = [];
-    this.cuisines = [];
+    this.cuisines = ['American', 'Burgers', 'Wings', 'Mexican', 'Bagels', 'Chinese', 'Pizza', 'Bar', 'Wine', 'German', 'French', 'Sushi', 'Cuban'];
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleUpdateInput = this.handleUpdateInput.bind(this);
+    this.props.fetchBusinesses();
+
   }
 
-  componentDidMount() {
-    this.props.fetchBusinesses();
-    this.cuisines = ['American', 'Burgers', 'Wings', 'Mexican', 'Bagels', 'Chinese', 'Pizza', 'Bar', 'Wine', 'German', 'French', 'Sushi', 'Cuban'];
-    debugger
-  }
+  // componentDidMount() {
+  //   this.cuisines = ['American', 'Burgers', 'Wings', 'Mexican', 'Bagels', 'Chinese', 'Pizza', 'Bar', 'Wine', 'German', 'French', 'Sushi', 'Cuban'];
+  // }
 
   indexCuisines(cuisine) {
     this.state.searchInput = cuisine;
@@ -29,7 +29,8 @@ class NewSearch extends React.Component {
   }
 
   updateDataSource() {
-    debugger
+
+    this.dataSource = [];
     this.props.businesses.forEach(business => {
       this.dataSource.push({
         text: `${business.name}`,
@@ -94,10 +95,11 @@ class NewSearch extends React.Component {
   }
 
   render() {
-    if (this.dataSource.length === 0) {
+    if (this.dataSource.length === 0 && this.props.businesses.length > 0) {
+
       this.updateDataSource();
     }
-    debugger
+
     return (
       <div className={this.chooseHeaderClass()}>
         <span className={this.chooseFindClass()}>Search</span>

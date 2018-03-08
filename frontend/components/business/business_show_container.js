@@ -16,6 +16,7 @@ const mapStateToProps = (state, ownProps) => {
 const mapDispatchToProps = id => dispatch => {
   return {
     fetchBusiness: id => dispatch(fetchBusiness(id)),
+    fetchBusinesses: () => dispatch(fetchBusinesses()),
     fetchReviews: id => dispatch(fetchReviews(id)),
     clearReviews: () => dispatch(clearReviews()),
     fetchBusinesses: () => dispatch(fetchBusinesses())
