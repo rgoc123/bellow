@@ -9,6 +9,7 @@ class BusinessShow extends React.Component {
     super(props);
     this.props.clearReviews();
     this.props.fetchBusiness(this.props.match.params.businessId);
+    debugger
   }
 
   // componentDidMount() {
@@ -16,9 +17,9 @@ class BusinessShow extends React.Component {
   //   this.props.fetchBusiness(this.props.match.params.businessId);
   // }
 
-  // componentWillUpdate() {
+  // componentWillMount() {
+  //   this.props.clearReviews();
   //   this.props.fetchBusiness(this.props.match.params.businessId);
-  //   // this.props.fetchBusinesses();
   // }
 
   reviewLink() {

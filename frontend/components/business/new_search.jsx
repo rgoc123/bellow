@@ -28,15 +28,19 @@ class NewSearch extends React.Component {
     this.props.props.history.push('/search');
   }
 
-  updateDataSource() {
+  menuItemClick(business) {
+    this.props.props.history.push(`/businesses/${business.id}`);
+    this.props.fetchBusiness(business.id);
+  }
 
+  updateDataSource() {
     this.dataSource = [];
     this.props.businesses.forEach(business => {
       this.dataSource.push({
         text: `${business.name}`,
         value: (<MenuItem
           primaryText={business.name}
-          onClick={() => {this.props.props.history.push(`/businesses/${business.id}`);}} />)
+          onClick={() => {this.menuItemClick(business);}} />)
       });
     });
     this.cuisines.forEach(cuisine => {

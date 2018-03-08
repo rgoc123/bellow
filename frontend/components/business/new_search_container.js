@@ -1,7 +1,7 @@
 import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';
 
-import { fetchBusinesses } from '../../actions/business_actions';
+import { fetchBusinesses, fetchBusiness } from '../../actions/business_actions';
 import { updateSearchInput } from '../../actions/filter_actions';
 
 import NewSearch from './new_search';
@@ -15,6 +15,7 @@ const mapStateToProps = (state) => {
 const mapDispatchToProps = dispatch => {
   return {
     fetchBusinesses: () => dispatch(fetchBusinesses()),
+    fetchBusiness: id => dispatch(fetchBusiness(id)),
     updateSearchInput: () => dispatch(updateSearchInput())
   };
 };
