@@ -8,11 +8,13 @@ class BusinessShow extends React.Component {
   componentDidMount() {
     this.props.clearReviews();
     this.props.fetchBusiness(this.props.match.params.businessId);
+    debugger
   }
 
   componentDidUpdate() {
     // this.props.clearReviews();
     this.props.fetchBusiness(this.props.match.params.businessId);
+    debugger
   }
 
   reviewLink() {
@@ -41,7 +43,7 @@ class BusinessShow extends React.Component {
   }
 
   render() {
-
+    debugger
     const business = this.props.business;
 
     if (!business) {
