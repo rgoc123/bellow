@@ -18,10 +18,6 @@ class NewSearch extends React.Component {
 
   }
 
-  // componentDidMount() {
-  //   this.cuisines = ['American', 'Burgers', 'Wings', 'Mexican', 'Bagels', 'Chinese', 'Pizza', 'Bar', 'Wine', 'German', 'French', 'Sushi', 'Cuban'];
-  // }
-
   indexCuisines(cuisine) {
     this.state.searchInput = cuisine;
     this.props.props.updateSearchInput(this.state.searchInput);
