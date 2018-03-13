@@ -21,7 +21,7 @@ import { AuthRoute, ProtectedRoute } from '../util/route_util';
 import NewSearchContainer from './business/new_search_container';
 
 const App = () => (
-  <div>
+  <div className="app-container">
 
     <HeaderContainer />
 
