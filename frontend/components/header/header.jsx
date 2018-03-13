@@ -56,6 +56,12 @@ const Header = (props) => {
     <header className={headerClass}>
       <div className="content-container">
         <h1>Bellow!<Link className={bLinkClass} to="/"></Link></h1>
+        <div className="header-mobile-search">
+          <i className="fa fa-search" aria-hidden="true"></i>
+        </div>
+        <div className="header-mobile-menu">
+          <i className="fa fa-bars" aria-hidden="true"></i>
+        </div>
         <MuiThemeProvider>
           <NewSearchContainer className="search-biz-input-landing" props={props} />
         </MuiThemeProvider>
