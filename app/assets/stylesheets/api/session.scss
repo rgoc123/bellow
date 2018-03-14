@@ -76,21 +76,34 @@
 
   .hot-and-new-container {
     width: 100%;
-    height: 60px;
+    height: 70px;
+    display: flex;
     border: 1px solid #e6e6e6;
     border-radius: 4px;
     background: #fff;
-    margin: 0px 15px;
+    margin: 0px;
+    position: relative;
   }
 
-  .hot-and-new-container:first-of-type {
-    margin-left: 0px;
+  .pop-mobile-link {
+    width: 100%;
+    height: 70px;
+  }
+
+  .pop-dolla {
+    display: none;
   }
 
   #lois {
     width: 50px;
     height: 50px;
     background-image: url(https://s3.amazonaws.com/bellow-dev/businesses/main_images/000/000/lois_hot.jpg);
+    border-radius: 4px;
+    margin: 10px;
+  }
+
+  #lois div {
+    display: none;
   }
   // #lois a {
   //   width: 298px;
@@ -102,28 +115,44 @@
     width: 50px;
     height: 50px;
     background-image: url(https://s3.amazonaws.com/bellow-dev/businesses/main_images/000/000/joes_hot.jpg);
+    border-radius: 4px;
+    margin: 10px;
   }
 
-  #joes a {
-    width: 298px;
-    height: 180px;
-    background-image: url(https://s3.amazonaws.com/bellow-dev/businesses/main_images/000/000/joes_hot.jpg);
+  #joes div {
+    display: none;
   }
+
+  // #joes a {
+  //   width: 298px;
+  //   height: 180px;
+  //   background-image: url(https://s3.amazonaws.com/bellow-dev/businesses/main_images/000/000/joes_hot.jpg);
+  // }
 
   #jgs {
     width: 50px;
     height: 50px;
     background-image: url(https://s3.amazonaws.com/bellow-dev/businesses/main_images/000/000/jgs_hot.jpg);
+    border-radius: 4px;
+    margin: 10px;
   }
 
-  #jgs a {
-    width: 298px;
-    height: 180px;
-    background-image: url(https://s3.amazonaws.com/bellow-dev/businesses/main_images/000/000/jgs_hot.jpg);
+  #jgs div {
+    display: none;
   }
+
+  // #jgs a {
+  //   width: 298px;
+  //   height: 180px;
+  //   background-image: url(https://s3.amazonaws.com/bellow-dev/businesses/main_images/000/000/jgs_hot.jpg);
+  // }
 
   .hot-info {
-    padding: 12px 12px 0 12px;
+    padding: 0px;
+    position: absolute;
+    height: 56px;
+    left: 70px;
+    top: 3px;
   }
 
   .hot-info a {
@@ -133,6 +162,16 @@
 
   .hot-info a:hover {
     text-decoration: underline;
+  }
+
+  div [class^="rating-img-"] {
+    margin-top: 0px;
+    margin-bottom: 0px;
+  }
+
+  .pop-neigh {
+    position: absolute;
+    bottom: -7px;
   }
 }
 
