@@ -62,12 +62,18 @@
     right: 10px;
   }
 
+  .hot-businesses-container {
+    width: 100%;
+    position: absolute;
+    top: 25px;
+  }
+
   #pop-biz {
     text-align: center;
     color: #d90007;
     font-size: 28px;
     margin-top: 28px;
-    margin-bottom: 28px;
+    margin-bottom: 16px;
   }
 
   .hot-businesses {
@@ -183,6 +189,14 @@
     width: 960px;
     margin: 0 auto;
     padding: 15px;
+  }
+
+  .hot-businesses-container {
+    width: 960px;
+    margin: 0 auto;
+    padding: 15px;
+    // display: flex;
+    position: relative;
   }
 
   .header-landing {

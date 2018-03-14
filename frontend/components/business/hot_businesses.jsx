@@ -8,7 +8,7 @@ class HotBusinesses extends React.Component {
   render() {
 
     return (
-      <div className="content-container">
+      <div className="hot-businesses-container">
         <h1 id="pop-biz">Popular Businesses</h1>
         <div className="hot-businesses">
           <div className="hot-and-new-container">
