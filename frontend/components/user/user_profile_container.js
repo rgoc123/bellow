@@ -1,6 +1,8 @@
 import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';
 
+import { fetchUser } from ''
+
 import UserProfile from './user_profile';
 
 const mapStateToProps = (state, ownProps) => {
@@ -11,7 +13,7 @@ const mapStateToProps = (state, ownProps) => {
 
 const mapDispatchToProps = id => dispatch => {
   return {
-    
+
   };
 };
 
