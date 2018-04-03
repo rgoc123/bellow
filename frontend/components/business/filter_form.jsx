@@ -1,4 +1,5 @@
 import React from 'react';
+import ReactDOM from 'react-dom';
 import { Link, withRouter } from 'react-router-dom';
 
 class FilterForm extends React.Component {
@@ -16,24 +17,6 @@ class FilterForm extends React.Component {
       this.priceChange = this.priceChange.bind(this);
     }
 
-
-    priceChange() {
-      let priceKeys = Object.keys(this.state.prices).filter(el => this.state.prices[el]).map(el => parseInt(el));
-
-      this.props.updatePrices(priceKeys);
-    }
-
-    changePrice(price) {
-      return () => {
-        if (this.state.prices[price] === true) {
-          this.state.prices[price] = false;
-        } else {
-          this.state.prices[price] = true;
-        }
-        this.priceChange();
-      };
-    }
-
     dollaSignChooser(num) {
       if (num === 1) {
         return "$";
@@ -46,8 +29,42 @@ class FilterForm extends React.Component {
       }
     }
 
-    render() {
+    priceChange() {
+      let priceKeys = Object.keys(this.state.prices).filter(el => this.state.prices[el]).map(el => parseInt(el));
 
+      this.props.updatePrices(priceKeys);
+    }
+
+    changePrice(price) {
+      // return () => {
+        if (this.state.prices[price] === true) {
+          this.state.prices[price] = false;
+        } else {
+          this.state.prices[price] = true;
+        }
+        this.priceChange();
+      // };
+    }
+
+    rightBorderStyle(price) {
+      if (document.getElementById(`price-filter-${price + 1}`) && price <= 3) {
+        debugger
+        if (this.state.prices[price] === true) {
+          document.getElementById(`price-filter-${price + 1}`).style.borderLeft = "1px solid #41a700";
+        } else {
+          document.getElementById(`price-filter-${price + 1}`).style.borderLeft = "";
+        }
+      }
+    }
+
+    changePriceAndBorder(price) {
+      return () => {
+        this.changePrice(price);
+        this.rightBorderStyle(price);
+      };
+    }
+
+    render() {
       return (
         <div className="background-gray">
           <div className="content-container price-form-container">
@@ -56,13 +73,12 @@ class FilterForm extends React.Component {
             {
               [1, 2, 3, 4].map( num => (
                 <div className="price-filter-checkbox" key={num}>
-                  <input id={`price-filter-${num}`} className="price-filter-input" onChange={this.changePrice(num)} type="checkbox" value={num} />
+                  <input id={`price-filter-${num}`} className="price-filter-input" onChange={this.changePriceAndBorder(num)} type="checkbox" value={num} />
                   <label htmlFor={`price-filter-${num}`}>{this.dollaSignChooser(num)}</label>
                 </div>
               ))
             }
             </div>
-
           </div>
         </div>
       );

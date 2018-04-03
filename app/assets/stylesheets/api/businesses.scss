@@ -113,6 +113,7 @@
   input[type=checkbox]:checked {
     background-color: #c4f3a4;
     border: 1px solid #41a700;
+    border-right: 0px;
   }
 
   input[type=checkbox]:checked + label {
@@ -127,7 +128,10 @@
   font-size: 14px;
 }
 
-
+#price-filter-4:checked {
+  border-left: 1px solid #41a700;
+  border-right: 1px solid #41a700;
+}
 
 // busines_index
 .biz-index-content-container {
