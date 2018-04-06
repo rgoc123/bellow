@@ -31,24 +31,20 @@ class FilterForm extends React.Component {
 
     priceChange() {
       let priceKeys = Object.keys(this.state.prices).filter(el => this.state.prices[el]).map(el => parseInt(el));
-
       this.props.updatePrices(priceKeys);
     }
 
     changePrice(price) {
-      // return () => {
-        if (this.state.prices[price] === true) {
-          this.state.prices[price] = false;
-        } else {
-          this.state.prices[price] = true;
-        }
-        this.priceChange();
-      // };
+      if (this.state.prices[price] === true) {
+        this.state.prices[price] = false;
+      } else {
+        this.state.prices[price] = true;
+      }
+      this.priceChange();
     }
 
     rightBorderStyle(price) {
       if (document.getElementById(`price-filter-${price + 1}`) && price <= 3) {
-        debugger
         if (this.state.prices[price] === true) {
           document.getElementById(`price-filter-${price + 1}`).style.borderLeft = "1px solid #41a700";
         } else {

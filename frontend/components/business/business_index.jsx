@@ -18,32 +18,31 @@ class BusinessIndex extends React.Component {
 
   filtersChoice() {
     let lowerSearchName = this.props.filters.searchInput.toLowerCase();
+    let emptyPricesCheck = (JSON.stringify(this.props.filters.prices) === JSON.stringify([]));
 
-    if ((JSON.stringify(this.props.filters.prices) === JSON.stringify([])) && (this.props.filters.searchInput === "") ) {
-      return this.props.businesses.map(business => <BusinessIndexItem key={business.id} business={business} updateSearchInput={this.props.updateSearchInput} props={this.props} />);
-    } else if ((this.props.filters.prices.length > 0) && (this.props.filters.searchInput != "")) {
-      return this.props.businesses.map(business => {
-        let lowerBizName = business.name.toLowerCase();
-        let lowerCuisine = business.cuisines.toLowerCase();
-        if ((this.props.filters.prices.includes(business.price)) && ((lowerBizName.includes(lowerSearchName)) || lowerCuisine.includes(lowerSearchName))) {
-          return <BusinessIndexItem key={business.id} business={business} updateSearchInput={this.props.updateSearchInput} props={this.props} />;
-        }
-      });
-    } else if (this.props.filters.prices.length > 0) {
-      return this.props.businesses.map(business => {
-        if (this.props.filters.prices.includes(business.price)) {
-          return <BusinessIndexItem key={business.id} business={business} updateSearchInput={this.props.updateSearchInput} props={this.props} />;
-        }
-      });
-    } else if (this.props.filters.searchInput != "") {
-      return this.props.businesses.map(business => {
-        let lowerBizName = business.name.toLowerCase();
-        let lowerCuisine = business.cuisines.toLowerCase();
-        if (lowerBizName.includes(lowerSearchName) || lowerCuisine.includes(lowerSearchName)) {
-          return <BusinessIndexItem key={business.id} business={business} updateSearchInput={this.props.updateSearchInput} props={this.props} />;
-        }
-      });
+    let retBizzies, tempBizzies = [];
+
+    makeBizIndex = makeBizIndex.bind(this);
+
+    function makeBizIndex(businesses) {
+      return businesses.map(business => <BusinessIndexItem key={business.id} business={business} updateSearchInput={this.props.updateSearchInput} props={this.props} />);
     }
+
+    if ((emptyPricesCheck) && (this.props.filters.searchInput === "")) {
+      return makeBizIndex(this.props.businesses);
+    } else {
+      if (!emptyPricesCheck) {
+        tempBizzies = this.props.businesses.filter(business => this.props.filters.prices.includes(business.price));
+      } else {
+        tempBizzies = this.props.businesses;
+      }
+      if (lowerSearchName) {
+        retBizzies = tempBizzies.filter(business => (business.name.toLowerCase().includes(lowerSearchName) || business.cuisines.toLowerCase().includes(lowerSearchName)));
+      } else {
+        retBizzies = tempBizzies;
+      }
+    }
+    return makeBizIndex(retBizzies);
   }
 
   render() {
