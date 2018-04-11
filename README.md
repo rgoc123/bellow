@@ -8,11 +8,15 @@ Visit the website here: [Bellow!](https://bellowtheapp.herokuapp.com/#/)
 ![alt text](./app/assets/images/landing_page.png)
 
 ## Technologies
-The application is a fullstack application that uses Rails for the backend and React-Redux in the frontend. By using rails, the application is able to authenticate user login information and handle requests to the database. JSON and jbuilder are used to pass data from the backend into the frontend. React and Redux then create a single page application for fast and seamless navigation. The app also implements Google Maps uses several of its features, such as tracking latitude/longitude changes and creating markers.
+The application uses Rails and ActiveRecord for handling the backend because of their efficiency in reducing the number of queries on the database. React is used for its enhanced UI that re-renders just components that have changed as opposed to entire pages. And Redux is used for its state management, which was very helpful on pages like “search” that have multiple components (e.g. the search bar, price filters, index, and map) accessing different slices of state.
+
+The app also implements Google Maps and uses several of its features, such as tracking latitude/longitude changes and creating interactive markers.
 
 ## Features
 #### Core Features
-There are several important features beyond being able to see a list of restaurants: user authorization, multiple avenues for site navigation, and the ability to select of multiple filters. A user is able to write, edit and delete their reviews. For filtering, a user is able to use a search bar, price filters, or both at the same time.
+There are several important features beyond being able to view a list of restaurants: user authorization, multiple avenues for site navigation, creating/updating/deleting reviews, and filtering.
+
+Filtering takes place on the search page. Because the data sample is small and the search bar needs access to all of the businesses for its fuzzy search, filtering by price and search input occurs on the frontend, which allows for greater speed and doesn’t require the map component to remount every time a filter is changed (only its markers change).
 
 #### New Features!!
 Two exciting features were added recently. 1) The ability to interact with the Google Maps API by hovering over markers to see which restaurant they belong to and clicking the marker to navigate to the restaurant's page. 2) By implementing the material-UI JavaScript library, the search bar now has a fuzzy filter that speeds up both search and navigation by pre-populating a list of results with clickable dropdown items that can take you to search results for the cuisine you're looking for or directly to a restaurant's page.
