@@ -25,19 +25,29 @@ class BusinessIndex extends React.Component {
     makeBizIndex = makeBizIndex.bind(this);
 
     function makeBizIndex(businesses) {
-      return businesses.map(business => <BusinessIndexItem key={business.id} business={business} updateSearchInput={this.props.updateSearchInput} props={this.props} />);
+      return businesses.map(business => (
+        <BusinessIndexItem key={business.id}
+        business={business}
+        updateSearchInput={this.props.updateSearchInput}
+        props={this.props} />)
+      );
     }
 
     if ((emptyPricesCheck) && (this.props.filters.searchInput === "")) {
       return makeBizIndex(this.props.businesses);
     } else {
       if (!emptyPricesCheck) {
-        tempBizzies = this.props.businesses.filter(business => this.props.filters.prices.includes(business.price));
+        tempBizzies = this.props.businesses.filter(business => (
+          this.props.filters.prices.includes(business.price))
+        );
       } else {
         tempBizzies = this.props.businesses;
       }
       if (lowerSearchName) {
-        retBizzies = tempBizzies.filter(business => (business.name.toLowerCase().includes(lowerSearchName) || business.cuisines.toLowerCase().includes(lowerSearchName)));
+        retBizzies = tempBizzies.filter(business => (
+          business.name.toLowerCase().includes(lowerSearchName) ||
+          business.cuisines.toLowerCase().includes(lowerSearchName))
+        );
       } else {
         retBizzies = tempBizzies;
       }
@@ -55,7 +65,10 @@ class BusinessIndex extends React.Component {
           </ul>
         </div>
         <div className="biz-column-bravo">
-          <BusinessMap updateBounds={this.props.updateBounds} businesses={this.props.businesses} prices={this.props.filters.prices} searchInput={this.props.filters.searchInput}/>
+          <BusinessMap updateBounds={this.props.updateBounds}
+          businesses={this.props.businesses}
+          prices={this.props.filters.prices}
+          searchInput={this.props.filters.searchInput}/>
         </div>
       </div>
 
