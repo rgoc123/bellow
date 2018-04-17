@@ -30,7 +30,8 @@ class FilterForm extends React.Component {
     }
 
     priceChange() {
-      let priceKeys = Object.keys(this.state.prices).filter(el => this.state.prices[el]).map(el => parseInt(el));
+      let priceKeys = Object.keys(this.state.prices).filter(el =>
+        this.state.prices[el]).map(el => parseInt(el));
       this.props.updatePrices(priceKeys);
     }
 
