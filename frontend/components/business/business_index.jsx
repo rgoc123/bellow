@@ -60,7 +60,7 @@ class BusinessIndex extends React.Component {
     return (
       <div className="biz-index-content-container">
         <div className="biz-column-alpha">
-          <ul>
+          <ul className="biz-index-ul">
             {this.filtersChoice()}
           </ul>
         </div>
