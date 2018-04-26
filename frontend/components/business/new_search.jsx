@@ -11,7 +11,9 @@ class NewSearch extends React.Component {
       searchInput: ""
     };
     this.dataSource = [];
-    this.cuisines = ['American', 'Burgers', 'Wings', 'Mexican', 'Bagels', 'Chinese', 'Pizza', 'Bar', 'Wine', 'German', 'French', 'Sushi', 'Cuban'];
+    this.cuisines = ['American', 'Burgers', 'Wings', 'Mexican',
+    'Bagels', 'Chinese', 'Pizza', 'Bar', 'Wine', 'German',
+    'French', 'Sushi', 'Cuban'];
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleUpdateInput = this.handleUpdateInput.bind(this);
     this.props.fetchBusinesses();
