@@ -20,6 +20,8 @@ class UserProfile extends React.Component {
         <div className="user-profile">
           {user.id}
           {user.first_name}
+          {user.last_name}
+          <img src={user.image} />
         </div>
       );
     }
