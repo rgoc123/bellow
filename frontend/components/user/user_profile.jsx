@@ -9,12 +9,12 @@ class UserProfile extends React.Component {
 
   render() {
     const user = this.props.user;
-    debugger
+
     if (!user) {
       return null;
     } else {
-      debugger
-      let ln = user.last_name;
+      let ln = user.last_name || "";
+      ln = ln.slice(0,1);
       return (
         <div>
           <div className="grayness-user-prof"></div>
