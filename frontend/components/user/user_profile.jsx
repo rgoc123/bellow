@@ -27,6 +27,14 @@ class UserProfile extends React.Component {
                 <h1>{user.first_name} {ln}.</h1>
               </div>
             </div>
+            <div className="user-profile-bottom">
+              <div className="user-profile-nav">
+                <h1>{user.first_name}'s Profile</h1>
+              </div>
+              <div className="user-profile-reviews">
+                <h1>Reviews</h1>
+              </div>
+            </div>
           </div>
         </div>
       );
