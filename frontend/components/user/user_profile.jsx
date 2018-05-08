@@ -7,6 +7,14 @@ class UserProfile extends React.Component {
     this.props.fetchUser(this.props.match.params.userId);
   }
 
+  createReviews(user) {
+    if (user.reviews) {
+      return Object.values(user.reviews).map(review => (
+        <li>{review.rating} {review.body}</li>
+      ));
+    }
+  }
+
   render() {
     const user = this.props.user;
 
@@ -33,6 +41,9 @@ class UserProfile extends React.Component {
               </div>
               <div className="user-profile-reviews">
                 <h1>Reviews</h1>
+                <ul>
+                  {this.createReviews(user)}
+                </ul>
               </div>
             </div>
           </div>
