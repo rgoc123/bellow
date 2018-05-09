@@ -10,7 +10,11 @@ class UserProfile extends React.Component {
   createReviews(user) {
     if (user.reviews) {
       return Object.values(user.reviews).map(review => (
-        <li>{review.rating} {review.body}</li>
+        <li>
+          <span>{review.business.name}</span>
+          <span>{review.rating}</span>
+          <span>{review.body}</span>
+        </li>
       ));
     }
   }
