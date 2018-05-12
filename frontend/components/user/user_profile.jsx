@@ -11,7 +11,11 @@ class UserProfile extends React.Component {
     if (user.reviews) {
       return Object.values(user.reviews).map(review => (
         <li>
+          <img src={review.business.imag_url} />
           <span>{review.business.name}</span>
+          <span>{this.chooseDollaSign(review)}</span>
+          <span className="dot-span">•</span>
+          <span></span>
           <span>{review.rating}</span>
           <span>{review.body}</span>
         </li>
@@ -19,9 +23,25 @@ class UserProfile extends React.Component {
     }
   }
 
+  chooseDollaSign(review) {
+    let dollaSign;
+
+    if (review.business.price === 1) {
+      dollaSign = '$';
+    } else if (review.business.price === 2) {
+      dollaSign = '$$';
+    } else if (review.business.price === 3) {
+      dollaSign = '$$$';
+    } else if (review.business.price === 4) {
+      dollaSign = '$$$$';
+    }
+
+    return dollaSign;
+  }
+
   render() {
     const user = this.props.user;
-
+    debugger
     if (!user) {
       return null;
     } else {
