@@ -10,12 +10,12 @@ class UserProfile extends React.Component {
   createReviews(user) {
     if (user.reviews) {
       return Object.values(user.reviews).map(review => (
-        <li>
+        <li className="user-profile-review">
           <img src={review.business.imag_url} />
           <span>{review.business.name}</span>
           <span>{this.chooseDollaSign(review)}</span>
           <span className="dot-span">•</span>
-          <span></span>
+          <span>{review.business.cuisines}</span>
           <span>{review.rating}</span>
           <span>{review.body}</span>
         </li>
@@ -41,7 +41,7 @@ class UserProfile extends React.Component {
 
   render() {
     const user = this.props.user;
-    debugger
+
     if (!user) {
       return null;
     } else {
