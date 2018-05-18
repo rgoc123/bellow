@@ -11,15 +11,23 @@ class UserProfile extends React.Component {
     if (user.reviews) {
       return Object.values(user.reviews).map(review => (
         <li className="user-profile-review">
-          <img src={review.image_url} className="user-profile-review-img" />
-          <span>{review.business.name}</span>
-          <span>{this.chooseDollaSign(review)}</span>
-          <span className="dot-span">•</span>
-          <span>{review.business.cuisines}</span>
-          <span>{review.business.address}</span>
-          <span>{review.business.city}</span>
-          <span>{review.rating}</span>
-          <span>{review.body}</span>
+          <div className="user-profile-review-upper">
+            <img src={review.image_url} className="user-profile-review-img" />
+            <div className="user-profile-review-upper-info">
+              <span>{review.business.name}</span>
+              <div className="biz-third-row">
+                <span>{this.chooseDollaSign(review)}</span>
+                <span className="dot-span">•</span>
+                <span>{review.business.cuisines}</span>
+              </div>
+              <span>{review.business.address}</span>
+              <span>{review.business.city}</span>
+            </div>
+          </div>
+          <div className="user-profile-review-lower">
+            <span>{review.rating}</span>
+            <span>{review.body}</span>
+          </div>
         </li>
       ));
     }
