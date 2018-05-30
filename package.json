@@ -23,6 +23,7 @@
   "version": "1.0.0",
   "main": "index.js",
   "directories": {
+    "lib": "lib",
     "test": "test"
   },
   "engines": {
@@ -44,5 +45,6 @@
   "bugs": {
     "url": "https://github.com/rgoc123/bellow/issues"
   },
-  "homepage": "https://github.com/rgoc123/bellow#readme"
+  "homepage": "https://github.com/rgoc123/bellow#readme",
+  "devDependencies": {}
 }

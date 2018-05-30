@@ -25,7 +25,7 @@ class UserProfile extends React.Component {
             </div>
           </div>
           <div className="user-profile-review-lower">
-            <span>{review.rating}</span>
+            <div className={`rating-img-${review.rating} show-review`}></div>
             <span>{review.body}</span>
           </div>
         </li>
