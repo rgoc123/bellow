@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link, withRouter } from 'react-router-dom';
 
 class UserProfile extends React.Component {
 
@@ -12,9 +13,11 @@ class UserProfile extends React.Component {
       return Object.values(user.reviews).map(review => (
         <li className="user-profile-review">
           <div className="user-profile-review-upper">
-            <img src={review.image_url} className="user-profile-review-img" />
+            <Link to={`/businesses/${review.business.id}`}>
+              <img src={review.image_url} className="user-profile-review-img" />
+            </Link>
             <div className="user-profile-review-upper-info">
-              <span>{review.business.name}</span>
+              <Link className="biz-idx-link" to={`/businesses/${review.business.id}`}>{review.business.name}</Link>
               <div className="biz-third-row">
                 <span>{this.chooseDollaSign(review)}</span>
                 <span className="dot-span">•</span>
@@ -51,7 +54,6 @@ class UserProfile extends React.Component {
 
   render() {
     const user = this.props.user;
-    debugger
     if (!user) {
       return null;
     } else {
