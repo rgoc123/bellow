@@ -44,9 +44,8 @@ class ReviewIndexItem extends React.Component {
         <div className="review">
           <div className="review-sidebar">
             <div className="reviewer-info">
-              <Link to={`/users/${this.props.review.user_id}`}>
-                <div className="avatar-img-placeholder"><img src={this.props.review.image} /></div>
-              </Link>
+
+              <div className="avatar-img-placeholder"><img src={this.props.review.image} /></div>
               <div>{this.props.review.first_name} {this.props.review.last_name.slice(0,1)}.</div>
             </div>
           </div>
