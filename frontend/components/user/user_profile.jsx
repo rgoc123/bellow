@@ -17,7 +17,9 @@ class UserProfile extends React.Component {
               <img src={review.image_url} className="user-profile-review-img" />
             </Link>
             <div className="user-profile-review-upper-info">
-              <Link className="biz-idx-link" to={`/businesses/${review.business.id}`}>{review.business.name}</Link>
+              <Link className="biz-idx-link" to={`/businesses/${review.business.id}`}>
+                {review.business.name}
+              </Link>
               <div className="biz-third-row">
                 <span>{this.chooseDollaSign(review)}</span>
                 <span className="dot-span">•</span>
