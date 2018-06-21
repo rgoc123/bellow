@@ -9,12 +9,12 @@ class ReviewForm extends React.Component {
       this.props.fetchBusiness(this.props.match.params.businessId);
       this.props.fetchReview(this.props.review);
 
-      this.setState(
-        {id: this.props.review.id,
+      this.setState({
+        id: this.props.review.id,
         rating: this.props.review.rating,
         body: this.props.review.body,
-        classColor: "default"}
-      );
+        classColor: "default"
+      });
     }
   }
 
@@ -30,7 +30,7 @@ class ReviewForm extends React.Component {
   constructor(props) {
 
     super(props);
-
+    debugger
     if (!this.props.review) {
       this.state = {
         id: this.props.match.params.reviewId,
@@ -224,7 +224,7 @@ class ReviewForm extends React.Component {
                         <input type="radio" name="radio-rating" value="1" onChange={this.update('rating')} />
                       </label>
                     </ul>
-                    <textarea value={this.body}
+                    <textarea value={this.state.body}
                       onChange={this.update('body')}
                       placeholder="Your review helps others learn about
                       great local businesses.&#10;Please don't review this business
