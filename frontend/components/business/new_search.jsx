@@ -17,7 +17,6 @@ class NewSearch extends React.Component {
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleUpdateInput = this.handleUpdateInput.bind(this);
     this.props.fetchBusinesses();
-
   }
 
   indexCuisines(cuisine) {
@@ -113,7 +112,7 @@ class NewSearch extends React.Component {
             dataSource={this.dataSource}
             onUpdateInput={this.handleUpdateInput}
             maxSearchResults={5}
-            placeholder="restaurant names or cuisines"
+            placeholder="pizza, burgers, Chinese, and more!"
           />
           <button className={this.chooseSearchButton()}><i className="fa fa-search" aria-hidden="true"></i></button>
         </form>

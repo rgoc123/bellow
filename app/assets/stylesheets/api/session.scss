@@ -700,4 +700,60 @@
   .hot-info a:hover {
     text-decoration: underline;
   }
+
+  .footer-container {
+    width: 100%;
+    height: 280px;
+    background: #F5F5F5;
+    margin-top: 43px;
+  }
+
+  .footer {
+    width: 960px;
+    height: 280px;
+    background: #F5F5F5;
+    margin: 0 auto;
+  }
+
+  #footer-img {
+    width: 960px;
+    height: 204px;
+    margin: 0 auto;
+  }
+
+  #footer-info {
+    display: flex;
+    width: 500px;
+    margin: 0 auto;
+    padding-top: 14px;
+
+    p {
+      display: inline;
+      font-size: 20px;
+      line-height: 40px;
+      margin-right: 28px;
+    }
+
+    ul {
+      display: inline;
+    }
+
+    li {
+      display: inline;
+      margin: 0 10px;
+    }
+
+    a {
+      text-decoration: none;
+      color: #be2020;
+    }
+
+    a:hover {
+      color: #d32323;
+    }
+
+    i {
+      font-size: 40px;
+    }
+  }
 }

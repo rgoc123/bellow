@@ -20,6 +20,7 @@ import ReviewFormContainer from './review/review_form_container';
 import { AuthRoute, ProtectedRoute } from '../util/route_util';
 import NewSearchContainer from './business/new_search_container';
 import UserProfileContainer from './user/user_profile_container';
+import FooterContainer from './header/footer_container';
 
 const App = () => (
   <div className="app-container">
@@ -36,7 +37,9 @@ const App = () => (
     <Route exact path="/businesses/:businessId/reviews/new" component={ReviewFormContainer} />
     <Route exact path="/businesses/:businessId/reviews/:reviewId/edit" component={ReviewFormContainer} />
     <Route path="/reviews/:reviewId" component={ReviewIndexContainer} />
-    
+    <Route path="/users/:userId" component={UserProfileContainer} />
+
+    <FooterContainer />
 
   </div>
 );
