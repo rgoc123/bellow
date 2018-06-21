@@ -52,11 +52,17 @@ class BusinessIndex extends React.Component {
         retBizzies = tempBizzies;
       }
     }
-    return makeBizIndex(retBizzies);
+    debugger
+    if (retBizzies.length > 0) {
+      return makeBizIndex(retBizzies);
+    } else {
+      return (
+        <p>Loading. If your search takes longer than one second, we may not have that restaurant or cuisine in our database. We apologize for the inconvience.</p>
+      );
+    }
   }
 
   render() {
-
     return (
       <div className="biz-index-content-container">
         <div className="biz-column-alpha">
@@ -71,9 +77,7 @@ class BusinessIndex extends React.Component {
           searchInput={this.props.filters.searchInput}/>
         </div>
       </div>
-
     );
-
   }
 
 }
