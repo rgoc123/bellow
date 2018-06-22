@@ -52,7 +52,7 @@ class BusinessIndex extends React.Component {
         retBizzies = tempBizzies;
       }
     }
-    debugger
+    
     if (retBizzies.length > 0) {
       return makeBizIndex(retBizzies);
     } else {
