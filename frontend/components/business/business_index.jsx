@@ -57,7 +57,7 @@ class BusinessIndex extends React.Component {
       return makeBizIndex(retBizzies);
     } else {
       return (
-        <p>Loading. If your search takes longer than one second, we may not have that restaurant or cuisine in our database. We apologize for the inconvience.</p>
+        <p>If your search takes longer than one second, we don't have that restaurant or cuisine in our database. We apologize for the inconvience.</p>
       );
     }
   }

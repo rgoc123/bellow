@@ -11,7 +11,8 @@ class UserProfile extends React.Component {
   createReviews(user) {
     if (user.reviews) {
       return Object.values(user.reviews).map(review => (
-        <li className="user-profile-review">
+        <li key={review.business.id}
+        className="user-profile-review">
           <div className="user-profile-review-upper">
             <Link to={`/businesses/${review.business.id}`}>
               <img src={review.image_url} className="user-profile-review-img" />
@@ -23,7 +24,8 @@ class UserProfile extends React.Component {
               <div className="biz-third-row">
                 <span>{this.chooseDollaSign(review)}</span>
                 <span className="dot-span">•</span>
-                <span>{review.business.cuisines}</span>
+                <span
+                onClick={() => this.indexCuisines(review.business.cusisines)}>{review.business.cuisines}</span>
               </div>
               <span>{review.business.address}</span>
               <span>{review.business.city}</span>
@@ -59,6 +61,8 @@ class UserProfile extends React.Component {
     if (!user) {
       return null;
     } else {
+      let reviewsCount = 0;
+      if (user.reviews) reviewsCount = Object.keys(user.reviews).length;
       let ln = user.last_name || "";
       ln = ln.slice(0,1);
       return (
@@ -71,14 +75,15 @@ class UserProfile extends React.Component {
               </div>
               <div className="user-profile-right">
                 <h1>{user.first_name} {ln}.</h1>
+                <h3>New York, NY</h3>
+                <i className="fa fa-star"></i><span><strong>{reviewsCount}</strong> Reviews</span>
               </div>
             </div>
             <div className="user-profile-bottom">
               <div className="user-profile-nav">
-                <h1>{user.first_name}'s Profile</h1>
               </div>
               <div className="user-profile-reviews">
-                <h1>Reviews</h1>
+                <h2>Reviews</h2>
                 <ul>
                   {this.createReviews(user)}
                 </ul>
