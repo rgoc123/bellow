@@ -19,6 +19,8 @@ class ModalMap extends React.Component {
     this.map = new google.maps.Map(this.mapNode, mapOptions);
 
     this.MarkerManager = new MarkerManager(this.map);
+
+    this.MarkerManager.createSingleMarker(this.props.lat, this.props.long);
     // this.props.businesses.forEach(biz => {
     //   this.MarkerManager.createMarkerFromBusiness(biz);
     // });

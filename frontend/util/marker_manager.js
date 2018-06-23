@@ -1,4 +1,3 @@
-
 export default class MarkerManager {
 
   constructor(map) {
@@ -15,6 +14,14 @@ export default class MarkerManager {
         position: latLng,
         map: this.map
       });
+    });
+  }
+
+  createSingleMarker(lat, lng) {
+    const position = new google.maps.LatLng(lat, lng);
+    const marker = new google.maps.Marker({
+      position,
+      map: this.map
     });
   }
 
