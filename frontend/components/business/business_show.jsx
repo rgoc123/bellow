@@ -2,6 +2,7 @@ import React from 'react';
 import { Link, withRouter } from 'react-router-dom';
 
 import ReviewIndexContainer from '../review/review_index_container';
+import ModalMap from '../map/modal_map';
 
 class BusinessShow extends React.Component {
 
@@ -159,6 +160,7 @@ class BusinessShow extends React.Component {
               </div>
             </div>
           </div>
+          <ModalMap lat={business.lat} long={business.long} />
         </div>
       );
     }
