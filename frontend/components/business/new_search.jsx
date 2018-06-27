@@ -106,6 +106,7 @@ class NewSearch extends React.Component {
         <span className={this.chooseFindClass()}>Search</span>
         <form onSubmit={this.handleSubmit}>
           <AutoComplete
+            id="search-input"
             className={this.chooseBizInput()}
             filter={AutoComplete.fuzzyFilter}
             searchText={this.state.searchInput}

@@ -59,6 +59,7 @@ class BusinessShow extends React.Component {
 
       return (
         <div>
+          <ModalMap lat={business.lat} long={business.long} />
           <div className="grayness"></div>
           <div className="content-container">
             <div className="top-shelf">
@@ -160,7 +161,6 @@ class BusinessShow extends React.Component {
               </div>
             </div>
           </div>
-          <ModalMap lat={business.lat} long={business.long} />
         </div>
       );
     }

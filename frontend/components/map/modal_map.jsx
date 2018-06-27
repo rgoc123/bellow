@@ -13,7 +13,7 @@ class ModalMap extends React.Component {
 
     const mapOptions = {
       center: { lat: this.props.lat, lng: this.props.long },
-      zoom: 12
+      zoom: 15
     };
 
     this.map = new google.maps.Map(this.mapNode, mapOptions);
@@ -21,10 +21,6 @@ class ModalMap extends React.Component {
     this.MarkerManager = new MarkerManager(this.map);
 
     this.MarkerManager.createSingleMarker(this.props.lat, this.props.long);
-    // this.props.businesses.forEach(biz => {
-    //   this.MarkerManager.createMarkerFromBusiness(biz);
-    // });
-    // this.MarkerManager.updateMarkers(this.props.businesses);
 
     google.maps.event.addListener(this.map, 'idle', () => {
 
@@ -41,7 +37,7 @@ class ModalMap extends React.Component {
 
   render() {
     return (
-      <div id="modal-map" style={{position: 'fixed'}} ref={ map => this.mapNode = map }></div>
+      <div id="modal-map" ref={ map => this.mapNode = map }></div>
     );
   }
 
