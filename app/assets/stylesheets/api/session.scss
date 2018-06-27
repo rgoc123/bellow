@@ -316,6 +316,7 @@
     width: 58px;
     height: 36px;
     display: flex;
+    position: relative;
 
     img {
       height: 36px;
@@ -338,6 +339,59 @@
 
   .header-normal #new-logout:hover {
     background: rgba(0,0,0,.35);
+  }
+
+  #new-logout-dropdown {
+    width: 191px;
+    height: 200px;
+    z-index: 1;
+    position: absolute;
+    top: 36px;
+    right: 0;
+    background: white;
+    padding: 12px;
+    border-radius: 3px;
+    border: 1px solid #ccc;
+    border-color: rgba(0,0,0,0.2);
+    box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+
+    #new-logout-dropdown-info {
+      display: flex;
+
+      #nldi-pic-link {
+        height: 60px;
+        width: 60px;
+        padding: 0;
+        margin: 0;
+        border: 0px;
+
+        .avatar-img-placeholder {
+          height: 60px;
+          width: 60px;
+
+          img {
+            height: 60px;
+            width: 60px;
+          }
+        }
+      }
+    }
+
+    #logout-link {
+      font-size: 14px;
+      text-decoration: none;
+      margin: 0 !important;
+      padding: 0 !important;
+      background: none !important;
+      border: 0 !important;
+      outline: 0 !important;
+      color: #0073bb !important;
+      cursor: pointer !important;
+    }
+
+    #logout-link:hover {
+      text-decoration: underline;
+    }
   }
 
   .underbar {

@@ -35,7 +35,18 @@ const Header = (props) => {
         <Link id="logout" to="/" onClick={props.logout}>Log Out</Link>
         <div id="new-logout">
           <img src={props.currentUser.image} />
-          <span><i class="fa fa-sort-down"></i></span>
+          <span><i className="fa fa-sort-down"></i></span>
+          <div id="new-logout-dropdown">
+            <div id="new-logout-dropdown-info">
+            <Link id="nldi-pic-link" to={`/users/${props.currentUser.id}`}>
+              <div className="avatar-img-placeholder">
+                <img src={props.currentUser.image} />
+              </div>
+            </Link>
+            <div>{props.currentUser.first_name} {props.currentUser.last_name.slice(0,1)}.</div>
+            </div>
+            <Link id="logout-link" to="/" onClick={props.logout}>Log Out</Link>
+          </div>
         </div>
       </div>
     );
