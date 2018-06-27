@@ -265,6 +265,7 @@
     right: 0;
     top: 0;
     margin-top: 11px;
+    display: flex;
   }
 
   .header-normal .content-container {
@@ -299,18 +300,44 @@
   }
 
   .header-normal #logout {
-    padding: 6px 12px;
-    min-width: 80px;
-    text-align: center;
-    line-height: 24px;
     background: #bd1f1f;
     border: none;
-    height: 30px;
+    padding: 8px 10px;
   }
 
-  .header-normal #logout {
+  .header-normal #logout:hover {
     background: #a71c1c;
     color: white;
+  }
+
+  .header-normal #new-logout {
+    background: rgba(0,0,0,.25);
+    border: none;
+    width: 58px;
+    height: 36px;
+    display: flex;
+
+    img {
+      height: 36px;
+      width: 36px;
+    }
+
+    span {
+      height: 36px;
+      width: 22px;
+      position: relative;
+    }
+
+    .fa {
+      color: white;
+      position: absolute;
+      top: 8px;
+      left: 6px;
+    }
+  }
+
+  .header-normal #new-logout:hover {
+    background: rgba(0,0,0,.35);
   }
 
   .underbar {

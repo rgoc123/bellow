@@ -33,6 +33,10 @@ const Header = (props) => {
     headerButtons = (
       <div className="header-button-container">
         <Link id="logout" to="/" onClick={props.logout}>Log Out</Link>
+        <div id="new-logout">
+          <img src={props.currentUser.image} />
+          <span><i class="fa fa-sort-down"></i></span>
+        </div>
       </div>
     );
   } else {
