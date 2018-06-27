@@ -264,6 +264,7 @@
     position: absolute;
     right: 0;
     top: 0;
+    margin-top: 11px;
   }
 
   .header-normal .content-container {
@@ -276,15 +277,9 @@
   }
 
   .header-normal .sULink {
-    box-shadow: none;
-    vertical-align: middle;
-    margin: 0;
-    outline: 0;
     border: none;
-    border-radius: 4px;
     background: #bd1f1f;
-    line-height: 24px;
-    padding: 6px 18px;
+    padding: 8px 10px;
   }
 
   .header-normal .sULink:hover {
@@ -293,13 +288,9 @@
   }
 
   .header-normal .lILink {
-    padding: 6px 12px;
-    min-width: 80px;
-    text-align: center;
-    line-height: 24px;
     background: #bd1f1f;
     border: none;
-    height: 30px;
+    padding: 8px 10px;
   }
 
   .header-normal .lILink:hover {
