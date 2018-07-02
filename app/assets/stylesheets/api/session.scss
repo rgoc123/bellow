@@ -264,8 +264,12 @@
     position: absolute;
     right: 0;
     top: 0;
-    margin-top: 11px;
     display: flex;
+    margin-top: 2px;
+
+    a {
+      margin: 0px 5px;;
+    }
   }
 
   .header-normal .content-container {
@@ -280,7 +284,7 @@
   .header-normal .sULink {
     border: none;
     background: #bd1f1f;
-    padding: 8px 10px;
+    padding: 9px 10px;
   }
 
   .header-normal .sULink:hover {
@@ -291,7 +295,7 @@
   .header-normal .lILink {
     background: #bd1f1f;
     border: none;
-    padding: 8px 10px;
+    padding: 9px 10px;
   }
 
   .header-normal .lILink:hover {
@@ -362,7 +366,7 @@
         height: 60px;
         width: 60px;
         padding: 0;
-        margin: 0;
+        margin: 0 9px 0 0;
         border: 0px;
 
         .avatar-img-placeholder {
@@ -375,6 +379,47 @@
           }
         }
       }
+
+      #nldi-name-link {
+        font-size: 14px;
+        font-weight: 700;
+        text-decoration: none;
+        margin: 0 !important;
+        padding: 0 !important;
+        background: none !important;
+        border: 0 !important;
+        outline: 0 !important;
+        color: #0073bb !important;
+        cursor: pointer !important;
+      }
+
+      #nldi-name-link:hover {
+        text-decoration: underline;
+      }
+
+      span {
+        font-size: 12px;
+        font-weight: 700;
+      }
+
+      .star-and-count {
+        i {
+          background: #d90007;
+          color: white;
+          border-radius: 3px;
+          font-size: 8px;
+          padding: 3px;
+          position: relative;
+          top: 0px;
+          left: 0px;
+        }
+
+        span {
+          margin-left: 3px;
+          top: 1px;
+        }
+      }
+
     }
 
     #logout-link {

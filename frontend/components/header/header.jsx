@@ -30,6 +30,8 @@ const Header = (props) => {
   }
 
   if (props.currentUser) {
+    let reviewsCount = props.currentUser.reviewsCount;
+
     headerButtons = (
       <div className="header-button-container">
         <Link id="logout" to="/" onClick={props.logout}>Log Out</Link>
@@ -38,12 +40,20 @@ const Header = (props) => {
           <span><i className="fa fa-sort-down"></i></span>
           <div id="new-logout-dropdown">
             <div id="new-logout-dropdown-info">
-            <Link id="nldi-pic-link" to={`/users/${props.currentUser.id}`}>
-              <div className="avatar-img-placeholder">
-                <img src={props.currentUser.image} />
+              <Link id="nldi-pic-link" to={`/users/${props.currentUser.id}`}>
+                <div className="avatar-img-placeholder">
+                  <img src={props.currentUser.image} />
+                </div>
+              </Link>
+              <div>
+                <Link id="nldi-name-link" to={`/users/${props.currentUser.id}`}>
+                  <div>{props.currentUser.first_name} {props.currentUser.last_name.slice(0,1)}.</div>
+                </Link>
+                <span>New York, NY</span>
+                <div className="star-and-count">
+                  <i className="fa fa-star"></i><span><strong>{reviewsCount}</strong></span>
+                </div>
               </div>
-            </Link>
-            <div>{props.currentUser.first_name} {props.currentUser.last_name.slice(0,1)}.</div>
             </div>
             <Link id="logout-link" to="/" onClick={props.logout}>Log Out</Link>
           </div>
