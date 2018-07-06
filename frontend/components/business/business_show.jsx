@@ -57,9 +57,11 @@ class BusinessShow extends React.Component {
         dollaSign = '$$$$';
       }
 
+      //<ModalMap lat={business.lat} long={business.long} />
+
       return (
         <div>
-          <ModalMap lat={business.lat} long={business.long} />
+
           <div className="grayness"></div>
           <div className="content-container">
             <div className="top-shelf">
