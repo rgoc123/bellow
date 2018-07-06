@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link, withRouter } from 'react-router-dom';
+import { Link, withRouter, ReactDOM } from 'react-router-dom';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 
 
@@ -32,13 +32,24 @@ const Header = (props) => {
   if (props.currentUser) {
     let reviewsCount = props.currentUser.reviewsCount;
 
+    let logoutDropdownStyle = {
+      'display': 'none'
+    }
+
+    function toggleLogoutDropdown() {
+      if (document.getElementById('new-logout-dropdown').style.display === 'none') {
+        document.getElementById('new-logout-dropdown').style.display = 'block';
+      } else {
+        document.getElementById('new-logout-dropdown').style.display = 'none';
+      }
+    }
+
     headerButtons = (
       <div className="header-button-container">
-        <Link id="logout" to="/" onClick={props.logout}>Log Out</Link>
-        <div id="new-logout">
+        <div id="new-logout" onClick={toggleLogoutDropdown}>
           <img src={props.currentUser.image} />
           <span><i className="fa fa-sort-down"></i></span>
-          <div id="new-logout-dropdown">
+          <div id="new-logout-dropdown" style={{display: 'none'}}>
             <div id="new-logout-dropdown-info">
               <Link id="nldi-pic-link" to={`/users/${props.currentUser.id}`}>
                 <div className="avatar-img-placeholder">

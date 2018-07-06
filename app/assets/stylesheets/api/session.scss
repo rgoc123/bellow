@@ -341,13 +341,12 @@
     }
   }
 
-  .header-normal #new-logout:hover {
+  #new-logout:hover {
     background: rgba(0,0,0,.35);
   }
 
   #new-logout-dropdown {
     width: 191px;
-    height: 200px;
     z-index: 1;
     position: absolute;
     top: 36px;
@@ -361,6 +360,9 @@
 
     #new-logout-dropdown-info {
       display: flex;
+      border-bottom: 1px solid #e6e6e6;
+      padding-bottom: 11px;
+      margin-bottom: 6px;
 
       #nldi-pic-link {
         height: 60px;
@@ -426,6 +428,7 @@
       font-size: 14px;
       text-decoration: none;
       margin: 0 !important;
+      border-top: 1px solid #e6e6e6;
       padding: 0 !important;
       background: none !important;
       border: 0 !important;
