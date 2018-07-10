@@ -1,6 +1,15 @@
 class Api::ReviewsController < ApplicationController
   def index
-    @reviews = Review.all
+    if params[:business_id]
+      @reviews = Review.where(business_id: params[:business_id])
+    else
+      @reviews = Review.all
+    end
+    render json: @reviews
+  end
+
+  def show
+    @review = Review.find(params[:id]);
   end
 
   def create

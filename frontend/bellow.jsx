@@ -1,12 +1,21 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
-import { fetchBusinesses } from './util/apiHelper';
+import {
+  fetchBusinesses,
+  fetchBusiness,
+  fetchReviews,
+  fetchReview,
+  fetchUser } from './util/apiHelper';
 import configureStore from './store/store';
 import Root from './components/root';
 
 //Testing start
 window.fetchBusinesses = fetchBusinesses;
+window.fetchUser = fetchUser;
+window.fetchBusiness = fetchBusiness
+window.fetchReviews = fetchReviews;
+window.fetchReview = fetchReview;
 //Testing end
 
 document.addEventListener('DOMContentLoaded', () => {
