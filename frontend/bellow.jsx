@@ -1,12 +1,12 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
-import { fetchUser } from './actions/user_actions';
+import { fetchBusinesses } from './util/apiHelper';
 import configureStore from './store/store';
 import Root from './components/root';
 
 //Testing start
-window.fetchUser = fetchUser;
+window.fetchBusinesses = fetchBusinesses;
 //Testing end
 
 document.addEventListener('DOMContentLoaded', () => {
