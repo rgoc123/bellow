@@ -75,6 +75,14 @@ class FilterForm extends React.Component {
                 </div>
               ))
             }
+              <div className="filter-button">
+                <input type="button"/>
+                <label>Open Now</label>
+              </div>
+              <div className="filter-button">
+                <input type="button"/>
+                <label>Delivers</label>
+              </div>
             </div>
           </div>
         </div>
