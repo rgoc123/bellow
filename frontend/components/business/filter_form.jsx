@@ -7,14 +7,13 @@ class FilterForm extends React.Component {
     constructor() {
       super();
       this.state = {
-        prices: {
-          1: false,
-          2: false,
-          3: false,
-          4: false
-        }
+        prices: {1: false, 2: false, 3: false, 4: false},
+        openNow: false,
+        delivers: false
       };
       this.priceChange = this.priceChange.bind(this);
+      this.openNowChange = this.openNowChange.bind(this);
+      this.deliversChange = this.deliversChange.bind(this);
     }
 
     dollaSignChooser(num) {
@@ -33,6 +32,24 @@ class FilterForm extends React.Component {
       let priceKeys = Object.keys(this.state.prices).filter(el =>
         this.state.prices[el]).map(el => parseInt(el));
       this.props.updatePrices(priceKeys);
+    }
+
+    openNowChange() {
+      if (this.state.openNow === false) {
+        this.state.openNow = true;
+      } else {
+        this.state.openNow = false;
+      }
+      this.props.updateOpenNow(this.state.openNow);
+    }
+
+    deliversChange() {
+      if (this.state.delivers === false) {
+        this.state.delivers = true;
+      } else {
+        this.state.delivers = false;
+      }
+      this.props.updateDelivers(this.state.delivers);
     }
 
     changePrice(price) {
@@ -75,11 +92,11 @@ class FilterForm extends React.Component {
                 </div>
               ))
             }
-              <div className="filter-button">
+              <div className="filter-button" onClick={this.openNowChange}>
                 <input type="button"/>
                 <label>Open Now</label>
               </div>
-              <div className="filter-button">
+              <div className="filter-button" onClick={this.deliversChange}>
                 <input type="button"/>
                 <label>Delivers</label>
               </div>

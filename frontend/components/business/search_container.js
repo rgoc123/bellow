@@ -1,7 +1,14 @@
 import { connect } from 'react-redux';
 
 import { fetchBusinesses } from '../../actions/business_actions';
-import { updateBounds, updateFilter, updatePrices } from '../../actions/filter_actions';
+import {
+  updateBounds,
+  updateFilter,
+  updatePrices,
+  updateOpenNow,
+  updateDelivers
+} from '../../actions/filter_actions';
+
 import Search from './search';
 
 const mapStateToProps = (state) => {
@@ -16,7 +23,9 @@ const mapDispatchToProps = dispatch => {
     fetchBusinesses: () => dispatch(fetchBusinesses()),
     updateBounds: (bounds) => dispatch(updateBounds(bounds)),
     updateFilter: (filter, value) => dispatch(updateFilter(filter, value)),
-    updatePrices: (prices) => dispatch(updatePrices(prices))
+    updatePrices: (prices) => dispatch(updatePrices(prices)),
+    updateOpenNow: (value) => dispatch(updateOpenNow(value)),
+    updateDelivers: (value) => dispatch(updateDelivers(value))
   };
 };
 
