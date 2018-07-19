@@ -17,7 +17,7 @@ class Api::ReviewsController < ApplicationController
     @review.business_id = params[:business_id]
     @review.user_id = current_user.id
     if @review.save
-      render 'api/reviews/show'
+      render json: @review
     else
       render json: @review.errors.full_messages, status: 422
     end

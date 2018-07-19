@@ -13,9 +13,21 @@ function fetchGetRequest(endpoint, id, filters) {
   }
 };
 
+// Left off here - having csrf issues with cR
 function fetchPostRequest(endpoint, id, data) {
-  let fetchPostOptions = { method: 'POST', data: data };
-
+  let fetchPostOptions = {
+    method: 'POST',
+    data: { data },
+    mode: 'cors',
+    credentials: 'same-origin',
+    headers: {
+      'Content-Type': 'application/json'
+    }
+  };
+  return fetch(`/api/${endpoint}`, fetchPostOptions)
+    .then(res => res.json())
+    .then(res => res)
+    .catch(err => console.log(err));
 };
 
 // USER REQUESTS
@@ -40,3 +52,8 @@ export const fetchReviews = (businessId, id = null, filters = null) => {
 export const fetchReview = (reviewId, id = null, filters = null) => {
   return fetchGetRequest(`reviews/${reviewId}`, id, filters);
 };
+
+export const cR = (review) => {
+  let id = null;
+  return fetchPostRequest(`businesses/${review.business_id}/reviews`, id, review);
+}

@@ -2,19 +2,14 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 
 import {
-  fetchBusinesses,
-  fetchBusiness,
-  fetchReviews,
-  fetchReview,
-  fetchUser } from './util/apiHelper';
+  createReview,
+  fetchReview
+} from './util/apiHelper';
 import configureStore from './store/store';
 import Root from './components/root';
 
 //Testing start
-window.fetchBusinesses = fetchBusinesses;
-window.fetchUser = fetchUser;
-window.fetchBusiness = fetchBusiness
-window.fetchReviews = fetchReviews;
+window.createReview = createReview;
 window.fetchReview = fetchReview;
 //Testing end
 

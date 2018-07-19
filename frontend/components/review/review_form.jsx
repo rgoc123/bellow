@@ -30,7 +30,7 @@ class ReviewForm extends React.Component {
   constructor(props) {
 
     super(props);
-    
+
     if (!this.props.review) {
       this.state = {
         id: this.props.match.params.reviewId,
