@@ -74,6 +74,11 @@ class BusinessMap extends React.Component{
           biz.delivers === true
         );
       }
+      if (openNow === true) {
+        allBizzys = allBizzys.filter(biz =>
+          biz.openNow === true
+        );
+      }
     } else if (prices.length > 0) {
       allBizzys = this.props.businesses.filter(biz =>
         prices.includes(biz.price)
@@ -81,6 +86,11 @@ class BusinessMap extends React.Component{
       if (delivers === true) {
         allBizzys = allBizzys.filter(biz =>
           biz.delivers === true
+        );
+      }
+      if (openNow === true) {
+        allBizzys = allBizzys.filter(biz =>
+          biz.openNow === true
         );
       }
     } else if (search !== "") {
@@ -92,15 +102,29 @@ class BusinessMap extends React.Component{
           biz.delivers === true
         );
       }
+      if (openNow === true) {
+        allBizzys = allBizzys.filter(biz =>
+          biz.openNow === true
+        );
+      }
     } else if (delivers === true) {
       allBizzys = this.props.businesses.filter(biz =>
         biz.delivers === true
+      );
+      if (openNow === true) {
+        allBizzys = allBizzys.filter(biz =>
+          biz.openNow === true
+        );
+      }
+    } else if (openNow === true) {
+      allBizzys = this.props.businesses.filter(biz =>
+        biz.openNow === true
       );
     } else {
       allBizzys = [];
     }
 
-    if (allBizzys.length === 0 && (prices.length > 0 || search !== "")) {
+    if (allBizzys.length === 0 && (prices.length > 0 || search !== "" || delivers === true || openNow === true)) {
     // if (allBizzys === undefined) {
       this.props.businesses.forEach(biz => {
         if (this.MarkerManager.markers[biz.id]) {
@@ -130,7 +154,6 @@ class BusinessMap extends React.Component{
   }
 
   render() {
-
     return (
       <div id="map-container" style={{position: 'fixed'}} ref={ map => this.mapNode = map }></div>
     );

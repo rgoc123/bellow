@@ -18,6 +18,7 @@
     json.image0 asset_path(business.photos[0].image)
     json.image1 asset_path(business.photos[1].image)
     json.cuisines business.cuisines
+    json.openNow business.open_now
     json.delivers business.delivers
   end
 end

@@ -35,7 +35,8 @@ class BusinessIndex extends React.Component {
 
     if ((emptyPricesCheck) &&
     (this.props.filters.searchInput === "") &&
-    (this.props.filters.openDelivers.delivers === false)) {
+    (this.props.filters.openDelivers.delivers === false) &&
+    (this.props.filters.openDelivers.openNow === false)) {
       return makeBizIndex(this.props.businesses);
     } else {
       if (!emptyPricesCheck) {
@@ -57,6 +58,18 @@ class BusinessIndex extends React.Component {
         retBizzies = retBizzies.filter(biz => (
           biz.delivers === true
         ));
+      }
+      if (this.props.filters.openDelivers.openNow === true) {
+        console.log(Date.now());
+        // if now.hour < 12
+        let currentHour = new Date(Date.now()).getHours();
+        retBizzies = retBizzies.filter(biz => (
+          currentHour < 12 ? biz.openNow === 1 : biz.openNow === 2
+        ));
+
+        // retBizzies = retBizzies.filter(biz => (
+        //   Date.new() biz.openNow === true
+        // ));
       }
     }
 
