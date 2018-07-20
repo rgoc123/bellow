@@ -6,10 +6,10 @@ export const UPDATE_PRICES = 'UPDATE_PRICES';
 export const UPDATE_SEARCH_INPUT = 'UPDATE_SEARCH_INPUT';
 export const UPDATE_OPEN_NOW = 'UPDATE_OPEN_NOW';
 export const UPDATE_DELIVERS = 'UPDATE_DELIVERS';
+export const UPDATE_TAKEOUT = 'UPDATE_TAKEOUT';
 
 //async actions
 export const updateBounds = bounds => {
-
   return {
     type: UPDATE_BOUNDS,
     bounds
@@ -37,6 +37,10 @@ export const updateOpenNow = (value) => {
 
 export const updateDelivers = (value) => {
   return {type: UPDATE_DELIVERS, value}
+}
+
+export const updateTakeout = (value) => {
+  return {type: UPDATE_TAKEOUT, value}
 }
 
 export const updateSearchInput = (searchInput) => {

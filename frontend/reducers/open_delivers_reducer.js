@@ -1,9 +1,10 @@
-import { UPDATE_OPEN_NOW, UPDATE_DELIVERS } from '../actions/filter_actions';
+import { UPDATE_OPEN_NOW, UPDATE_DELIVERS, UPDATE_TAKEOUT } from '../actions/filter_actions';
 import merge from 'lodash/merge';
 
 let openDeliversState = {
   openNow: false,
   delivers: false,
+  takeout: false
 }
 
 const openDeliversReducer = (state = openDeliversState, action) => {
@@ -13,6 +14,8 @@ const openDeliversReducer = (state = openDeliversState, action) => {
       return merge({}, state, {openNow: action.value});
     case UPDATE_DELIVERS:
       return merge({}, state, {delivers: action.value});
+      case UPDATE_TAKEOUT:
+        return merge({}, state, {takeout: action.value});
     default:
       return state;
   }

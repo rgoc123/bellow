@@ -6,7 +6,8 @@ import {
   updateFilter,
   updatePrices,
   updateOpenNow,
-  updateDelivers
+  updateDelivers,
+  updateTakeout
 } from '../../actions/filter_actions';
 
 import Search from './search';
@@ -25,7 +26,8 @@ const mapDispatchToProps = dispatch => {
     updateFilter: (filter, value) => dispatch(updateFilter(filter, value)),
     updatePrices: (prices) => dispatch(updatePrices(prices)),
     updateOpenNow: (value) => dispatch(updateOpenNow(value)),
-    updateDelivers: (value) => dispatch(updateDelivers(value))
+    updateDelivers: (value) => dispatch(updateDelivers(value)),
+    updateTakeout: (value) => dispatch(updateTakeout(value))
   };
 };
 

@@ -10,12 +10,15 @@ class FilterForm extends React.Component {
         prices: {1: false, 2: false, 3: false, 4: false},
         openNow: false,
         delivers: false,
+        takeout: false,
         openNowStyle: {},
-        deliversStyle: {}
+        deliversStyle: {},
+        takeoutStyle: {}
       };
       this.priceChange = this.priceChange.bind(this);
       this.openNowChange = this.openNowChange.bind(this);
       this.deliversChange = this.deliversChange.bind(this);
+      this.takeoutChange = this.takeoutChange.bind(this);
     }
 
     dollaSignChooser(num) {
@@ -70,6 +73,23 @@ class FilterForm extends React.Component {
       this.props.updateDelivers(this.state.delivers);
     }
 
+    takeoutChange() {
+      if (this.state.takeout === false) {
+        this.state.takeout = true;
+        this.setState({
+          takeoutStyle: {
+            'backgroundColor': '#c4f3a4',
+            'border': '1px solid #41a700',
+            'color': '#348c42'
+          }
+        });
+      } else {
+        this.state.takeout = false;
+        this.setState({takeoutStyle: {}});
+      }
+      this.props.updateTakeout(this.state.takeout);
+    }
+
     changePrice(price) {
       if (this.state.prices[price] === true) {
         this.state.prices[price] = false;
@@ -122,7 +142,14 @@ class FilterForm extends React.Component {
               onClick={this.deliversChange}
               style={this.state.deliversStyle}>
                 <input type="button"/>
-                <label>Delivers</label>
+                <label>Order Delivery</label>
+              </div>
+              <div className="filter-button"
+              id="take-out"
+              onClick={this.takeoutChange}
+              style={this.state.takeoutStyle}>
+                <input type="button"/>
+                <label>Order Takeout</label>
               </div>
             </div>
           </div>

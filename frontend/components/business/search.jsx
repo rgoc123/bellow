@@ -18,7 +18,8 @@ class Search extends React.Component {
           updateFilter={this.props.updateFilter}
           updatePrices={this.props.updatePrices}
           updateOpenNow={this.props.updateOpenNow}
-          updateDelivers={this.props.updateDelivers} />
+          updateDelivers={this.props.updateDelivers}
+          updateTakeout={this.props.updateTakeout} />
         <div>
           <BusinessIndexContainer
             filters={this.props.filters}
