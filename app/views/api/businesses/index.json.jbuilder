@@ -20,5 +20,6 @@
     json.cuisines business.cuisines
     json.openNow business.open_now
     json.delivers business.delivers
+    json.takeout business.takeout
   end
 end

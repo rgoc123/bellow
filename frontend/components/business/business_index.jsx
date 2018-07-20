@@ -38,7 +38,8 @@ class BusinessIndex extends React.Component {
     if ((emptyPricesCheck) &&
     (this.props.filters.searchInput === "") &&
     (this.props.filters.openDelivers.delivers === false) &&
-    (this.props.filters.openDelivers.openNow === false)) {
+    (this.props.filters.openDelivers.openNow === false) &&
+    (this.props.filters.openDelivers.takeout === false)) {
       this.retBizzies = this.props.businesses;
       return makeBizIndex(this.props.businesses);
     } else {
@@ -66,6 +67,13 @@ class BusinessIndex extends React.Component {
           currentHour < 12 ? biz.openNow === 1 : biz.openNow === 2
         ));
       }
+      if (this.props.filters.openDelivers.takeout === true) {
+        console.log("Hi!");
+        retBizzies = retBizzies.filter(biz => (
+          biz.takeout === true
+        ));
+      }
+      console.log(retBizzies);
     }
 
     if (retBizzies.length > 0) {
