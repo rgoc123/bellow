@@ -47,110 +47,14 @@ class BusinessMap extends React.Component{
   }
 
   componentDidUpdate() {
-    let prices = this.props.prices;
-    let bizzys = this.props.businesses.filter(biz =>
-      prices.includes(biz.price)
-    );
-    let search = this.props.searchInput.toLowerCase();
-    let delivers = this.props.openDelivers.delivers;
-    let openNow = this.props.openDelivers.openNow;
-    // let newbizzys;
-    // if (search !== "") {
-    //   newbizzys = this.props.businesses.filter(biz =>
-    //     biz.name.toLowerCase().includes(search) || biz.cuisines.toLowerCase().includes(search)
-    //   );
-    // } else {
-    //   newbizzys = [];
-    // }
+    let tempMarkersKeys = Object.keys(this.MarkerManager.markers);
+    tempMarkersKeys.forEach(key => {
+      this.MarkerManager.removeMarker(this.MarkerManager.markers[key]);
+    })
 
-    // let allBizzys = bizzys.concat(newbizzys);
-    let allBizzys;
-    if (prices.length > 0 && search !== "") {
-      allBizzys = this.props.businesses.filter(biz =>
-        prices.includes(biz.price) && ((biz.name.toLowerCase().includes(search)) || biz.cuisines.toLowerCase().includes(search))
-      );
-      if (delivers === true) {
-        allBizzys = allBizzys.filter(biz =>
-          biz.delivers === true
-        );
-      }
-      if (openNow === true) {
-        allBizzys = allBizzys.filter(biz =>
-          biz.openNow === true
-        );
-      }
-    } else if (prices.length > 0) {
-      allBizzys = this.props.businesses.filter(biz =>
-        prices.includes(biz.price)
-      );
-      if (delivers === true) {
-        allBizzys = allBizzys.filter(biz =>
-          biz.delivers === true
-        );
-      }
-      if (openNow === true) {
-        allBizzys = allBizzys.filter(biz =>
-          biz.openNow === true
-        );
-      }
-    } else if (search !== "") {
-      allBizzys = this.props.businesses.filter(biz =>
-        allBizzys = biz.name.toLowerCase().includes(search) || biz.cuisines.toLowerCase().includes(search)
-      );
-      if (delivers === true) {
-        allBizzys = allBizzys.filter(biz =>
-          biz.delivers === true
-        );
-      }
-      if (openNow === true) {
-        allBizzys = allBizzys.filter(biz =>
-          biz.openNow === true
-        );
-      }
-    } else if (delivers === true) {
-      allBizzys = this.props.businesses.filter(biz =>
-        biz.delivers === true
-      );
-      if (openNow === true) {
-        allBizzys = allBizzys.filter(biz =>
-          biz.openNow === true
-        );
-      }
-    } else if (openNow === true) {
-      allBizzys = this.props.businesses.filter(biz =>
-        biz.openNow === true
-      );
-    } else {
-      allBizzys = [];
-    }
-
-    if (allBizzys.length === 0 && (prices.length > 0 || search !== "" || delivers === true || openNow === true)) {
-    // if (allBizzys === undefined) {
-      this.props.businesses.forEach(biz => {
-        if (this.MarkerManager.markers[biz.id]) {
-          this.MarkerManager.removeMarker(this.MarkerManager.markers[biz.id]);
-        }
-      });
-    } else if (allBizzys.length === 0) {
-      this.props.businesses.forEach(biz => {
-        if (this.MarkerManager.markers[biz.id]) {
-          this.MarkerManager.removeMarker(this.MarkerManager.markers[biz.id]);
-        }
-      });
-      this.props.businesses.forEach(biz => {
-        this.MarkerManager.createMarkerFromBusiness(biz);
-      });
-    } else {
-      this.props.businesses.forEach(biz => {
-        if (this.MarkerManager.markers[biz.id]) {
-          this.MarkerManager.removeMarker(this.MarkerManager.markers[biz.id]);
-        }
-      });
-      allBizzys.forEach(biz => {
-        this.MarkerManager.createMarkerFromBusiness(biz);
-      });
-    }
-
+    this.props.businesses.forEach(biz => {
+      this.MarkerManager.createMarkerFromBusiness(biz);
+    });
   }
 
   render() {

@@ -9,6 +9,8 @@ class BusinessIndex extends React.Component {
 
   constructor(props) {
     super(props);
+    this.retBizzies = this.props.businesses;
+    this.filtersChoice = this.filtersChoice.bind(this);
   }
 
   componentDidMount() {
@@ -33,26 +35,26 @@ class BusinessIndex extends React.Component {
       );
     }
 
+    // Left off somewhere in this whole function.
     if ((emptyPricesCheck) &&
     (this.props.filters.searchInput === "") &&
     (this.props.filters.openDelivers.delivers === false) &&
     (this.props.filters.openDelivers.openNow === false)) {
+      this.retBizzies = this.props.businesses;
       return makeBizIndex(this.props.businesses);
     } else {
       if (!emptyPricesCheck) {
-        tempBizzies = this.props.businesses.filter(business => (
+        retBizzies = this.props.businesses.filter(business => (
           this.props.filters.prices.includes(business.price))
         );
       } else {
-        tempBizzies = this.props.businesses;
+        retBizzies = this.props.businesses;
       }
       if (lowerSearchName) {
-        retBizzies = tempBizzies.filter(business => (
+        retBizzies = retBizzies.filter(business => (
           business.name.toLowerCase().includes(lowerSearchName) ||
           business.cuisines.toLowerCase().includes(lowerSearchName))
         );
-      } else {
-        retBizzies = tempBizzies;
       }
       if (this.props.filters.openDelivers.delivers === true) {
         retBizzies = retBizzies.filter(biz => (
@@ -60,22 +62,19 @@ class BusinessIndex extends React.Component {
         ));
       }
       if (this.props.filters.openDelivers.openNow === true) {
-        console.log(Date.now());
-        // if now.hour < 12
         let currentHour = new Date(Date.now()).getHours();
         retBizzies = retBizzies.filter(biz => (
           currentHour < 12 ? biz.openNow === 1 : biz.openNow === 2
         ));
-
-        // retBizzies = retBizzies.filter(biz => (
-        //   Date.new() biz.openNow === true
-        // ));
       }
     }
 
     if (retBizzies.length > 0) {
+      this.retBizzies = retBizzies;
+      console.log(this.retBizzies);
       return makeBizIndex(retBizzies);
     } else {
+      this.retBizzies = [];
       return (
         <p>If your search takes longer than one second, we don't have that restaurant or cuisine in our database. We apologize for the inconvience.</p>
       );
@@ -92,7 +91,7 @@ class BusinessIndex extends React.Component {
         </div>
         <div className="biz-column-bravo">
           <BusinessMap updateBounds={this.props.updateBounds}
-          businesses={this.props.businesses}
+          businesses={this.retBizzies}
           prices={this.props.filters.prices}
           searchInput={this.props.filters.searchInput}
           openDelivers={this.props.filters.openDelivers} />
