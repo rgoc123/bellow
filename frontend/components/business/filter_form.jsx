@@ -9,7 +9,9 @@ class FilterForm extends React.Component {
       this.state = {
         prices: {1: false, 2: false, 3: false, 4: false},
         openNow: false,
-        delivers: false
+        delivers: false,
+        openNowStyle: {},
+        deliversStyle: {}
       };
       this.priceChange = this.priceChange.bind(this);
       this.openNowChange = this.openNowChange.bind(this);
@@ -37,8 +39,16 @@ class FilterForm extends React.Component {
     openNowChange() {
       if (this.state.openNow === false) {
         this.state.openNow = true;
+        this.setState({
+          openNowStyle: {
+            'backgroundColor': '#c4f3a4',
+            'border': '1px solid #41a700',
+            'color': '#348c42'
+          }
+        });
       } else {
         this.state.openNow = false;
+        this.setState({openNowStyle: {}});
       }
       this.props.updateOpenNow(this.state.openNow);
     }
@@ -46,8 +56,16 @@ class FilterForm extends React.Component {
     deliversChange() {
       if (this.state.delivers === false) {
         this.state.delivers = true;
+        this.setState({
+          deliversStyle: {
+            'backgroundColor': '#c4f3a4',
+            'border': '1px solid #41a700',
+            'color': '#348c42'
+          }
+        });
       } else {
         this.state.delivers = false;
+        this.setState({deliversStyle: {}});
       }
       this.props.updateDelivers(this.state.delivers);
     }
@@ -92,11 +110,17 @@ class FilterForm extends React.Component {
                 </div>
               ))
             }
-              <div className="filter-button" onClick={this.openNowChange}>
+              <div className="filter-button"
+              id="open-now"
+              onClick={this.openNowChange}
+              style={this.state.openNowStyle}>
                 <input type="button"/>
                 <label>Open Now</label>
               </div>
-              <div className="filter-button" onClick={this.deliversChange}>
+              <div className="filter-button"
+              id="delivers"
+              onClick={this.deliversChange}
+              style={this.state.deliversStyle}>
                 <input type="button"/>
                 <label>Delivers</label>
               </div>
