@@ -35,7 +35,6 @@ class BusinessIndex extends React.Component {
       );
     }
 
-    // Left off somewhere in this whole function.
     if ((emptyPricesCheck) &&
     (this.props.filters.searchInput === "") &&
     (this.props.filters.openDelivers.delivers === false) &&
@@ -71,7 +70,6 @@ class BusinessIndex extends React.Component {
 
     if (retBizzies.length > 0) {
       this.retBizzies = retBizzies;
-      console.log(this.retBizzies);
       return makeBizIndex(retBizzies);
     } else {
       this.retBizzies = [];

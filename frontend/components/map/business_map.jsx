@@ -18,7 +18,6 @@ class BusinessMap extends React.Component{
     this.props.businesses.forEach(biz => {
       this.MarkerManager.createMarkerFromBusiness(biz);
     });
-    // this.MarkerManager.updateMarkers(this.props.businesses);
 
     google.maps.event.addListener(this.map, 'idle', () => {
 
