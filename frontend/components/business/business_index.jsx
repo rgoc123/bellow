@@ -33,7 +33,9 @@ class BusinessIndex extends React.Component {
       );
     }
 
-    if ((emptyPricesCheck) && (this.props.filters.searchInput === "")) {
+    if ((emptyPricesCheck) &&
+    (this.props.filters.searchInput === "") &&
+    (this.props.filters.openDelivers.delivers === false)) {
       return makeBizIndex(this.props.businesses);
     } else {
       if (!emptyPricesCheck) {
@@ -51,8 +53,13 @@ class BusinessIndex extends React.Component {
       } else {
         retBizzies = tempBizzies;
       }
+      if (this.props.filters.openDelivers.delivers === true) {
+        retBizzies = retBizzies.filter(biz => (
+          biz.delivers === true
+        ));
+      }
     }
-    
+
     if (retBizzies.length > 0) {
       return makeBizIndex(retBizzies);
     } else {
@@ -74,7 +81,8 @@ class BusinessIndex extends React.Component {
           <BusinessMap updateBounds={this.props.updateBounds}
           businesses={this.props.businesses}
           prices={this.props.filters.prices}
-          searchInput={this.props.filters.searchInput}/>
+          searchInput={this.props.filters.searchInput}
+          openDelivers={this.props.filters.openDelivers} />
         </div>
       </div>
     );

@@ -8,7 +8,7 @@
     json.address business.address
     json.city business.city
     json.phone_number business.phone_number
-    json.webstie business.website
+    json.website business.website
     json.lat business.lat
     json.long business.long
     json.main_image business.main_image
@@ -18,5 +18,6 @@
     json.image0 asset_path(business.photos[0].image)
     json.image1 asset_path(business.photos[1].image)
     json.cuisines business.cuisines
+    json.delivers business.delivers
   end
 end

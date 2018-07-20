@@ -52,14 +52,16 @@ class BusinessMap extends React.Component{
       prices.includes(biz.price)
     );
     let search = this.props.searchInput.toLowerCase();
-    let newbizzys;
-    if (search !== "") {
-      newbizzys = this.props.businesses.filter(biz =>
-        biz.name.toLowerCase().includes(search) || biz.cuisines.toLowerCase().includes(search)
-      );
-    } else {
-      newbizzys = [];
-    }
+    let delivers = this.props.openDelivers.delivers;
+    let openNow = this.props.openDelivers.openNow;
+    // let newbizzys;
+    // if (search !== "") {
+    //   newbizzys = this.props.businesses.filter(biz =>
+    //     biz.name.toLowerCase().includes(search) || biz.cuisines.toLowerCase().includes(search)
+    //   );
+    // } else {
+    //   newbizzys = [];
+    // }
 
     // let allBizzys = bizzys.concat(newbizzys);
     let allBizzys;
@@ -67,13 +69,32 @@ class BusinessMap extends React.Component{
       allBizzys = this.props.businesses.filter(biz =>
         prices.includes(biz.price) && ((biz.name.toLowerCase().includes(search)) || biz.cuisines.toLowerCase().includes(search))
       );
+      if (delivers === true) {
+        allBizzys = allBizzys.filter(biz =>
+          biz.delivers === true
+        );
+      }
     } else if (prices.length > 0) {
       allBizzys = this.props.businesses.filter(biz =>
         prices.includes(biz.price)
       );
+      if (delivers === true) {
+        allBizzys = allBizzys.filter(biz =>
+          biz.delivers === true
+        );
+      }
     } else if (search !== "") {
       allBizzys = this.props.businesses.filter(biz =>
         allBizzys = biz.name.toLowerCase().includes(search) || biz.cuisines.toLowerCase().includes(search)
+      );
+      if (delivers === true) {
+        allBizzys = allBizzys.filter(biz =>
+          biz.delivers === true
+        );
+      }
+    } else if (delivers === true) {
+      allBizzys = this.props.businesses.filter(biz =>
+        biz.delivers === true
       );
     } else {
       allBizzys = [];
