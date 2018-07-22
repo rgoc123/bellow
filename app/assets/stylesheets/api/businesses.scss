@@ -110,6 +110,10 @@
     background: white;
   }
 
+  input:hover {
+    box-shadow: 0 2px 2px 0 rgba(0,0,0,0.1);
+  }
+
   input[type=checkbox]:checked {
     background-color: #c4f3a4;
     border: 1px solid #41a700;
@@ -140,6 +144,10 @@
   height: 20px;
   font-size: 14px;
   margin: 0 30px;
+}
+
+.filter-button:hover {
+  box-shadow: 0 2px 2px 0 rgba(0,0,0,0.1);
 }
 
 #open-now {
