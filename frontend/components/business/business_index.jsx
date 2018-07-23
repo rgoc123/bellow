@@ -64,7 +64,7 @@ class BusinessIndex extends React.Component {
       if (this.props.filters.openDelivers.openNow === true) {
         let currentHour = new Date(Date.now()).getHours();
         retBizzies = retBizzies.filter(biz => (
-          currentHour < 12 ? biz.openNow === 1 : biz.openNow === 2
+          currentHour < 15 ? biz.openNow === 1 : biz.openNow === 2
         ));
       }
       if (this.props.filters.openDelivers.takeout === true) {

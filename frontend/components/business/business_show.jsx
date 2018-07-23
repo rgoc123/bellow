@@ -10,6 +10,8 @@ class BusinessShow extends React.Component {
     super(props);
     this.props.clearReviews();
     this.props.fetchBusiness(this.props.match.params.businessId);
+    this.businessHours;
+    this.generateBusinessHours = this.generateBusinessHours.bind(this);
   }
 
   reviewLink() {
@@ -37,9 +39,41 @@ class BusinessShow extends React.Component {
     }
   }
 
+  generateBusinessHours() {
+    const businessHours = this.props.business.openNow;
+    if (businessHours === 1) {
+      this.businessHours = '8:00 am - 3:00 pm';
+      return (
+        <ul>
+          <li><p className="day">Mon</p><p>{this.businessHours}</p></li>
+          <li><p className="day">Tue</p><p>{this.businessHours}</p></li>
+          <li><p className="day">Wed</p><p>{this.businessHours}</p></li>
+          <li><p className="day">Thu</p><p>{this.businessHours}</p></li>
+          <li><p className="day">Fri</p><p>{this.businessHours}</p></li>
+          <li><p className="day">Sat</p><p>{this.businessHours}</p></li>
+          <li><p className="day">Sun</p><p>{this.businessHours}</p></li>
+        </ul>
+      )
+    } else {
+      this.businessHours = '3:00 pm - 12:00 am';
+      return (
+        <ul>
+          <li><p className="day">Mon</p><p>{this.businessHours}</p></li>
+          <li><p className="day">Tue</p><p>{this.businessHours}</p></li>
+          <li><p className="day">Wed</p><p>{this.businessHours}</p></li>
+          <li><p className="day">Thu</p><p>{this.businessHours}</p></li>
+          <li><p className="day">Fri</p><p>{this.businessHours}</p></li>
+          <li><p className="day">Sat</p><p>{this.businessHours}</p></li>
+          <li><p className="day">Sun</p><p>{this.businessHours}</p></li>
+        </ul>
+      )
+    }
+  }
+
   render() {
 
     const business = this.props.business;
+    console.log(business);
 
     if (!business) {
       return null;
@@ -119,7 +153,7 @@ class BusinessShow extends React.Component {
                   <ul>
                     <li>
                       <i className="fa fa-clock-o" aria-hidden="true"></i>
-                      <p>Today <strong>11:00 am - 10:00 pm</strong></p>
+                      <p>Today <strong>{this.businessHours}</strong></p>
                     </li>
                     <li>
                       <span className="todays-dollas">{dollaSign}</span>
@@ -129,36 +163,7 @@ class BusinessShow extends React.Component {
                 </div>
                 <div className="hours">
                   <h5>Hours</h5>
-                  <ul>
-                    <li>
-                      <p className="day">Mon</p>
-                      <p>11:00 am - 10:00 pm</p>
-                    </li>
-                    <li>
-                      <p className="day">Tue</p>
-                      <p>11:00 am - 10:00 pm</p>
-                    </li>
-                    <li>
-                      <p className="day">Wed</p>
-                      <p>11:00 am - 10:00 pm</p>
-                    </li>
-                    <li>
-                      <p className="day">Thu</p>
-                      <p>11:00 am - 10:00 pm</p>
-                    </li>
-                    <li>
-                      <p className="day">Fri</p>
-                      <p>11:00 am - 10:00 pm</p>
-                    </li>
-                    <li>
-                      <p className="day">Sat</p>
-                      <p>11:00 am - 10:00 pm</p>
-                    </li>
-                    <li>
-                      <p className="day">Sun</p>
-                      <p>11:00 am - 10:00 pm</p>
-                    </li>
-                  </ul>
+                  {this.generateBusinessHours()}
                 </div>
               </div>
             </div>
