@@ -53,7 +53,7 @@ class BusinessShow extends React.Component {
           <li><p className="day">Sat</p><p>{this.businessHours}</p></li>
           <li><p className="day">Sun</p><p>{this.businessHours}</p></li>
         </ul>
-      )
+      );
     } else {
       this.businessHours = '3:00 pm - 12:00 am';
       return (
@@ -66,7 +66,7 @@ class BusinessShow extends React.Component {
           <li><p className="day">Sat</p><p>{this.businessHours}</p></li>
           <li><p className="day">Sun</p><p>{this.businessHours}</p></li>
         </ul>
-      )
+      );
     }
   }
 

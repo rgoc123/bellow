@@ -28,12 +28,21 @@ class BusinessIndexItem extends React.Component {
   }
 
   indexCuisines(cuisine) {
-
     this.state.searchInput = cuisine;
     let currentSearch = this.state.searchInput;
 
     dispatch(updateSearchInput(currentSearch));
     this.props.props.props.history.push('/search');
+  }
+
+  generateDeliversTakeout() {
+    if (this.business.delivers === true && this.business.takeout === true) {
+      return (<span className="delivers-takout">Delivers, Takeout</span>);
+    } else if (this.business.delivers === true) {
+      return (<span className="delivers-takout">Delivers</span>);
+    } else if (this.business.takeout === true) {
+      return (<span className="delivers-takout">Takeout</span>);
+    }
   }
 
   render() {
@@ -55,7 +64,10 @@ class BusinessIndexItem extends React.Component {
                 <span
                   className="biz-index-cuisine"
                   onClick={() => this.indexCuisines(this.business.cuisines)}
-                  > {this.business.cuisines}</span>
+                  >{this.business.cuisines}</span>
+              </div>
+              <div>
+                {this.generateDeliversTakeout()}
               </div>
             </div>
           </div>

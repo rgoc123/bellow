@@ -68,12 +68,10 @@ class BusinessIndex extends React.Component {
         ));
       }
       if (this.props.filters.openDelivers.takeout === true) {
-        console.log("Hi!");
         retBizzies = retBizzies.filter(biz => (
           biz.takeout === true
         ));
       }
-      console.log(retBizzies);
     }
 
     if (retBizzies.length > 0) {
