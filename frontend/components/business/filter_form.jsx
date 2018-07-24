@@ -39,6 +39,32 @@ class FilterForm extends React.Component {
       this.props.updatePrices(priceKeys);
     }
 
+    changePrice(price) {
+      if (this.state.prices[price] === true) {
+        this.state.prices[price] = false;
+      } else {
+        this.state.prices[price] = true;
+      }
+      this.priceChange();
+    }
+
+    rightBorderStyle(price) {
+      if (document.getElementById(`price-filter-${price + 1}`) && price <= 3) {
+        if (this.state.prices[price] === true) {
+          document.getElementById(`price-filter-${price + 1}`).style.borderLeft = "1px solid #41a700";
+        } else {
+          document.getElementById(`price-filter-${price + 1}`).style.borderLeft = "";
+        }
+      }
+    }
+
+    changePriceAndBorder(price) {
+      return () => {
+        this.changePrice(price);
+        this.rightBorderStyle(price);
+      };
+    }
+
     openNowChange() {
       if (this.state.openNow === false) {
         this.state.openNow = true;
@@ -90,32 +116,6 @@ class FilterForm extends React.Component {
       this.props.updateTakeout(this.state.takeout);
     }
 
-    changePrice(price) {
-      if (this.state.prices[price] === true) {
-        this.state.prices[price] = false;
-      } else {
-        this.state.prices[price] = true;
-      }
-      this.priceChange();
-    }
-
-    rightBorderStyle(price) {
-      if (document.getElementById(`price-filter-${price + 1}`) && price <= 3) {
-        if (this.state.prices[price] === true) {
-          document.getElementById(`price-filter-${price + 1}`).style.borderLeft = "1px solid #41a700";
-        } else {
-          document.getElementById(`price-filter-${price + 1}`).style.borderLeft = "";
-        }
-      }
-    }
-
-    changePriceAndBorder(price) {
-      return () => {
-        this.changePrice(price);
-        this.rightBorderStyle(price);
-      };
-    }
-
     componentDidMount() {
       this.setState({
         openNow: this.props.filters.openDelivers.openNow,
@@ -143,6 +143,23 @@ class FilterForm extends React.Component {
           'color': '#348c42'
         }
       });
+      if (this.props.filters.prices.length > 0) {
+        let newPrice = Object.assign({}, this.state.prices);
+        this.props.filters.prices.forEach(price => {
+          newPrice[price] = true;
+          if (document.getElementById(`price-filter-${price + 1}`) && price <= 3) {
+            if (newPrice[price] === true) {
+              document.getElementById(`price-filter-${price + 1}`).style.borderLeft = "1px solid #41a700";
+            } else {
+              document.getElementById(`price-filter-${price + 1}`).style.borderLeft = "";
+            }
+          }
+        });
+        this.setState({
+          prices: newPrice
+        });
+
+      }
     }
 
     render() {
@@ -154,7 +171,12 @@ class FilterForm extends React.Component {
             {
               [1, 2, 3, 4].map( num => (
                 <div className="price-filter-checkbox" key={num}>
-                  <input id={`price-filter-${num}`} className="price-filter-input" onChange={this.changePriceAndBorder(num)} type="checkbox" value={num} />
+                  <input id={`price-filter-${num}`}
+                    className="price-filter-input"
+                    onChange={this.changePriceAndBorder(num)}
+                    type="checkbox"
+                    value={num}
+                    checked={this.state.prices[num]} />
                   <label htmlFor={`price-filter-${num}`}>{this.dollaSignChooser(num)}</label>
                 </div>
               ))
