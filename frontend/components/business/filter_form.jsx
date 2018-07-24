@@ -4,13 +4,13 @@ import { Link, withRouter } from 'react-router-dom';
 
 class FilterForm extends React.Component {
 
-    constructor() {
-      super();
+    constructor(props) {
+      super(props);
       this.state = {
         prices: {1: false, 2: false, 3: false, 4: false},
-        openNow: false,
-        delivers: false,
-        takeout: false,
+        openNow: "",
+        delivers: "",
+        takeout: "",
         openNowStyle: {},
         deliversStyle: {},
         takeoutStyle: {}
@@ -114,6 +114,35 @@ class FilterForm extends React.Component {
         this.changePrice(price);
         this.rightBorderStyle(price);
       };
+    }
+
+    componentDidMount() {
+      this.setState({
+        openNow: this.props.filters.openDelivers.openNow,
+        delivers: this.props.filters.openDelivers.delivers,
+        takeout: this.props.filters.openDelivers.takeout
+      });
+      if (this.props.filters.openDelivers.openNow === true) this.setState({
+        openNowStyle: {
+          'backgroundColor': '#c4f3a4',
+          'border': '1px solid #41a700',
+          'color': '#348c42'
+        }
+      });
+      if (this.props.filters.openDelivers.delivers === true) this.setState({
+        deliversStyle: {
+          'backgroundColor': '#c4f3a4',
+          'border': '1px solid #41a700',
+          'color': '#348c42'
+        }
+      });
+      if (this.props.filters.openDelivers.takeout === true) this.setState({
+        takeoutStyle: {
+          'backgroundColor': '#c4f3a4',
+          'border': '1px solid #41a700',
+          'color': '#348c42'
+        }
+      });
     }
 
     render() {

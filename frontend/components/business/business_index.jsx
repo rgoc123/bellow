@@ -35,8 +35,6 @@ class BusinessIndex extends React.Component {
       );
     }
 
-    // Left off here, just needed a separate if else statement for
-    // things that depend on each other
     if ((emptyPricesCheck) &&
     (this.props.filters.searchInput === "") &&
     (this.props.filters.openDelivers.delivers === false) &&
@@ -57,7 +55,6 @@ class BusinessIndex extends React.Component {
           business.name.toLowerCase().includes(lowerSearchName) ||
           business.cuisines.toLowerCase().includes(lowerSearchName))
         );
-        debugger
       }
       if (this.props.filters.openDelivers.delivers === true &&
         this.props.filters.openDelivers.takeout === true) {
