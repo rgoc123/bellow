@@ -35,6 +35,8 @@ class BusinessIndex extends React.Component {
       );
     }
 
+    // Left off here, just needed a separate if else statement for
+    // things that depend on each other
     if ((emptyPricesCheck) &&
     (this.props.filters.searchInput === "") &&
     (this.props.filters.openDelivers.delivers === false) &&
@@ -43,20 +45,30 @@ class BusinessIndex extends React.Component {
       this.retBizzies = this.props.businesses;
       return makeBizIndex(this.props.businesses);
     } else {
+      retBizzies = this.props.businesses;
+      console.log(retBizzies);
       if (!emptyPricesCheck) {
         retBizzies = this.props.businesses.filter(business => (
           this.props.filters.prices.includes(business.price))
         );
-      } else {
-        retBizzies = this.props.businesses;
       }
       if (lowerSearchName) {
         retBizzies = retBizzies.filter(business => (
           business.name.toLowerCase().includes(lowerSearchName) ||
           business.cuisines.toLowerCase().includes(lowerSearchName))
         );
+        debugger
       }
-      if (this.props.filters.openDelivers.delivers === true) {
+      if (this.props.filters.openDelivers.delivers === true &&
+        this.props.filters.openDelivers.takeout === true) {
+        retBizzies = retBizzies.filter(biz => (
+          (biz.delivers === true || biz.takeout === true)
+        ));
+      } else if (this.props.filters.openDelivers.takeout === true) {
+        retBizzies = retBizzies.filter(biz => (
+          biz.takeout === true
+        ));
+      } else if (this.props.filters.openDelivers.delivers === true) {
         retBizzies = retBizzies.filter(biz => (
           biz.delivers === true
         ));
@@ -67,13 +79,8 @@ class BusinessIndex extends React.Component {
           currentHour < 15 ? biz.openNow === 1 : biz.openNow === 2
         ));
       }
-      if (this.props.filters.openDelivers.takeout === true) {
-        retBizzies = retBizzies.filter(biz => (
-          biz.takeout === true
-        ));
-      }
     }
-
+    console.log(retBizzies);
     if (retBizzies.length > 0) {
       this.retBizzies = retBizzies;
       return makeBizIndex(retBizzies);
