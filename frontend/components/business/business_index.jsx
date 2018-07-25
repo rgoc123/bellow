@@ -44,7 +44,6 @@ class BusinessIndex extends React.Component {
       return makeBizIndex(this.props.businesses);
     } else {
       retBizzies = this.props.businesses;
-      console.log(retBizzies);
       if (!emptyPricesCheck) {
         retBizzies = this.props.businesses.filter(business => (
           this.props.filters.prices.includes(business.price))
@@ -77,7 +76,7 @@ class BusinessIndex extends React.Component {
         ));
       }
     }
-    console.log(retBizzies);
+    
     if (retBizzies.length > 0) {
       this.retBizzies = retBizzies;
       return makeBizIndex(retBizzies);
