@@ -7,6 +7,7 @@ export const UPDATE_SEARCH_INPUT = 'UPDATE_SEARCH_INPUT';
 export const UPDATE_OPEN_NOW = 'UPDATE_OPEN_NOW';
 export const UPDATE_DELIVERS = 'UPDATE_DELIVERS';
 export const UPDATE_TAKEOUT = 'UPDATE_TAKEOUT';
+export const CLEAR_FILTERS = 'CLEAR_FILTERS';
 
 //async actions
 export const updateBounds = bounds => {
@@ -47,6 +48,12 @@ export const updateSearchInput = (searchInput) => {
   return {
     type: UPDATE_SEARCH_INPUT,
     searchInput
+  };
+};
+
+export const clearFilters = () => {
+  return {
+    type: CLEAR_FILTERS
   };
 };
 

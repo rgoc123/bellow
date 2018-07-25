@@ -8,9 +8,9 @@ class FilterForm extends React.Component {
       super(props);
       this.state = {
         prices: {1: false, 2: false, 3: false, 4: false},
-        openNow: "",
-        delivers: "",
-        takeout: "",
+        openNow: false,
+        delivers: false,
+        takeout: false,
         openNowStyle: {},
         deliversStyle: {},
         takeoutStyle: {}
@@ -19,6 +19,7 @@ class FilterForm extends React.Component {
       this.openNowChange = this.openNowChange.bind(this);
       this.deliversChange = this.deliversChange.bind(this);
       this.takeoutChange = this.takeoutChange.bind(this);
+      this.clearFilters = this.clearFilters.bind(this);
     }
 
     dollaSignChooser(num) {
@@ -116,6 +117,24 @@ class FilterForm extends React.Component {
       this.props.updateTakeout(this.state.takeout);
     }
 
+    clearFilters() {
+      this.props.clearFilters();
+      let newState = Object.assign({}, this.state);
+      newState['prices'] = {1: false, 2: false, 3: false, 4: false};
+      newState['openNowStyle'] = {};
+      newState['deliversStyle'] = {};
+      newState['takeoutStyle'] = {};
+      newState['openNow'] = false;
+      newState['delivers'] = false;
+      newState['takeout'] = false;
+      [1, 2, 3].forEach(price => {
+        if (document.getElementById(`price-filter-${price + 1}`) && price <= 3) {
+            document.getElementById(`price-filter-${price + 1}`).style.borderLeft = "";
+        }
+      });
+      this.setState(newState);
+    }
+
     componentDidMount() {
       this.setState({
         openNow: this.props.filters.openDelivers.openNow,
@@ -158,7 +177,6 @@ class FilterForm extends React.Component {
         this.setState({
           prices: newPrice
         });
-
       }
     }
 
@@ -201,6 +219,12 @@ class FilterForm extends React.Component {
               style={this.state.takeoutStyle}>
                 <input type="button"/>
                 <label>Order Takeout</label>
+              </div>
+              <div className="filter-button"
+              id="take-out"
+              onClick={this.clearFilters} >
+                <input type="button"/>
+                <label>Clear Filters</label>
               </div>
             </div>
           </div>

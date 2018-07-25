@@ -1,4 +1,4 @@
-import { UPDATE_SEARCH_INPUT } from '../actions/filter_actions';
+import { UPDATE_SEARCH_INPUT, CLEAR_FILTERS } from '../actions/filter_actions';
 
 const searchInputReducer = (state = "", action) => {
   Object.freeze(state);
@@ -6,6 +6,8 @@ const searchInputReducer = (state = "", action) => {
   switch (action.type) {
     case UPDATE_SEARCH_INPUT:
       return action.searchInput;
+    case CLEAR_FILTERS:
+      return "";
     default:
       return state;
   }
