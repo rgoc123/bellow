@@ -8,7 +8,8 @@ import NewSearch from './new_search';
 
 const mapStateToProps = (state) => {
   return {
-    businesses: Object.values(state.entities.businesses)
+    businesses: Object.values(state.entities.businesses),
+    searchInput: state.ui.filters.searchInput
   };
 };
 

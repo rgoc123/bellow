@@ -8,7 +8,7 @@ class NewSearch extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      searchInput: ""
+      searchInput: null
     };
     this.dataSource = [];
     this.cuisines = ['American', 'Burgers', 'Wings', 'Mexican',
@@ -49,6 +49,13 @@ class NewSearch extends React.Component {
         />)
       });
     });
+  }
+
+  updateSearchInputState() {
+    this.setState({
+      searchInput: this.props.searchInput
+    });
+    console.log(this.state);
   }
 
   handleSubmit(e) {
@@ -95,9 +102,17 @@ class NewSearch extends React.Component {
     }
   }
 
+  componentWillUpdate(nextProps) {
+    // console.log("Hello");
+    // console.log()
+    // console.log(this.state.searchInput);
+    // this.setState({
+    //   searchInput: nextProps.searchInput
+    // });
+  }
+
   render() {
     if (this.dataSource.length === 0 && this.props.businesses.length > 0) {
-
       this.updateDataSource();
     }
 
