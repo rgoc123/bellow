@@ -56,13 +56,12 @@ class NewSearch extends React.Component {
   handleSubmit(e) {
     e.preventDefault();
     this.props.props.updateSearchInput(this.state.searchInput);
-    this.props.props.history.push('/search');
-    // update above to only happen if the page isn't /search
-    // this will stop the error
+    if (this.props.props.history.location.pathname !== '/search') {
+      this.props.props.history.push('/search');
+    }
   }
 
   handleUpdateInput(value) {
-    console.log("Value: " + value);
     if (this.props.searchInput !== "") {
       this.setState({
         searchInput: this.props.searchInput
