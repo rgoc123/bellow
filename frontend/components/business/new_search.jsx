@@ -8,7 +8,7 @@ class NewSearch extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      searchInput: null
+      searchInput: ""
     };
     this.dataSource = [];
     this.cuisines = ['American', 'Burgers', 'Wings', 'Mexican',
@@ -17,6 +17,8 @@ class NewSearch extends React.Component {
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleUpdateInput = this.handleUpdateInput.bind(this);
     this.props.fetchBusinesses();
+    this.searchFieldNotEmpty = false;
+    console.log("Props State: " + this.props.searchInput);
   }
 
   indexCuisines(cuisine) {
@@ -51,23 +53,24 @@ class NewSearch extends React.Component {
     });
   }
 
-  updateSearchInputState() {
-    this.setState({
-      searchInput: this.props.searchInput
-    });
-    console.log(this.state);
-  }
-
   handleSubmit(e) {
     e.preventDefault();
     this.props.props.updateSearchInput(this.state.searchInput);
     this.props.props.history.push('/search');
+    // update above to only happen if the page isn't /search
+    // this will stop the error
   }
 
   handleUpdateInput(value) {
-    return (this.setState({
+    console.log("Value: " + value);
+    if (this.props.searchInput !== "") {
+      this.setState({
+        searchInput: this.props.searchInput
+      });
+    }
+    this.setState({
       searchInput: value
-    }));
+    });
   }
 
   chooseHeaderClass() {
@@ -102,18 +105,30 @@ class NewSearch extends React.Component {
     }
   }
 
-  componentWillUpdate(nextProps) {
-    // console.log("Hello");
-    // console.log()
-    // console.log(this.state.searchInput);
-    // this.setState({
-    //   searchInput: nextProps.searchInput
-    // });
-  }
-
   render() {
     if (this.dataSource.length === 0 && this.props.businesses.length > 0) {
       this.updateDataSource();
+    }
+
+    // If there isn't props, then showStateSearchInput = state
+    // else if there is props and state = "" and searchFieldNotEmpty = false
+      // showStateSearchInput = props and searchFieldNotEmpty = true and state = props
+    // else if there is props and state !== ""
+      // showStateSearchInput = state
+    // else if there is props and state = "" and searchFieldNotEmpty = true
+      // showStateSearchInput = state and searchFieldNotEmpty = false
+    let showStateSearchInput;
+    if (this.props.searchInput === "") {
+      showStateSearchInput = this.state.searchInput;
+    } else if (this.state.searchInput === "" && this.searchFieldNotEmpty == false) {
+      showStateSearchInput = this.props.searchInput;
+      this.searchFieldNotEmpty = true;
+    } else if (this.state.searchInput === "") {
+      showStateSearchInput = this.state.searchInput;
+      this.searchFieldNotEmpty = false;
+    } else {
+      showStateSearchInput = this.state.searchInput;
+      this.searchFieldNotEmpty = true;
     }
 
     return (
@@ -124,7 +139,7 @@ class NewSearch extends React.Component {
             id="search-input"
             className={this.chooseBizInput()}
             filter={AutoComplete.fuzzyFilter}
-            searchText={this.state.searchInput}
+            searchText={showStateSearchInput}
             dataSource={this.dataSource}
             onUpdateInput={this.handleUpdateInput}
             maxSearchResults={5}
