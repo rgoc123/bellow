@@ -555,3 +555,15 @@ div [class^="show-rating-img-"] {
 #search-input {
   padding-top: 1px;
 }
+
+#search-x-button {
+  color: gray;
+  background: white;
+  top: 0;
+  margin-right: 5px;
+  font-size: 14px;
+}
+
+#search-x-button:hover {
+  color: black;
+}
