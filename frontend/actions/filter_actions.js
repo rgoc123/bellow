@@ -8,6 +8,7 @@ export const UPDATE_OPEN_NOW = 'UPDATE_OPEN_NOW';
 export const UPDATE_DELIVERS = 'UPDATE_DELIVERS';
 export const UPDATE_TAKEOUT = 'UPDATE_TAKEOUT';
 export const CLEAR_FILTERS = 'CLEAR_FILTERS';
+export const CLEAR_SEARCH = 'CLEAR_SEARCH';
 
 //async actions
 export const updateBounds = bounds => {
@@ -57,5 +58,10 @@ export const clearFilters = () => {
   };
 };
 
+export const clearSearch = () => {
+  return {
+    type: CLEAR_SEARCH
+  };
+};
 
 //thunk actions

@@ -152,7 +152,7 @@ class NewSearch extends React.Component {
             maxSearchResults={5}
             placeholder="pizza, burgers, Chinese, and more!"
           />
-        <div id={this.chooseSearchXId()}><i class="fa fa-times"></i></div>
+        <div id={this.chooseSearchXId()} onClick={this.props.clearSearch}><i className="fa fa-times"></i></div>
           <button className={this.chooseSearchButton()}><i className="fa fa-search" aria-hidden="true"></i></button>
         </form>
       </div>
