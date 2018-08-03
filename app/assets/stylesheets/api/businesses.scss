@@ -560,11 +560,26 @@ div [class^="show-rating-img-"] {
   color: gray;
   background: white;
   top: 0;
-  margin-right: 5px;
+  padding-top: 10px;
+  margin-right: 14px;
   font-size: 14px;
 }
 
 #search-x-button:hover {
+  color: black;
+}
+
+#search-x-button-landing {
+  width: 25px !important;
+  color: gray;
+  background: white;
+  top: 0;
+  padding-top: 14px;
+  margin-right: 5px;
+  font-size: 14px;
+}
+
+#search-x-button-landing:hover {
   color: black;
 }
 

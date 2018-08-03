@@ -104,6 +104,14 @@ class NewSearch extends React.Component {
     }
   }
 
+  chooseSearchXId() {
+    if (this.props.props.location.pathname === "/") {
+      return "search-x-button-landing";
+    } else {
+      return "search-x-button";
+    }
+  }
+
   render() {
     if (this.dataSource.length === 0 && this.props.businesses.length > 0) {
       this.updateDataSource();
@@ -144,7 +152,7 @@ class NewSearch extends React.Component {
             maxSearchResults={5}
             placeholder="pizza, burgers, Chinese, and more!"
           />
-        <div id="search-x-button"><i class="fa fa-times"></i></div>
+        <div id={this.chooseSearchXId()}><i class="fa fa-times"></i></div>
           <button className={this.chooseSearchButton()}><i className="fa fa-search" aria-hidden="true"></i></button>
         </form>
       </div>
