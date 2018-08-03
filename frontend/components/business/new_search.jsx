@@ -112,6 +112,13 @@ class NewSearch extends React.Component {
     }
   }
 
+  clearSearch() {
+    this.props.clearSearch();
+    this.setState({
+      searchInput: ""
+    });
+  }
+
   render() {
     if (this.dataSource.length === 0 && this.props.businesses.length > 0) {
       this.updateDataSource();
@@ -152,7 +159,7 @@ class NewSearch extends React.Component {
             maxSearchResults={5}
             placeholder="pizza, burgers, Chinese, and more!"
           />
-        <div id={this.chooseSearchXId()} onClick={this.props.clearSearch}><i className="fa fa-times"></i></div>
+        <div id={this.chooseSearchXId()} onClick={() => this.clearSearch()}><i className="fa fa-times"></i></div>
           <button className={this.chooseSearchButton()}><i className="fa fa-search" aria-hidden="true"></i></button>
         </form>
       </div>
