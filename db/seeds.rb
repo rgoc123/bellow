@@ -35,6 +35,14 @@
 # biz14 = Business.create!(name: "Sushi Nakazawa", rating: 4, price: 4, neighborhood: "West Village", address: "23 Commerce St", city: "New York, NY 10009", phone_number: "(212) 249-6177", website: "http://sushinakazawa.com/", lat: 40.731815, long: -74.00491, main_image: File.open('./app/assets/images/sushi_nakazawa_prof.jpg'), cuisines: "Sushi")
 # biz15 = Business.create!(name: "Shuko", rating: 4, price: 4, neighborhood: "Union Square", address: "47 E 12th St", city: "New York, NY 10003", phone_number: "(212) 249-6177", website: "https://www.shukonyc.com/", lat: 40.733648, long: -73.991613, main_image: File.open('./app/assets/images/shuko_prof.jpg'), cuisines: "Sushi")
 # biz16 = Business.create!(name: "Paseo", rating: 5, price: 2, neighborhood: "Fremont", address: "4225 Fremont Ave N", city: "Seattle, WA 98103", phone_number: "(206) 545-7440", website: "http://www.paseorestaurants.com/", lat: 47.658561, long: -122.350309, main_image: File.open('./app/assets/images/paseo_prof.jpg'), cuisines: "Cuban")
+biz17 = Business.create!(name: "Corner Bistro", rating: 5, price: 2, neighborhood: "West Village", address: "123 Sp123 Spring String St", city: "New York", phone_number: "(212) 249-6177", website: "http://cornerbistrony.com/", lat: 40.7380487, long: -74.0039281, main_image: File.open('./app/assets/images/cbistro_prof.jpg'), cuisines: "Burgers") # corner bistro
+biz18 = Business.create!(name: "Dutch Fred's", rating: 5, price: 3, neighborhood: "Theater District", address: "123 Spring St", city: "New York", phone_number: "(212) 249-6177", website: "https://www.dutchfreds.com/", lat: 40.7607843, long: -73.9880036, main_image: File.open('./app/assets/images/dfreds_prof.jpg'), cuisines: "American") # dutch fred's
+biz19 = Business.create!(name: "Shorty's", rating: 5, price: 2, neighborhood: "Upper East Side", address: "123 Spring St", city: "New York", phone_number: "(212) 249-6177", website: "http://www.shortysnyc.com/", lat: 40.777880, long: -73.9485456, main_image: File.open('./app/assets/images/shortys_prof.jpg'), cuisines: "Wings") # shorty's
+biz20 = Business.create!(name: "H&H Midtown Bagels Eagles", rating: 4, price: 2, neighborhood: "Lenox Hill", address: "123 Spring St", city: "New York", phone_number: "(212) 249-6177", website: "https://www.hhmidtownbagelseast.com/", lat: 40.7744243, long: -73.9546259, main_image: File.open('./app/assets/images/hh_prof.jpg'), cuisines: "Bagels") # hh
+biz21 = Business.create!(name: "John's of Bleecker Street", rating: 5, price: 2, neighborhood: "West Village", address: "123 Spring St", city: "New York", phone_number: "(212) 249-6177", website: "http://www.johnsbrickovenpizza.com/", lat: 40.731631, long: -74.0035777, main_image: File.open('./app/assets/images/johns_prof.jpg'), cuisines: "Pizza") # johns
+biz22 = Business.create!(name: "Loreley Beer Garden", rating: 4, price: 2, neighborhood: "Lower East Side", address: "123 Spring St", city: "New York", phone_number: "(212) 249-6177", website: "http://www.loreleynyc.com/", lat: 40.721118, long: -73.9934438, main_image: File.open('./app/assets/images/loreley_prof.jpg'), cuisines: "German") # loreley
+biz23 = Business.create!(name: "Mimi Cheng's", rating: 4, price: 2, neighborhood: "East Village", address: "123 Spring St", city: "New York", phone_number: "(212) 249-6177", website: "http://www.mimichengs.com/", lat: 40.7306734, long: -73.9866583, main_image: File.open('./app/assets/images/mimis_prof.jpg'), cuisines: "Chinese") # mimi chengs
+biz24 = Business.create!(name: "Santa Fe", rating: 5, price: 3, neighborhood: "Upper West Side", address: "123 Spring St", city: "New York", phone_number: "(212) 249-6177", website: "http://santafe71.com/", lat: 40.7766731, long: -73.979088, main_image: File.open('./app/assets/images/sf_prof.jpg'), cuisines: "Mexican") # santa fe
 
 # Review.destroy_all
 # Review.create!(user_id: bobby.id, business_id: biz2.id, body: "The best burgers in the city", rating: 5)
@@ -78,3 +86,19 @@
 # Photo.create!(business_id: biz15.id, image: File.open('./app/assets/images/shuko2.jpg'))
 # Photo.create!(business_id: biz16.id, image: File.open('./app/assets/images/paseo1.jpg'))
 # Photo.create!(business_id: biz16.id, image: File.open('./app/assets/images/paseo2.jpg'))
+Photo.create!(business_id: biz17.id, image: File.open('./app/assets/images/cbistro1.jpg'))
+Photo.create!(business_id: biz17.id, image: File.open('./app/assets/images/cbistro2.jpg'))
+Photo.create!(business_id: biz18.id, image: File.open('./app/assets/images/dfreds1.jpg'))
+Photo.create!(business_id: biz18.id, image: File.open('./app/assets/images/dfreds2.jpg'))
+Photo.create!(business_id: biz19.id, image: File.open('./app/assets/images/shortys1.jpg'))
+Photo.create!(business_id: biz19.id, image: File.open('./app/assets/images/shortys2.jpg'))
+Photo.create!(business_id: biz20.id, image: File.open('./app/assets/images/hh1.jpg'))
+Photo.create!(business_id: biz20.id, image: File.open('./app/assets/images/hh2.jpg'))
+Photo.create!(business_id: biz21.id, image: File.open('./app/assets/images/johns1.jpg'))
+Photo.create!(business_id: biz21.id, image: File.open('./app/assets/images/johns2.jpg'))
+Photo.create!(business_id: biz22.id, image: File.open('./app/assets/images/loreley1.jpg'))
+Photo.create!(business_id: biz22.id, image: File.open('./app/assets/images/loreley2.jpg'))
+Photo.create!(business_id: biz23.id, image: File.open('./app/assets/images/mimis1.jpg'))
+Photo.create!(business_id: biz23.id, image: File.open('./app/assets/images/mimis2.jpg'))
+Photo.create!(business_id: biz24.id, image: File.open('./app/assets/images/sf1.jpg'))
+Photo.create!(business_id: biz24.id, image: File.open('./app/assets/images/sf2.jpg'))
